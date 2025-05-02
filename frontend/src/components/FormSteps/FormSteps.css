@@ -1,0 +1,35 @@
+
+/* .FormSteps{
+    controla o tamanho do componente
+} */
+
+
+.container-steps{
+    display: flex;
+    flex-direction: row;
+    width: fit-content;
+    gap: 2.7em;
+    z-index: 2;
+    position: relative;
+}
+.steps{
+    width: 2.5em;
+    height: 2.5em;
+    border-radius: 50%;
+}
+
+.on{
+    background-color: #0B7038;
+}
+
+.off{
+    background-color: #7cad78;
+}
+
+.line{
+    position: relative;
+    bottom: 2em;
+    left: 0.5em;
+    z-index: 1;
+    color: #0B183B;
+}
