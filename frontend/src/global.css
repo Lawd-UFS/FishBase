@@ -1,0 +1,86 @@
+:root{
+    --color-titles: #30468b;
+
+    --bg-button:#0B7038;
+    --bg-button-hover: #075228;
+    --bg-button-active: #11a152;
+    --color-button: #ffffff;
+
+    --bg-input: #ece8e4;
+    --border-input: #FCC729;
+    --color-input: #767574;
+
+    --bg-form: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins";
+}
+
+body{
+    background-image: url('/images/bg.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+h1,h2,h3, label{
+    color: var(--color-titles);
+}
+
+label{
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+  
+button{
+    background-color: var(--bg-button);
+    border: none;
+    border-radius: 15px;
+    width: 10.5em;
+    height: 4em;
+    padding: 0.3em;
+    color: var(--color-button);
+    font-weight: 700;
+    font-size: 0.8em;
+    letter-spacing: 0.5px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5em;
+    cursor: pointer;
+}
+
+button:hover{
+    background-color: var(--bg-button-hover);
+}
+
+button:active{
+    background-color: var(--bg-button-active);
+}
+
+button>img{
+    width: 3.5em;
+}
+
+input{
+    background-color: var(--bg-input);
+    color: var(--color-input);
+    border: solid 2px var(--border-input);
+    border-radius: 15px;
+    padding: 0.5em 1em;
+    font-size: 0.8em;
+}
+
+input:focus {
+    outline: none;
+}
