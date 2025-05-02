@@ -1,0 +1,32 @@
+.AlertCustom {
+    position: absolute;
+    top: 2em;
+    left: 50%;
+    width: 30em;
+    transform: translateX(-50%);
+    z-index: 10000;
+    padding: 0.7em 1.5em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 15px;
+    color: #ffffff;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.AlertCustom>img{
+    width: 2em;
+}
+
+.success{
+    background-color: #01ad4c;
+}
+
+.error{
+    background-color: #f53c42;
+}
+
+.info{
+    background-color: #6c93b9;
+}
