@@ -1,5 +1,7 @@
 :root{
     --color-titles: #30468b;
+    --color-titles2: #7cad78;
+    --color-error: #f53c42;
 
     --bg-button:#0B7038;
     --bg-button-hover: #075228;
@@ -72,15 +74,15 @@ button>img{
     width: 3.5em;
 }
 
-input{
+input, select{
     background-color: var(--bg-input);
     color: var(--color-input);
     border: solid 2px var(--border-input);
     border-radius: 15px;
-    padding: 0.5em 1em;
-    font-size: 0.8em;
+    padding: 0.7em 1em ;
+    font-size: 0.9em;
 }
 
-input:focus {
+input:focus, select:focus{
     outline: none;
 }
