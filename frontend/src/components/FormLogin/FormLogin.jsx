@@ -1,30 +1,25 @@
+//React
 import React, {useState} from 'react';
 import { Link } from 'react-router-dom';
 
-import AlertCustom from '../AlertCustom/AlertCustom';
+// contexts
+import { useAlert } from '../../Context/AlertProvider/AlertProvider';
 
 
 import './FormLogin.css'
 
 function FormLogin() {
 
+    const { notify } = useAlert();
+
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-
-    //AlertCustom
-    const [message, setMessage] = useState('');
-    const [action, setAction] = useState('');
-    const [visible, setVisible] = useState(false);
 
     const toAuth = async (event) => {
         event.preventDefault();
         console.log(email);
         console.log(password);
-
-        setMessage('error');
-        setAction('info');
-        setVisible(true)
-        setTimeout(() => setVisible(false), 2000);
+        notify('teste', 'info');
     }
 
     const authByGoogle = (event) => {
@@ -38,15 +33,16 @@ function FormLogin() {
 
   return (
     <div className='FormLogin'>
+        <img src='public/images/logo.png' className='fishbase'></img>
         <form className='container'>
-            <img src='public/images/logo.png' className='logo'></img>
+            <img src='public/images/imgLogin.png' className='logo'></img>
             <div>
                 <label htmlFor="email">Email:</label>
                 <input 
                     type="email" 
                     name='email' 
                     value={email} 
-                    autoComplete="current-password"
+                    autoComplete="email"
                     onChange={(e) => setEmail(e.target.value)} 
                 />
             </div>
@@ -61,7 +57,9 @@ function FormLogin() {
                 />
             </div>
             <Link to={"/novasenha"} className='link'>Esqueci minha senha</Link>
-            <button onClick={toAuth}>Login</button>
+            <div className="buttonLogin">
+                <button onClick={toAuth}>Login</button>
+            </div>
             <hr></hr>
             <div className='container-buttons'>
                 <button onClick={authByGoogle}>
@@ -74,11 +72,6 @@ function FormLogin() {
                 </button>
             </div>
         </form>
-        <AlertCustom 
-            message={message} 
-            action={action} 
-            visible={visible}
-        ></AlertCustom>
     </div>
   );
 }
