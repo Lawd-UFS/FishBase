@@ -1,9 +1,10 @@
 import React from 'react';
-import FormLogin from '../components/FormLogin/FormLogin';
+import { Link } from 'react-router-dom';
+
 
 const HomePage = () => {
     return (
-        <FormLogin></FormLogin>
+        <div></div>
     );
 };
 
