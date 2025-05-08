@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 //Pages
 import HomePage from "../views/HomePage";
 import Register from "../views/Register";
+import Transmission from "../views/Transmission";
 
 //Contexts
 import { AlertProvider } from "../Context/AlertProvider/AlertProvider";
@@ -23,6 +24,7 @@ if (rootElement) {
           <Routes>
             <Route path="/" element={<HomePage />} /> {/* Ajuste aqui */}
             <Route path="/register" element={<Register />} /> 
+            <Route path="/transmission" element={<Transmission />} /> 
           </Routes>
         </Router>
       </AlertProvider>
