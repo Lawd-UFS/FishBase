@@ -3,6 +3,10 @@ import { Link } from 'react-router-dom';
 import './Homepage.css';
 import axios from 'axios';
 import ScheduleCard from '../../components/scheduleCard/schedulecard';
+import useEmblaCarousel from "embla-carousel-react";
+import Autoplay from "embla-carousel-autoplay";
+import { useRef } from 'react';
+
 
 const HomePage = () => {
     const [scheduleData, setScheduleData] = useState([]); // Estado para armazenar os dados da API
@@ -18,6 +22,10 @@ const HomePage = () => {
                 console.error('Error fetching data:', error);
             });
     }, []);
+    const autoplay = useRef(
+        Autoplay({ delay: 3000, stopOnInteraction: false })
+      );
+      const [emblaRef] = useEmblaCarousel({ loop: true }, [autoplay.current]);
 
     return (
         <div className="content">
@@ -53,6 +61,25 @@ const HomePage = () => {
                     </p>
                 </section>  
             </section>
+            <footer className="footer">
+                <div className="footer-contacts">
+                    <p>Email: 
+                    email: fbbrazilscientificcommittee@gmail.com </p>
+                    <a href="https://maps.app.goo.gl/jbZs6hRdx2rpUWhA8">Departamento de Pesca</a>
+                    <p>Contato: +0055 79 8156-5745</p>
+                </div>
+                <div className="footer-logos-organization">
+                    <img src="./images/logo-ufs.png" alt="Logo" />
+                    <img id="logo-depaq" src="./images/logo-depaq.png" alt="Logo" />
+                </div>
+                <div className="overflow-hidden" ref={emblaRef}>
+                <div className="flex">
+                    <div className="flex-[0_0_100%] px-2">Slide 1</div>
+                    <div className="flex-[0_0_100%] px-2">Slide 2</div>
+                    <div className="flex-[0_0_100%] px-2">Slide 3</div>
+                </div>
+                </div>
+            </footer>
         </div>
     );
 };
