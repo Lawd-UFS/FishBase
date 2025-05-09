@@ -170,6 +170,32 @@
     object-fit:fill;
 }
 
+.footer {
+    display: flex;
+    gap: 50px;
+    padding: 20px;
+    background-color: #2A3F76;
+}
+.footer-logo-organization {
+    display: flex;
+    height: 100%;
+    width: 30%;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+}
+
+.footer-logos-organization img {
+    width: 50%;
+    height: 100%;
+    object-fit: contain;
+    max-height: 100px;
+}
+
+#logo-depaq {
+    
+}
+
 @media (max-width: 768px) {
     .cards {
         grid-template-columns: repeat(2, 1fr); /* 2 colunas em telas menores */
