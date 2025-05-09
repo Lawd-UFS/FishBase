@@ -13,13 +13,14 @@
     --color-input: #767574;
 
     --bg-form: #ffffff;
+    --navbar-width: 20%;
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Poppins";
+    font-family: "Space Mono", monospace;
 }
 
 body{
@@ -58,6 +59,7 @@ button{
     align-items: center;
     gap: 0.5em;
     cursor: pointer;
+    text-decoration: none;
 }
 
 button:hover{
