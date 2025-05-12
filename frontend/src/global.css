@@ -13,21 +13,26 @@
     --color-input: #767574;
 
     --bg-form: #ffffff;
+    --navbar-height: 200px;
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Poppins";
+    font-family: "Space Mono", monospace;
 }
 
 body{
     background-image: url('/images/homepagebg.png');
     background-repeat: no-repeat;
     background-position: center;
+    background-attachment: fixed;
     background-size: cover;
     display: flex;
+    margin: 0;
+    padding: 0;
+    width: 100%;
     height: 100vh;
 }
 
@@ -58,6 +63,7 @@ button{
     align-items: center;
     gap: 0.5em;
     cursor: pointer;
+    text-decoration: none;
 }
 
 button:hover{
