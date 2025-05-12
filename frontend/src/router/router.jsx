@@ -27,6 +27,8 @@ if (rootElement) {
           <Routes>
             <Route path="/" element={<HomePage />} /> {/* Ajuste aqui */}
             <Route path="/register" element={<Register />} /> 
+            <Route path="/transmission" element={<Transmission />} /> 
+            <Route path="/user" element={<UserPage />} /> {/* Ajuste aqui */}
           </Routes>
         </Router>
       </AlertProvider>
