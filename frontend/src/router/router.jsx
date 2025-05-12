@@ -1,10 +1,12 @@
 import { createRoot } from "react-dom/client";
 import { StrictMode } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import NavBar from "../components/navbar/navbar";
 
 //Pages
-import HomePage from "../views/HomePage";
+import HomePage from "../views/Homepage/HomePage";
 import Register from "../views/Register";
+import Transmission from "../views/Transmission";
 import UserPage from "../views/UserPage";
 
 //Contexts
@@ -21,14 +23,14 @@ if (rootElement) {
     <LoadingProvider>
       <AlertProvider>
         <Router>
+        <NavBar />
           <Routes>
             <Route path="/" element={<HomePage />} /> {/* Ajuste aqui */}
             <Route path="/register" element={<Register />} /> 
-            <Route path="/user" element={<UserPage />} /> {/* Ajuste aqui */}
           </Routes>
         </Router>
       </AlertProvider>
     </LoadingProvider>
   </StrictMode>
 );
-}
+};
