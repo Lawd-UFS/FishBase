@@ -23,13 +23,11 @@
 }
 
 body{
-    background-image: url('/images/bg.png');
+    background-image: url('/images/homepagebg.png');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     display: flex;
-    justify-content: center;
-    align-items: center;
     height: 100vh;
 }
 
