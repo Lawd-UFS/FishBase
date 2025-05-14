@@ -24,7 +24,7 @@
 }
 
 body{
-    background-image: url('/images/homepagebg.png');
+    background-image: url('/images/wallpaper-fishbase-branco.jpeg');
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
@@ -49,8 +49,6 @@ button{
     background-color: var(--bg-button);
     border: none;
     border-radius: 15px;
-    width: 10.5em;
-    height: 4em;
     padding: 0.3em;
     color: var(--color-button);
     font-weight: 700;

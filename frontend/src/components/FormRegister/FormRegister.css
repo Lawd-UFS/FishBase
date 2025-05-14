@@ -1,3 +1,9 @@
+.FormRegister{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 .container-register{
     width: 55em;
     height: 35em;
@@ -54,6 +60,7 @@
 
 .container-buttons-register{
     margin-top: 1em;
+    width: 100%;
     display: flex;
     justify-content: space-between;
 }

@@ -12,7 +12,7 @@ const NavBar = () => {
     return (
         <nav className="navbar">
             <a className="img-logo" href="/">
-                <img src="/images/logo.png" alt="fishbase-logo" width="75" height="75" />
+                <img src="/images/logos/logo.png" alt="fishbase-logo" width="85" height="85" />
             </a>
             <section id="buttons">
                 <Link to="/" className="nav-button">Sobre o evento</Link>
@@ -23,20 +23,23 @@ const NavBar = () => {
                         className={activeLang === 'en' ? 'active-lang' : ''}
                         onClick={() => handleLanguageChange('en')}
                     >
-                        <img src="/images/USA.png" alt="EN" width="25" height="25" />
+                        <img src="/images/icones/USA.png" alt="EN" width="25" height="25" />
                     </button>
                     <button
                         className={activeLang === 'pt' ? 'active-lang' : ''}
                         onClick={() => handleLanguageChange('pt')}
                     >
-                        <img src="/images/Brazil.png" alt="PT-BR" width="25" height="25" />
+                        <img src="/images/icones/Brazil.png" alt="PT-BR" width="25" height="25" />
                     </button>
                 </div>
-                <Link to="/logout" className="login-button">
-                    <img src="/images/Lock.png" alt="logout" width="25" height="25" />
+                <Link to="/login" className="login-button">
+                    <img src="/images/icones/Lock.png" alt="logout" width="25" height="25" />
                     Login
                 </Link>
             </section>
+            <a className="img-logo" href="/">
+                <img src="/images/logos/SeaLifeBase-logo-solo.png" alt="SeaLifeBase-logo-solo.png" width="85" height="85" />
+            </a>
         </nav>
     );
 };
