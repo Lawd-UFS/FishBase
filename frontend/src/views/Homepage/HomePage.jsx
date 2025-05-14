@@ -26,7 +26,7 @@ const HomePage = () => {
                     <h1>23rd FishBase and SeaLifeBase Symposium</h1>
                 </div>
                 <button className="register-button">
-                    <Link to="/register" className="register-link">Inscreva-se</Link>
+                    <Link to="/register" className="register-link">Inscreva-se Gratuitamente</Link>
                 </button>
             </section>
             <div className="hero-footer">
