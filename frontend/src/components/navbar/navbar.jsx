@@ -11,7 +11,7 @@ const NavBar = () => {
 
     return (
         <nav className="navbar">
-            <a className="img-logo" href="/">
+            <a className="img-logo-fishbase" href="/">
                 <img src="/images/logo.png" alt="fishbase-logo" width="75" height="75" />
             </a>
             <section id="buttons">
@@ -37,6 +37,9 @@ const NavBar = () => {
                     Login
                 </Link>
             </section>
+            <a className="img-logo-sealifebase" href="/">
+                <img src="/images/SeaLifeBase-logo-solo.png" alt="SeaLifeBase-logo-solo.png" width="75" height="75" />
+            </a>
         </nav>
     );
 };

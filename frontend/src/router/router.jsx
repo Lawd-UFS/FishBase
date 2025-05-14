@@ -6,6 +6,7 @@ import NavBar from "../components/navbar/navbar";
 //Pages
 import HomePage from "../views/Homepage/HomePage";
 import Register from "../views/Register";
+import Transmission from "../views/Transmission";
 
 //Contexts
 import { AlertProvider } from "../Context/AlertProvider/AlertProvider";
@@ -25,6 +26,7 @@ if (rootElement) {
           <Routes>
             <Route path="/" element={<HomePage />} /> {/* Ajuste aqui */}
             <Route path="/register" element={<Register />} /> 
+            <Route path="/transmission" element={<Transmission />} /> 
           </Routes>
         </Router>
       </AlertProvider>
