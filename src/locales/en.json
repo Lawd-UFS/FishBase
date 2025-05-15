@@ -1,0 +1,72 @@
+{
+  "navbar": {
+    "aboutEvent": "About the event",
+    "programming": "Schedule",
+    "register": "Sign Up"
+  },
+  "hero": {
+    "registerButton": "Register →",
+    "checkEventButton": "Check the event ↓"
+  },
+  "programming": {
+    "noSessions": "No sessions available."
+  },
+  "register": {
+    "title": "Registration",
+    "steps": [
+      "Account Information",
+      "Additional Data",
+      "Confirmation"
+    ],
+    "fields": {
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "email": "Email",
+      "password": "Password",
+      "gender": "Gender",
+      "city": "City",
+      "state": "State",
+      "country": "Country",
+      "institution": "Institution",
+      "modality": "Modality",
+      "language": "Language"
+    },
+    "placeholders": {
+      "firstName": "John",
+      "lastName": "Doe",
+      "email": "john@example.com",
+      "password": "••••••••",
+      "city": "New York",
+      "state": "NY",
+      "country": "USA",
+      "institution": "University of Example"
+    },
+    "genderOptions": {
+      "female": "Female",
+      "male": "Male",
+      "transgender": "Transgender",
+      "other": "Other",
+      "select": "Select"
+    },
+    "modalityOptions": {
+      "inPerson": "In-person",
+      "remote": "Remote"
+    },
+    "languageOptions": {
+      "pt": "Portuguese",
+      "en": "English"
+    },
+    "buttons": {
+      "back": "◀ Back",
+      "continue": "Continue ▶"
+    },
+    "messages": {
+      "success": "🎉 Registration successful! Check your email for confirmation.",
+      "genericError": "Unknown error",
+      "networkError": "Network error, please try again.",
+      "step0Error": "Fill in first name, last name, email and password.",
+      "step1Error": "Please complete all additional data."
+    },
+    "navBack": "Back"
+  }
+}

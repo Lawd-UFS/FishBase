@@ -1,0 +1,72 @@
+{
+  "navbar": {
+    "aboutEvent": "Sobre o evento",
+    "programming": "Programação",
+    "register": "Registro"
+  },
+  "hero": {
+    "registerButton": "Inscreva-se →",
+    "checkEventButton": "Confira o evento ↓"
+  },
+  "programming": {
+    "noSessions": "Nenhuma sessão disponível."
+  },
+  "register": {
+    "title": "Inscrição",
+    "steps": [
+      "Informações de conta",
+      "Dados Complementares",
+      "Confirmação"
+    ],
+    "fields": {
+      "firstName": "Nome",
+      "lastName": "Sobrenome",
+      "email": "Email",
+      "password": "Senha",
+      "gender": "Gênero",
+      "city": "Cidade",
+      "state": "Estado",
+      "country": "País",
+      "institution": "Instituição",
+      "modality": "Modalidade",
+      "language": "Idioma"
+    },
+    "placeholders": {
+      "firstName": "João",
+      "lastName": "Silva",
+      "email": "joao@exemplo.com",
+      "password": "••••••••",
+      "city": "Aracaju",
+      "state": "Sergipe",
+      "country": "Brasil",
+      "institution": "Universidade Federal de Sergipe"
+    },
+    "genderOptions": {
+      "female": "Feminino",
+      "male": "Masculino",
+      "transgender": "Transgênero",
+      "other": "Outro",
+      "select": "Selecione"
+    },
+    "modalityOptions": {
+      "inPerson": "Presencial",
+      "remote": "Remoto"
+    },
+    "languageOptions": {
+      "pt": "Português",
+      "en": "Inglês"
+    },
+    "buttons": {
+      "back": "◀ Voltar",
+      "continue": "Continuar ▶"
+    },
+    "messages": {
+      "success": "🎉 Inscrição realizada com sucesso! Verifique seu email para confirmação.",
+      "genericError": "❌ Erro desconhecido",
+      "networkError": "Erro de rede, tente novamente.",
+      "step0Error": "Preencha nome, sobrenome, email e senha.",
+      "step1Error": "Preencha todos os dados complementares."
+    },
+    "navBack": "Voltar"
+  }
+}

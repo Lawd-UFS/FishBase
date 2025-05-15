@@ -1,4 +1,6 @@
 import Header from '../../components/Header';
+import pt from '../../locales/pt.json';
+import en from '../../locales/en.json';
 
 export const dynamic = 'force-dynamic';
 
@@ -24,6 +26,10 @@ function formatDateTimeBR(isoString) {
 export default async function ProgramacaoPage() {
   const sessoes = await fetchProgramacao();
 
+  // idioma fixo por enquanto (pt ou en)
+  const language = 'pt'; // ou 'en'
+  const texts = language === 'pt' ? pt : en;
+
   return (
     <main className="container">
       <div className="background" />
@@ -37,26 +43,18 @@ export default async function ProgramacaoPage() {
                 return (
                   <div key={sessao.id ?? i} className="event-card">
                     <div className="card-top-bar" />
-
                     <div className="card-body">
                       <div className="title">{sessao.title}</div>
-                      <div className="speaker">
-                        {sessao.speaker || '—'}
-                      </div>
-                      <div className="theme">
-                        {sessao.theme}
-                      </div>
+                      <div className="speaker">{sessao.speaker || '—'}</div>
+                      <div className="theme">{sessao.theme}</div>
                     </div>
-
-                    <div className="date-pill">
-                      {dateBR}
-                    </div>
+                    <div className="date-pill">{dateBR}</div>
                   </div>
                 );
               })
             : (
               <p style={{ color: '#fff', textAlign: 'center', width: '100%' }}>
-                Nenhuma sessão disponível.
+                {texts.programming.noSessions}
               </p>
             )}
         </div>

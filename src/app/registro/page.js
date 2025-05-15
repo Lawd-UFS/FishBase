@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-
+import { useLanguage } from '../../contexts/LanguageContext';
 const STEPS = [
   'Informações de conta',
   'Dados Complementares',
@@ -10,6 +10,8 @@ const STEPS = [
 ];
 
 export default function RegistroPage() {
+  const { texts } = useLanguage();
+  const STEPS = texts.register.steps;
   const [step, setStep] = useState(0);
   const [form, setForm] = useState({
     firstName:   '',
@@ -64,11 +66,11 @@ export default function RegistroPage() {
         setSuccess(true);
         setStep(2);
       } else {
-        setError(json.error?.message || 'Erro desconhecido');
+        setError(json.error?.message || texts.register.messages.genericError);
         setStep(2);
       }
     } catch {
-      setError('Erro de rede, tente novamente.');
+      setError(texts.register.messages.genericError);
       setStep(2);
     }
   }
@@ -79,7 +81,7 @@ export default function RegistroPage() {
     if (step === 0) {
       // valida campos de conta
       if (!form.firstName || !form.lastName || !form.email || !form.password) {
-        setError('Preencha nome, sobrenome, email e senha.');
+        setError(texts.register.messages.step0Error);
         return;
       }
       setStep(1);
@@ -88,7 +90,7 @@ export default function RegistroPage() {
       // valida dados complementares
       const { gender, city, state, country, institution } = form;
       if (!gender || !city || !state || !country || !institution) {
-        setError('Preencha todos os dados complementares.');
+        setError(texts.register.messages.step1Error);
         return;
       }
       submitRegistration();
@@ -104,7 +106,7 @@ export default function RegistroPage() {
     <div className="container">
       <div className="registration-nav">
         <Link href="/">
-          <span className="arrow">◀</span> Voltar
+          <span className="arrow">◀</span> {texts.register.navBack}
         </Link>
       </div>
 
@@ -122,7 +124,7 @@ export default function RegistroPage() {
         <div className="form-section">
           {step === 0 && (
             <>
-              <h1>Inscrição</h1>
+              <h1>{texts.register.title}</h1>
               {['firstName','lastName','email','password'].map(field => (
                 <div className="form-group" key={field}>
                   <label>
@@ -132,16 +134,11 @@ export default function RegistroPage() {
                       : 'Senha'}
                   </label>
                   <input
-                    type={field==='password'?'password':'text'}
+                    type={field === 'password' ? 'password' : 'text'}
                     name={field}
                     value={form[field]}
                     onChange={handleChange}
-                    placeholder={
-                      field==='firstName'?'João'
-                      :field==='lastName'?'Silva'
-                      :field==='email'   ?'joao@exemplo.com'
-                      :'••••••••'
-                    }
+                    placeholder={texts.register.placeholders[field]}
                   />
                 </div>
               ))}
@@ -150,50 +147,40 @@ export default function RegistroPage() {
 
           {step === 1 && (
             <>
-              <h1>Dados Complementares</h1>
+              <h1>{texts.register.steps[1]}</h1>
               <div className="form-group">
-                <label>Gênero</label>
+                <label>{texts.register.fields.gender}</label>
                 <select name="gender" value={form.gender} onChange={handleChange}>
-                  <option value="">Selecione</option>
-                  <option value="female">Feminino</option>
-                  <option value="male">Masculino</option>
-                  <option value="transgender">Transgênero</option>
-                  <option value="other">Outro</option>
+                  <option value="">{texts.register.genderOptions.select}</option>
+                  <option value="female">{texts.register.genderOptions.female}</option>
+                  <option value="male">{texts.register.genderOptions.male}</option>
+                  <option value="transgender">{texts.register.genderOptions.transgender}</option>
+                  <option value="other">{texts.register.genderOptions.other}</option>
                 </select>
               </div>
 
               {['city','state','country','institution'].map(field => (
                 <div className="form-group" key={field}>
-                  <label>
-                    {field==='city'?'Cidade'
-                      :field==='state'?'Estado'
-                      :field==='country'?'País'
-                      :'Instituição'}
-                  </label>
+                  <label>{texts.register.fields[field]}</label>
                   <input
                     name={field}
                     value={form[field]}
                     onChange={handleChange}
-                    placeholder={
-                      field==='city'?'Aracaju'
-                      :field==='state'?'Sergipe'
-                      :field==='country'?'Brasil'
-                      :'Universidade Federal de Sergipe'
-                    }
+                    placeholder={texts.register.placeholders[field]}
                   />
                 </div>
               ))}
 
               <div className="form-group">
-                <label>Modalidade</label>
+                <label>{texts.register.fields.modality}</label>
                 <select name="modality" value={form.modality} onChange={handleChange}>
-                  <option value="in-person">Presencial</option>
-                  <option value="remote">Remoto</option>
+                  <option value="in-person">{texts.register.modalityOptions.inPerson}</option>
+                  <option value="remote">{texts.register.modalityOptions.remote}</option>
                 </select>
               </div>
 
               <div className="form-group">
-                <label>Idioma</label>
+                <label>{texts.register.fields.language}</label>
                 <select name="language" value={form.language} onChange={handleChange}>
                   <option value="pt">Português</option>
                   <option value="en">Inglês</option>
@@ -205,7 +192,7 @@ export default function RegistroPage() {
           {step === 2 && (
             <div className="confirmation">
               {success
-                ? <p>🎉 Inscrição realizada com sucesso! Verifique seu email para confirmação.</p>
+                ? <p>{texts.register.messages.success}</p>
                 : <p style={{ color: '#FFD700' }}>❌ {error}</p>
               }
             </div>
@@ -215,11 +202,11 @@ export default function RegistroPage() {
 
           <div className="button-container">
             <button type="button" className="btn-back" onClick={prevStep} disabled={step===0}>
-              ◀ Voltar
+              {texts.register.buttons.back}
             </button>
             {step < 2 && (
               <button type="button" className="btn-next" onClick={nextStep}>
-                Continuar ▶
+                {texts.register.buttons.continue}
               </button>
             )}
           </div>

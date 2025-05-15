@@ -1,6 +1,11 @@
+'use client';
+
 import Link from 'next/link';
+import { useLanguage } from '../contexts/LanguageContext';
 
 export default function Hero() {
+  const { texts } = useLanguage();
+
   return (
     <div className="hero">
       <h1>
@@ -10,10 +15,10 @@ export default function Hero() {
       <h2>Symposium</h2>
       <div style={{ marginTop: '2rem' }}>
         <Link href="/registro" className="btn-primary">
-          Inscreva-se →
+          {texts.hero.registerButton}
         </Link>
         <Link href="/programacao" className="btn-secondary" style={{ marginLeft: '1rem' }}>
-          Confira o evento ↓
+          {texts.hero.checkEventButton}
         </Link>
       </div>
     </div>
