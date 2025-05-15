@@ -12,13 +12,17 @@ function User() {
             <div className='Foto GridElement'></div>
             <div className='Name GridElement'>
                 <p>Nome</p>
-                <div className='FormContainer'></div>
+                <div className='FormContainer'>
+                    <input type="Text" />
+                </div>
             </div>
         </div>
         <div className='Row'>
             <div className='Email GridElement'>
                 <p>Email</p>
-                <div className='FormContainer'></div>
+                <div className='FormContainer'>
+                    <input type="Text" />
+                </div>
             </div>
         </div>
         <div className='Row'>
@@ -30,7 +34,9 @@ function User() {
             </div>
             <div className='Instituicao GridElement'>
                 <p>Instituição</p>
-                <div className='FormContainer'></div>
+                <div className='FormContainer'>
+                    <input type="Text" />
+                </div>
             </div>
         </div>
         <div className='Row ButtonRow'>

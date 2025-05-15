@@ -15,7 +15,8 @@
 .Container{
     width: 90%;
     height: 80%;
-    background-color: #F3F3F3;
+    background-color: #1A3C88;
+;
     border-radius: 2em;
     border : .2em solid #203C88;
     display: flex;
@@ -24,7 +25,9 @@
     justify-items: center;
     gap: 1rem;
     padding: 1rem;
-
+    margin-top: 5em;
+    align-self: center;
+    justify-self: center;
 }
 
 .Row{
@@ -57,7 +60,7 @@
     height: 100%;
     aspect-ratio: 1/1;
     width: auto;
-    background-color: #203C88;
+    background-color: #FFFFFF;
     border-radius: 50%;
     align-self: center;
     justify-self: center;
@@ -77,17 +80,16 @@
 input{
     width: 100%;
     height: 100%;
+    outline: none;
+    border: none !important;
+    background-color: #FFFFFF !important;
+    color: #203C88!important;
+
 }
 
 input[type="text"]{
     color: #203C88;
     font-size: 2em;
-}
-
-input:focus{
-    outline: none;
-    border: .1em solid #203C88;
-    background-color: #F3F3F3;
 }
 
 .Name{
