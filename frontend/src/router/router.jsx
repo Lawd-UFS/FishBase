@@ -8,6 +8,7 @@ import HomePage from "../views/Homepage/HomePage";
 import Register from "../views/Register";
 import Transmission from "../views/Transmission";
 import UserPage from "../views/UserPage";
+import HoteisPage from "../views/HoteisPage";
 
 //Contexts
 import { AlertProvider } from "../Context/AlertProvider/AlertProvider";
@@ -29,6 +30,7 @@ if (rootElement) {
             <Route path="/register" element={<Register />} /> 
             <Route path="/transmission" element={<Transmission />} /> 
             <Route path="/user" element={<UserPage />} /> {/* Ajuste aqui */}
+            <Route path="/hoteis" element={<HoteisPage />} /> {/* Ajuste aqui */}
           </Routes>
         </Router>
       </AlertProvider>
