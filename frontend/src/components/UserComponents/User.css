@@ -323,3 +323,52 @@ input[type="text"]{
     align-self: center;
     justify-self: center;
 }
+
+.buttonsContainer{
+    width: 100%;
+}
+
+
+@media all and (orientation:portrait) {
+/* Style adjustments for portrait mode goes here */
+
+.Container{
+    flex-direction: column;
+    overflow-y: scroll;
+}
+
+.titulo{
+    font-size: 2em;
+}
+
+.Navegacao{
+    width: 100%;
+    padding-left: 0;
+    align-items: center;
+}
+
+.buttonsContainer{
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+    overflow-x: scroll;
+}
+
+.Subtitulo{
+    width: 100%;
+    margin: 0;
+}
+
+.Display_De_Dados{
+    width: 100%;
+    height: 100%;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+}
+
+@media all and (orientation:landscape) {
+  /* Style adjustments for landscape mode goes here */
+
+}

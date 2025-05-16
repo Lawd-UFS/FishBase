@@ -51,25 +51,29 @@ function User() {
   return (
     <div className='Container'>
       <div className='Navegacao'>
-        <div className='titulo'>Área do participante</div>
-        <button
-          className={`Subtitulo ${selectedSection === 'dados' ? 'SelectedSubtitulo' : ''}`}
-          onClick={() => setSelectedSection('dados')}
-        >
-          Dados do participante
-        </button>
-        <button
-          className={`Subtitulo ${selectedSection === 'hospedagem' ? 'SelectedSubtitulo' : ''}`}
-          onClick={() => setSelectedSection('hospedagem')}
-        >
-          Saiba onde se hospedar
-        </button>
-        <button
-          className={`Subtitulo ${selectedSection === 'viagem' ? 'SelectedSubtitulo' : ''}`}
-          onClick={() => setSelectedSection('viagem')}
-        >
-          Faça um plano de viagem
-        </button>
+        <div className='TituloContainer'>
+          <div className='titulo'>Área do participante</div>
+        </div>
+        <div className='buttonsContainer'>
+          <button
+            className={`Subtitulo ${selectedSection === 'dados' ? 'SelectedSubtitulo' : ''}`}
+            onClick={() => setSelectedSection('dados')}
+            >
+            Dados do participante
+          </button>
+          <button
+            className={`Subtitulo ${selectedSection === 'hospedagem' ? 'SelectedSubtitulo' : ''}`}
+            onClick={() => setSelectedSection('hospedagem')}
+            >
+            Saiba onde se hospedar
+          </button>
+          <button
+            className={`Subtitulo ${selectedSection === 'viagem' ? 'SelectedSubtitulo' : ''}`}
+            onClick={() => setSelectedSection('viagem')}
+            >
+            Faça um plano de viagem
+          </button>
+        </div>
       </div>
 
       <div className='Display_De_Dados'>
