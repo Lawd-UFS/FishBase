@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import Link from 'next/link';
-import { useLanguage } from '../contexts/LanguageContext';
+import Link from "next/link";
+import { useLanguage } from "../contexts/LanguageContext";
 
 export default function Hero() {
   const { texts } = useLanguage();
@@ -13,11 +13,15 @@ export default function Hero() {
         FishBase &amp; SeaLifeBase
       </h1>
       <h2>Symposium</h2>
-      <div style={{ marginTop: '2rem' }}>
-        <Link href="/registro" className="btn-primary">
+      <div style={{ marginTop: "2rem" }}>
+        <Link href="/register" className="btn-primary">
           {texts.hero.registerButton}
         </Link>
-        <Link href="/programacao" className="btn-secondary" style={{ marginLeft: '1rem' }}>
+        <Link
+          href="/schedule"
+          className="btn-secondary"
+          style={{ marginLeft: "1rem" }}
+        >
           {texts.hero.checkEventButton}
         </Link>
       </div>
