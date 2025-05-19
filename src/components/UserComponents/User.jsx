@@ -1,11 +1,9 @@
+'use client';
 //React
 import React, { useState, useEffect } from 'react';
 
-import { Link } from 'react-router-dom';
-
 //For resquest
 import axios from 'axios';
-import env from '../../../env';
 
 import './User.css'
 
@@ -22,7 +20,7 @@ function User() {
   useEffect(() => {
     const fetchUserData = async () => {
       try {
-        const response = await axios.post(`${env.apiUrl}/participants/profile`);
+        const response = await axios.post(`http://localhost:3000/participants/profile`);
         if (response.data.success) {
           const data = response.data.data;
           setUserData({
