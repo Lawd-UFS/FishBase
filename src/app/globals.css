@@ -22,7 +22,8 @@ body {
 /* Background fixo */
 .background {
   position: fixed;
-  top: 0; left: 0;
+  top: 0;
+  left: 0;
   width: 100vw;
   height: 100vh;
   background-image: url('/background.png');
@@ -34,7 +35,8 @@ body {
 /* Header sticky */
 .header {
   position: sticky;
-  top: 0; left: 0;
+  top: 0;
+  left: 0;
   width: 100%;
   padding: 2rem 0;
   background-color: #fff;
@@ -74,7 +76,7 @@ body {
 
 .nav-links a,
 .lang-switch a {
-  color: #064E3B;
+  color: #064e3b;
   text-decoration: none;
   font-weight: 500;
 }
@@ -102,7 +104,7 @@ body {
 
 .hero h1 .highlight {
   font-weight: 700;
-  color: #FFD700;
+  color: #ffd700;
 }
 
 .hero h2 {
@@ -124,8 +126,8 @@ body {
 }
 
 .btn-primary {
-  background-color: #FFD700;
-  color: #064E3B;
+  background-color: #ffd700;
+  color: #064e3b;
   border: none;
 }
 
@@ -141,7 +143,7 @@ body {
 
 .btn-secondary:hover {
   background: #fff;
-  color: #064E3B;
+  color: #064e3b;
 }
 
 /* ===== Registros & Formulários ===== */
@@ -159,7 +161,7 @@ body {
 }
 
 .registration-nav a {
-  color: #064E3B;
+  color: #064e3b;
   text-decoration: none;
   font-weight: 500;
 }
@@ -204,11 +206,11 @@ body {
   transform: rotate(90deg);
   display: inline-block;
   font-size: 0.75rem;
-  color: #064E3B;
+  color: #064e3b;
 }
 
 .stepper li.current::before {
-  color: #FFD700;
+  color: #ffd700;
 }
 
 .form-section {
@@ -269,14 +271,14 @@ body {
 
 /* Erro de validação */
 .form-error {
-  color: #FFD700;
+  color: #ffd700;
   font-size: 0.9rem;
   margin-top: -1rem;
 }
 
 .confirmation {
   padding: 2rem;
-  background: rgba(0,0,0,0.1);
+  background: rgba(0, 0, 0, 0.1);
   border-radius: 1rem;
   text-align: center;
   font-size: 1.1rem;
@@ -292,7 +294,7 @@ body {
 .btn-back {
   background: none;
   border: none;
-  color: #FFD700;
+  color: #ffd700;
   font-size: 1rem;
   font-weight: 500;
   display: flex;
@@ -307,7 +309,7 @@ body {
 }
 
 .btn-next {
-  background-color: #FFD700;
+  background-color: #ffd700;
   color: #1e3a8a;
   border: none;
   padding: 0.75rem 1.5rem;
@@ -346,7 +348,7 @@ body {
 .event-card {
   background: #fff;
   border-radius: 0.75rem;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   width: 320px;
   display: flex;
@@ -393,7 +395,7 @@ body {
   position: absolute;
   bottom: 1rem;
   right: 1rem;
-  background: #FFD700;
+  background: #ffd700;
   color: #1e3a8a;
   padding: 0.25rem 0.75rem;
   border-radius: 9999px;

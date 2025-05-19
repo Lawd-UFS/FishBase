@@ -13,11 +13,7 @@
   },
   "register": {
     "title": "Inscrição",
-    "steps": [
-      "Informações de conta",
-      "Dados Complementares",
-      "Confirmação"
-    ],
+    "steps": ["Informações de conta", "Dados Complementares", "Confirmação"],
     "fields": {
       "firstName": "Nome",
       "lastName": "Sobrenome",
