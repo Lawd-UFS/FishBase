@@ -2,7 +2,7 @@
   "navbar": {
     "aboutEvent": "About the event",
     "programming": "Schedule",
-    "register": "Sign Up"
+    "register": "Register"
   },
   "hero": {
     "registerButton": "Register →",
@@ -13,11 +13,7 @@
   },
   "register": {
     "title": "Registration",
-    "steps": [
-      "Account Information",
-      "Additional Data",
-      "Confirmation"
-    ],
+    "steps": ["Account Information", "Additional Data", "Confirmation"],
     "fields": {
       "firstName": "First Name",
       "lastName": "Last Name",
