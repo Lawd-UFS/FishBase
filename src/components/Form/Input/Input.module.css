@@ -29,7 +29,7 @@
 
   border: none;
 
-  background-color: #3e85921f;
+  background-color: var(--primary-blue-light);
 }
 
 .inputContainer:focus-within {

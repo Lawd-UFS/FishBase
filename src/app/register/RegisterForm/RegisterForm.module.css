@@ -58,7 +58,7 @@
 }
 
 .navItem:not(.active) {
-  color: #5f84a7;
+  color: var(--primary-blue-light-2);
 }
 
 .navItem.active {
