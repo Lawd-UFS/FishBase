@@ -7,11 +7,12 @@ export default function Radio({
   name,
   options,
   error = null,
+  currentSelectedOption = null,
   ...props
 }) {
   const { onChange, ...restProps } = props;
 
-  const [selectedOption, setSelectedOption] = useState(null);
+  const [selectedOption, setSelectedOption] = useState(currentSelectedOption);
 
   const handleChange = (e, value) => {
     if (onChange) {
