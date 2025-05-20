@@ -18,6 +18,7 @@ export default function AdditionalInfoStep() {
     updateFormData,
     submitForm,
     previousStage,
+    nextStage,
     setValidateCurrentStage,
     setGetFormData,
   } = useRegister();
@@ -40,6 +41,8 @@ export default function AdditionalInfoStep() {
 
       if (response.success) {
         setShouldSubmit(false);
+        nextStage();
+        router.push('/register/confirmation');
         return;
       }
 
@@ -112,8 +115,6 @@ export default function AdditionalInfoStep() {
   };
 
   const handleNextStage = async () => {
-    console.log('handleNextStage');
-    console.log(setShouldSubmit);
     const formValues = getValues();
 
     updateFormData({ ...formValues, language });
