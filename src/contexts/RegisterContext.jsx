@@ -12,6 +12,7 @@ export const RegisterProvider = ({ children }) => {
   const [errorMessage, setErrorMessage] = useState(null);
   const [validateCurrentStage, setValidateCurrentStage] = useState(null);
   const [getFormData, setGetFormData] = useState(null);
+  const [isConfirmation, setIsConfirmation] = useState(false);
 
   const updateFormData = useCallback(async (data) => {
     setFormData((prev) => ({ ...prev, ...data }));
@@ -74,7 +75,9 @@ export const RegisterProvider = ({ children }) => {
     setIsLoading(false);
 
     if (response.success) {
+      setIsConfirmation(true);
       resetErrorMessage();
+      resetFormData();
     } else {
       setErrorMessage(response.error.message);
     }
@@ -99,6 +102,7 @@ export const RegisterProvider = ({ children }) => {
         setValidateCurrentStage,
         setGetFormData,
         resetFormData,
+        isConfirmation,
       }}
     >
       {children}
