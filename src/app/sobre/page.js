@@ -8,9 +8,7 @@ export default function SobrePage() {
   return (
     <main className="p-8">
       <div className="background">
-        <div className="header">
           <Header/>
-        </div>
         <div class="about-content">
           <div class="about-content-container-1">
             <img src="Mapa fishbase.png
