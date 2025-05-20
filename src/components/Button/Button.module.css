@@ -20,7 +20,15 @@
   color: white;
 }
 
+.filled:hover {
+  background-color: var(--primary-blue-dark);
+}
+
 .ghost {
   background-color: transparent;
   color: var(--primary-blue);
+}
+
+.ghost:hover {
+  background-color: var(--primary-blue-light);
 }

@@ -5,9 +5,18 @@ const variants = {
   ghost: styles.ghost,
 };
 
-export default function Button({ children, variant = 'filled' }) {
+export default function Button({
+  children,
+  variant = 'filled',
+  color = null,
+  onClick = null,
+}) {
   return (
-    <button className={`${styles.button} ${variants[variant]}`}>
+    <button
+      className={`${styles.button} ${variants[variant]}`}
+      style={{ color: color }}
+      onClick={onClick}
+    >
       {children}
     </button>
   );
