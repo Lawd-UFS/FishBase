@@ -1,0 +1,233 @@
+.FormRegister{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.container-register{
+    width: 55em;
+    height: 35em;
+    padding: 0;
+    background-color: #ffffff;
+    border-radius: 15px;
+}
+
+.container-register form{
+    gap: 1em !important;
+}
+
+.header{
+    display: flex;
+    flex-direction: row !important;
+    justify-content: space-between;
+    padding: 4em 3em 1.5em 3em;
+    border-bottom: solid var(--color-titles) 1px;
+}
+
+.title-step3{
+    position: relative;
+    bottom: 1em;
+}
+
+.formChilder{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr); 
+}
+
+.FormRegister>div>form{
+    padding: 3em 3em 1.5em 3em;
+}
+
+.formChilder>div{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.FormRegister>div>form{
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+}
+
+.FormRegister > form > input{
+    width: 100%;
+}
+
+.container-register label{
+    padding-left: 0.2em;
+}
+
+.container-buttons-register{
+    margin-top: 1em;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.select{
+    display: flex;
+    flex-direction: column;
+}
+
+.errorContainer{
+    position: absolute;
+}
+
+.errorInput{
+    position: relative;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    bottom: 1em;
+    margin-left: 0.2em;
+    color: #f53c42;
+}
+
+.step3-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 0em !important;
+    padding: 0em 3em 0em 3em;
+    gap: 2em;
+}
+
+.step3-container>div{   
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.step3-container h1{
+    text-align: center;
+    color: var(--color-titles2);
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+}
+
+.step3-container h3{
+    padding-bottom: 2em;
+    margin-bottom: 1.5em;
+    border-bottom: solid 2px var(--color-titles);
+    text-align: justify;
+}
+
+.step3-container>div button{
+    width: 15em;
+}
+
+.step3-container img{
+    width: 13em;
+    position: relative;
+    left: 7em;
+    top: 16em;
+}
+
+.imgRegister{
+    position: absolute;
+}
+
+@media (min-width: 320px)  {
+    .FormRegister{
+        font-size: 0.6em;
+    }
+
+    .container-register{
+        width: 30em;
+        height: 50em;
+        padding: 0;
+        background-color: #ffffff;
+        border-radius: 15px;
+    }
+
+    .formChilder{
+        gap: 1em;
+    }
+
+    .container-register form{
+        font-size: 0.9em;
+    }
+
+}
+
+@media (min-width:375px) {
+    .FormRegister{
+        font-size: 0.7em;
+    }
+}
+
+@media (min-width: 640px){
+    .FormRegister{
+        font-size: 0.7em;
+    }
+    .container-register{
+        width: 55em;
+        height: 35em;
+    }
+    .container-register form{
+        gap: 2em !important;
+        font-size: 1em;
+    }
+    .formChilder{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        gap: 2em;
+    }
+    .step3-container{
+        flex-direction: row;
+    }
+    .step3-container h1{
+        margin-top: 0em;
+        margin-bottom: 0em;
+    }
+    
+    .step3-container h3{
+        padding-bottom: 1em;
+        margin-bottom: 0em;
+    }
+    .step3-container img{
+        width: 24em;
+        position: static;
+    }
+    .imgRegister{
+        position: static;
+    }
+}
+
+@media (min-width: 768px) {
+    .FormRegister{
+        font-size: 0.8em;
+    }
+    .container-register{
+        width: 55em;
+        height: 35em;
+    }
+
+    .formChilder{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        gap: 2em;
+    }
+}
+
+@media (min-width: 1024px) {
+    .FormRegister{
+        font-size: 0.9em;
+    }
+}
+
+@media (min-width: 1440px) {
+    .FormRegister{
+        font-size: 1em;
+    }
+}
+
+@media (min-width: 2560px) {
+    .FormRegister{
+        font-size: 1.5em;
+    }
+}
+
