@@ -1,8 +1,37 @@
+'use client';
+
+import Header from "@/components/Header";
+import { useLanguage } from '../../contexts/LanguageContext';
+
 export default function SobrePage() {
+  const { texts } = useLanguage();
   return (
     <main className="p-8">
-      <h1 className="text-4xl font-bold">Sobre o evento</h1>
-      <p>Detalhes e objetivos do Symposium.</p>
+      <div className="background">
+        <div className="header">
+          <Header/>
+        </div>
+        <div class="about-content">
+          <div class="about-content-container-1">
+            <img src="Mapa fishbase.png
+            " alt="Imagem Exemplo" />
+            <div class="text-container">
+              <h1>{texts.aboutEvent.title[0]}</h1>
+              <p>{texts.aboutEvent.description[0]}</p>
+            </div>
+          </div >
+          <div class="about-content-container-2">
+            <div class="text-container">
+              <h1>{texts.aboutEvent.title[1]}</h1>
+              <p>{texts.aboutEvent.description[1]}</p>
+            </div>
+            <button className="fishbase-button"
+            onClick={() => window.open('https://www.fishbase.org', '_blank')}>
+              {texts.btnFishBase}
+            </button>
+          </div>
+        </div>
+      </div>
     </main>
   );
 }
