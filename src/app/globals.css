@@ -4,7 +4,11 @@
   padding: 0;
   box-sizing: border-box;
 
+  list-style: none;
+
   --primary-blue: #104d87;
+  --primary-blue-dark: #0a335c;
+  --primary-blue-light: #3e85921f;
 }
 
 /* Defaults */
