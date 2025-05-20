@@ -19,10 +19,11 @@
       "lastName": "Sobrenome",
       "email": "Email",
       "password": "Senha",
+      "confirmPassword": "Confirmar senha",
       "gender": "Gênero",
       "city": "Cidade",
       "state": "Estado",
-      "country": "País",
+      "country": "País de origem",
       "institution": "Instituição",
       "modality": "Modalidade",
       "language": "Idioma"
@@ -38,14 +39,16 @@
       "institution": "Universidade Federal de Sergipe"
     },
     "genderOptions": {
+      "placeholder": "Selecione uma opção",
       "female": "Feminino",
       "male": "Masculino",
       "transgender": "Transgênero",
-      "other": "Outro",
-      "select": "Selecione"
+      "agender": "Agênero",
+      "non-binary": "Não binário",
+      "not declared": "Não declarado"
     },
     "modalityOptions": {
-      "inPerson": "Presencial",
+      "in-person": "Presencial",
       "remote": "Remoto"
     },
     "languageOptions": {
@@ -53,8 +56,8 @@
       "en": "Inglês"
     },
     "buttons": {
-      "back": "◀ Voltar",
-      "continue": "Continuar ▶"
+      "back": "Voltar",
+      "continue": "Continuar"
     },
     "messages": {
       "success": "🎉 Inscrição realizada com sucesso! Verifique seu email para confirmação.",

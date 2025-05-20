@@ -19,10 +19,11 @@
       "lastName": "Last Name",
       "email": "Email",
       "password": "Password",
+      "confirmPassword": "Confirm Password",
       "gender": "Gender",
       "city": "City",
       "state": "State",
-      "country": "Country",
+      "country": "Country of origin",
       "institution": "Institution",
       "modality": "Modality",
       "language": "Language"
@@ -38,14 +39,16 @@
       "institution": "University of Example"
     },
     "genderOptions": {
+      "placeholder": "Select an option",
       "female": "Female",
       "male": "Male",
       "transgender": "Transgender",
-      "other": "Other",
-      "select": "Select"
+      "agender": "Agender",
+      "non-binary": "Non-binary",
+      "not declared": "Not declared"
     },
     "modalityOptions": {
-      "inPerson": "In-person",
+      "in-person": "In-person",
       "remote": "Remote"
     },
     "languageOptions": {
@@ -53,8 +56,8 @@
       "en": "English"
     },
     "buttons": {
-      "back": "◀ Back",
-      "continue": "Continue ▶"
+      "back": "Back",
+      "continue": "Continue"
     },
     "messages": {
       "success": "🎉 Registration successful! Check your email for confirmation.",
