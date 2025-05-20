@@ -1,0 +1,42 @@
+.label input {
+  border: none;
+  background: none;
+
+  width: 100%;
+  height: 100%;
+}
+
+.label input:focus {
+  outline: none;
+}
+
+.error span,
+.error .inputContainer input {
+  color: red;
+}
+
+.error .inputContainer {
+  outline: 2px solid red;
+}
+
+.inputContainer {
+  display: flex;
+
+  gap: 0.5rem;
+
+  justify-content: space-between;
+  align-items: center;
+
+  border-radius: 2.25rem;
+  height: 2.5rem;
+
+  padding: 0.25rem 0.75rem;
+
+  border: none;
+
+  background-color: #3e85921f;
+}
+
+.inputContainer:focus-within {
+  border: 2px solid var(--primary-blue);
+}
