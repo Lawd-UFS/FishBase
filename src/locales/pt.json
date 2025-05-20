@@ -2,7 +2,7 @@
   "navbar": {
     "aboutEvent": "Sobre o evento",
     "programming": "Programação",
-    "register": "Registro"
+    "register": "Inscreva-se"
   },
   "hero": {
     "registerButton": "Inscreva-se →",
@@ -61,6 +61,53 @@
     },
     "messages": {
       "success": "🎉 Inscrição realizada com sucesso! Verifique seu email para confirmação.",
+      "firstName": {
+        "required": "Nome é obrigatório",
+        "minLength": "O nome deve ter pelo menos 1 caracter."
+      },
+      "lastName": {
+        "required": "Sobrenome é obrigatório",
+        "minLength": "O sobrenome deve ter pelo menos 1 caracter."
+      },
+      "email": {
+        "required": "Email é obrigatório",
+        "invalid": "Email inválido."
+      },
+      "password": {
+        "required": "Senha é obrigatória",
+        "minLength": "A senha deve ter pelo menos 6 caracteres.",
+        "strong": "A senha deve conter pelo menos uma letra maiúscula, uma letra minúscula, um número e um símbolo."
+      },
+      "confirmPassword": {
+        "required": "Confirmar senha é obrigatório",
+        "minLength": "A senha deve ter pelo menos 6 caracteres.",
+        "notMatch": "As senhas não coincidem."
+      },
+      "gender": {
+        "required": "Gênero é obrigatório"
+      },
+      "modality": {
+        "required": "Modalidade é obrigatório"
+      },
+      "institution": {
+        "required": "Instituição é obrigatório",
+        "minLength": "A instituição deve ter pelo menos 2 caracteres."
+      },
+      "country": {
+        "required": "País é obrigatório",
+        "minLength": "O país deve ter pelo menos 2 caracteres."
+      },
+      "state": {
+        "required": "Estado é obrigatório",
+        "minLength": "O estado deve ter pelo menos 2 caracteres."
+      },
+      "city": {
+        "required": "Cidade é obrigatório",
+        "minLength": "A cidade deve ter pelo menos 2 caracteres."
+      },
+      "language": {
+        "required": "Idioma é obrigatório"
+      },
       "genericError": "❌ Erro desconhecido",
       "networkError": "Erro de rede, tente novamente.",
       "step0Error": "Preencha nome, sobrenome, email e senha.",
