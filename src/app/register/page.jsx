@@ -1,14 +1,21 @@
 'use client';
 
-import styles from '@/app/register/page.module.css';
-import { RegisterBanner } from '@/app/register/RegisterBanner';
-import { RegisterForm } from '@/app/register/RegisterForm';
+import { useRegister } from '@/contexts/RegisterContext';
+import { useRouter } from 'next/navigation';
+import { useEffect } from 'react';
 
 export default function RegisterPage() {
-  return (
-    <div className={styles.container}>
-      <RegisterBanner />
-      <RegisterForm />
-    </div>
-  );
+  const { setIsLoading, resetFormData } = useRegister();
+
+  const router = useRouter();
+
+  useEffect(() => {
+    setIsLoading(true);
+    resetFormData();
+    router.push('/register/account-info');
+
+    return () => setIsLoading(false);
+  }, [setIsLoading, resetFormData, router]);
+
+  return null;
 }

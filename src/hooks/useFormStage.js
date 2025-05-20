@@ -2,7 +2,7 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useCallback, useMemo } from 'react';
 
-export function useFormStage(schema, defaultValues, onValid) {
+export function useFormStage(schema, defaultValues) {
   const {
     register,
     handleSubmit,
@@ -17,14 +17,16 @@ export function useFormStage(schema, defaultValues, onValid) {
 
   const validate = useCallback(async () => {
     const isFormValid = await trigger();
+    return isFormValid;
+  }, [trigger]);
 
-    if (isFormValid) {
-      await handleSubmit(onValid)();
-      return true;
+  const validateStage = async () => {
+    if (validate) {
+      return await validate();
     }
 
-    return false;
-  }, [handleSubmit, onValid, trigger]);
+    return true;
+  };
 
   const formFunctions = useMemo(
     () => ({
@@ -33,8 +35,9 @@ export function useFormStage(schema, defaultValues, onValid) {
       errors,
       isValid,
       validate,
+      validateStage,
     }),
-    [register, handleSubmit, errors, isValid, validate]
+    [register, handleSubmit, errors, isValid, validate, validateStage]
   );
 
   return { ...formFunctions, getValues };
