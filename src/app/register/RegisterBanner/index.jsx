@@ -5,14 +5,16 @@ import { ChevronLeft } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import styles from '@/app/register/RegisterBanner/RegisterBanner.module.css';
 import LanguageSwitch from '@/components/LanguageSwitch';
+import { useRouter } from 'next/navigation';
 
 export function RegisterBanner() {
   const { texts } = useLanguage();
+  const router = useRouter();
 
   return (
     <section className={styles.container}>
       <header className={styles.header}>
-        <Button variant='ghost' color='white'>
+        <Button variant='ghost' color='white' onClick={() => router.push('/')}>
           <ChevronLeft />
           <span>{texts.register.buttons.back}</span>
         </Button>
