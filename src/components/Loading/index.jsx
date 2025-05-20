@@ -1,8 +1,8 @@
 import styles from '@/components/Loading/Loading.module.css';
 
-export function Loading({ size = 24 }) {
+export function Loading({ size = 24, className = null }) {
   return (
-    <div className={styles.container}>
+    <div className={`${styles.container} ${className}`}>
       <div className={styles.spinner}>
         {[...Array(8)].map((_, i) => (
           <div
