@@ -10,6 +10,7 @@ export default function Input({
   onChange = null,
   onFocus = null,
   error = null,
+  ...props
 }) {
   return (
     <div className={`${formStyles.formInput} ${error && styles.error}`}>
@@ -22,9 +23,11 @@ export default function Input({
           name={name}
           onChange={onChange}
           onFocus={onFocus}
+          {...props}
         />
         {rightIcon}
       </div>
+      {error && <p className={formStyles.errorMessage}>{error}</p>}
     </div>
   );
 }

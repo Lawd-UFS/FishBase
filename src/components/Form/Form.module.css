@@ -12,7 +12,12 @@
 
 .formInput label {
   color: var(--primary-blue);
-  font-weight: 700;
+  font-weight: 500;
+}
+
+.errorMessage {
+  color: red;
+  font-size: 0.875rem;
 }
 
 .formInput input,

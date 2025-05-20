@@ -2,11 +2,22 @@ import styles from '@/components/Form/Radio/Radio.module.css';
 import formStyles from '@/components/Form/Form.module.css';
 import { useState } from 'react';
 
-export default function Radio({ label, name, options }) {
+export default function Radio({
+  label,
+  name,
+  options,
+  error = null,
+  ...props
+}) {
+  const { onChange, ...restProps } = props;
+
   const [selectedOption, setSelectedOption] = useState(null);
 
-  const handleChange = (value) => {
-    console.log('mudando para: ', value);
+  const handleChange = (e, value) => {
+    if (onChange) {
+      onChange(e);
+    }
+
     setSelectedOption(value);
   };
 
@@ -22,7 +33,8 @@ export default function Radio({ label, name, options }) {
               id={`${name}-${option.value}`}
               value={option.value}
               checked={selectedOption === option.value}
-              onChange={() => handleChange(option.value)}
+              onChange={(e) => handleChange(e, option.value)}
+              {...restProps}
             />
             <label
               htmlFor={`${name}-${option.value}`}
@@ -36,6 +48,7 @@ export default function Radio({ label, name, options }) {
           </div>
         ))}
       </div>
+      {error && <p className={formStyles.errorMessage}>{error}</p>}
     </div>
   );
 }
