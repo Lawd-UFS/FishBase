@@ -1,5 +1,5 @@
 import styles from '@/components/Form/Input/Input.module.css';
-import formStyles from '@/components/Form.module.css';
+import formStyles from '@/components/Form/Form.module.css';
 
 export default function Input({
   label,
@@ -12,9 +12,7 @@ export default function Input({
   error = null,
 }) {
   return (
-    <div
-      className={`${formStyles.formInput} ${styles.label} ${error && styles.error}`}
-    >
+    <div className={`${formStyles.formInput} ${error && styles.error}`}>
       <label htmlFor={name}>{label}</label>
       <div className={styles.inputContainer}>
         {leftIcon}

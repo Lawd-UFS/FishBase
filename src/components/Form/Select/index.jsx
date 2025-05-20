@@ -1,5 +1,5 @@
 import styles from '@/components/Form/Select/Select.module.css';
-import formStyles from '@/components/Form.module.css';
+import formStyles from '@/components/Form/Form.module.css';
 
 export default function Select({ label, name, options, placeholder }) {
   return (

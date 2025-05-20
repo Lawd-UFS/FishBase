@@ -1,5 +1,5 @@
 import styles from '@/components/Form/Radio/Radio.module.css';
-import formStyles from '@/components/Form.module.css';
+import formStyles from '@/components/Form/Form.module.css';
 import { useState } from 'react';
 
 export default function Radio({ label, name, options }) {
