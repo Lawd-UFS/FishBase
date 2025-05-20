@@ -14,6 +14,17 @@
   "register": {
     "title": "Inscrição",
     "steps": ["Informações de conta", "Dados Complementares", "Confirmação"],
+    "confirmation": {
+      "title": "Confirme sua inscrição",
+      "description": "Enviamos para o seu email um link de confirmação. Clique no link para finalizar a inscrição.",
+      "warning": {
+        "title": "Atenção:",
+        "list": [
+          "Sua inscrição só será concluída após a confirmação do e-mail.",
+          "Qualquer dúvida, entre em contato com nossa organização."
+        ]
+      }
+    },
     "fields": {
       "firstName": "Nome",
       "lastName": "Sobrenome",

@@ -14,6 +14,17 @@
   "register": {
     "title": "Registration",
     "steps": ["Account Information", "Additional Data", "Confirmation"],
+    "confirmation": {
+      "title": "Confirm your registration",
+      "description": "We sent you an email with a confirmation link. Click the link to finish the registration.",
+      "warning": {
+        "title": "Attention:",
+        "list": [
+          "Your registration will only be completed after the email is confirmed.",
+          "Any questions, contact our organization."
+        ]
+      }
+    },
     "fields": {
       "firstName": "First Name",
       "lastName": "Last Name",
