@@ -4,9 +4,10 @@ import Hero from '../components/Hero';
 export default function Home() {
   return (
     <main className='container'>
-      <div className='background' />
       <Header />
-      <Hero />
+      <div className='grid'>
+        <Hero />
+      </div>
     </main>
   );
 }

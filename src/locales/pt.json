@@ -5,8 +5,8 @@
     "register": "Inscreva-se"
   },
   "hero": {
-    "registerButton": "Inscreva-se →",
-    "checkEventButton": "Confira o evento ↓"
+    "registerButton": "Inscreva-se",
+    "checkEventButton": "Confira o evento"
   },
   "programming": {
     "noSessions": "Nenhuma sessão disponível."

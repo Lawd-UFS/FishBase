@@ -5,8 +5,8 @@
     "register": "Register"
   },
   "hero": {
-    "registerButton": "Register →",
-    "checkEventButton": "Check the event ↓"
+    "registerButton": "Register",
+    "checkEventButton": "Check the event"
   },
   "programming": {
     "noSessions": "No sessions available."
