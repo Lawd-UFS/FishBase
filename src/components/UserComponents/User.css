@@ -1,0 +1,374 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+#root{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Container{
+    width: 90%;
+    height: 80%;
+    background-color: #1A3C88;
+    border-radius: 2em;
+    border : .2em solid #203C88;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    margin-top: 5em;
+    align-self: center;
+    justify-self: center;
+}
+
+.Navegacao{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    padding-left: 3%;
+}
+
+.titulo{
+    color: #FFFFFF;
+    font-size: 3em;
+    font-weight: 700;
+    margin-bottom: 1em;
+}
+
+.Subtitulo{
+    color: #FFFFFF;
+    font-size: 1.7em;
+    margin-bottom: 1em;
+}
+
+.Subtitulo {
+  background: none;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  text-align: left;
+  min-width: fit-content;
+  width: 25%;
+  margin-left: 7%;
+}
+
+.Subtitulo:hover {
+  background-color: #132452; /* Change to your desired highlight */
+  color: #FFFFFF;
+  font-weight: bold;
+}
+
+.SelectedSubtitulo {
+  background-color: #FFFFFF; /* Change to your desired highlight */
+  color: #203C88;
+  font-weight: bold;
+}
+
+
+.Display_De_Dados{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    width: 50%;
+    height: 100%;
+    padding-left: 5em;
+    padding-right: 5em;
+}
+
+.Row{
+    width: 100%;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.GridElement{
+    width: 25%;
+    height: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.GridElement p{
+    font-size: 1em;
+    color: #FFFFFF;
+    font-weight: 600;
+    margin-left: 2%;
+}
+
+.Foto{
+    height: 100%;
+    aspect-ratio: 1/1;
+    width: auto;
+    background-color: #FFFFFF;
+    border-radius: 50%;
+    align-self: center;
+    justify-self: center;
+}
+
+.FormContainer{
+    background-color: var(--bg-form);
+    border-radius: 20px;
+    box-shadow: 0px 6px 8px 0px #0000000d;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 60%;
+}
+
+input{
+    width: 100%;
+    height: 100%;
+    outline: none;
+    border: none !important;
+    background-color: #FFFFFF !important;
+    color: #203C88!important;
+}
+.Uninteractable{
+    pointer-events: none;
+}
+
+input[type="text"]{
+    color: #203C88;
+    font-size: 2em;
+}
+
+.Name{
+    width: 100%;
+    height: 100%;
+}
+
+.Email{
+    width: 100%;
+    height: 100%;
+}
+
+.Modalidade{
+    width: 100%;
+    height: 100%;
+}
+
+.Instituicao{
+    width: 100%;
+    height: 100%;
+}
+
+.Buttn{
+    width: 20%;
+    height: 40%;
+    min-width: 10ch;
+    border-radius: .3em;
+    box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    color: #F3F3F3;
+}
+
+.ButtonRow{
+    gap: 1em;
+    margin-top: auto;
+    display: flex;
+    flex-direction: row;
+}
+
+.Descartar{
+    position: relative;
+    background-color: #FF4040;
+}
+
+.Salvar{
+    background-color: #1DA111;
+}
+
+.Agencias{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.HotelCard {
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  background-color: #fff;
+  max-width: 500px;
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+  font-family: 'Arial', sans-serif;
+}
+
+.HotelCard h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  letter-spacing: 2px;
+}
+
+.ContactRow {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.75rem;
+  width: 100%;
+}
+
+.IconCircle {
+  background-color: #203C88;
+  color: white;
+  min-width: 8%;
+  aspect-ratio: 1/1;
+  height: auto;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+  font-size: 16px;
+}
+
+.ContactRow a {
+  color: blue;
+  text-decoration: underline;
+  word-break: break-word;
+}
+
+.HotelCard {
+  background: #fff;
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  font-family: 'Arial', sans-serif;
+}
+
+.HotelHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.HotelHeader h2 {
+  font-size: 1.5rem;
+  margin: 0;
+  letter-spacing: 2px;
+}
+
+.HotelImagePlaceholder {
+  background-color: #ccc;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  color: #333;
+}
+
+.HotelContent {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+  gap: 1rem;
+}
+
+.HotelLinks {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+
+.HotelLinks a {
+  color: blue;
+  text-decoration: underline;
+}
+
+.HotelContacts {
+  text-align: right;
+}
+
+.Hoteis{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.FotoHotel{
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 1/1;
+    background-color: #FFFFFF;
+    border-radius: 50%;
+    align-self: center;
+    justify-self: center;
+}
+
+.buttonsContainer{
+    width: 100%;
+}
+
+
+@media all and (orientation:portrait) {
+/* Style adjustments for portrait mode goes here */
+
+.Container{
+    flex-direction: column;
+    overflow-y: scroll;
+}
+
+.titulo{
+    font-size: 2em;
+}
+
+.Navegacao{
+    width: 100%;
+    padding-left: 0;
+    align-items: center;
+}
+
+.buttonsContainer{
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+    overflow-x: scroll;
+}
+
+.Subtitulo{
+    width: 100%;
+    margin: 0;
+}
+
+.Display_De_Dados{
+    width: 100%;
+    height: 100%;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+}
+
+@media all and (orientation:landscape) {
+  /* Style adjustments for landscape mode goes here */
+
+}
