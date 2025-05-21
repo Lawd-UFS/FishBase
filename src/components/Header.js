@@ -27,14 +27,14 @@ export default function Header() {
           />
         </Link>
       </div>
-      <div className="nav-container">
-        <nav className="nav-links">
-          <Link href="/sobre">{texts.navbar.aboutEvent}</Link>
-          <Link href="/programacao">{texts.navbar.programming}</Link>
-          <Link href="/login">Login</Link>
-          <Link href="/registro">{texts.navbar.register}</Link>
+      <div className='nav-container'>
+        <nav className='nav-links'>
+          <Link href='/about'>{texts.navbar.aboutEvent}</Link>
+          <Link href='/schedule'>{texts.navbar.programming}</Link>
+          <Link href='/login'>Login</Link>
+          <Link href='/register'>{texts.navbar.register}</Link>
         </nav>
-        <div className="lang-switch">
+        <div className='lang-switch'>
           <button
             onClick={() => toggleLanguage("en")}
             className={language === "en" ? "active" : ""}
