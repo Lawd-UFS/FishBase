@@ -1,5 +1,5 @@
 import './globals.css';
-import { LanguageProvider } from '../src/contexts/LanguageContext';
+import { LanguageProvider } from '../contexts/LanguageContext';
 
 export const metadata = {
   title: '23rd FishBase & SeaLifeBase Symposium',
