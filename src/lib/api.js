@@ -50,3 +50,19 @@ export const confirmRegistration = async (token) => {
 
   return response;
 };
+
+export const resendConfirmationLink = async (token) => {
+  const response = await api.post(
+    '/participants/resend-confirmation-email',
+    {
+      token,
+    },
+    {
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    }
+  );
+
+  return response;
+};
