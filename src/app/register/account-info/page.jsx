@@ -24,7 +24,6 @@ export default function AccountInfoStep() {
   } = useRegister();
   const { texts, language } = useLanguage();
 
-
   const router = useRouter();
 
   const defaultValues = {
