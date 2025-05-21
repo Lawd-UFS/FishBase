@@ -34,3 +34,19 @@ export const registerParticipant = async (data) => {
 
   return response;
 };
+
+export const confirmRegistration = async (token) => {
+  const response = await api.put(
+    '/participants/confirm-enrollment',
+    {
+      token,
+    },
+    {
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    }
+  );
+
+  return response;
+};
