@@ -5,17 +5,17 @@ import { useRouter } from 'next/navigation';
 import { useEffect } from 'react';
 
 export default function RegisterPage() {
-  const { setIsLoading, resetFormData } = useRegister();
+  const { setIsLoading, resetRegister } = useRegister();
 
   const router = useRouter();
 
   useEffect(() => {
     setIsLoading(true);
-    resetFormData();
+    resetRegister();
     router.push('/register/account-info');
 
     return () => setIsLoading(false);
-  }, [setIsLoading, resetFormData, router]);
+  }, [setIsLoading, resetRegister, router]);
 
   return null;
 }
