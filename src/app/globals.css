@@ -24,7 +24,8 @@ body {
 /* Background fixo */
 .background {
   position: fixed;
-  top: 0; left: 0;
+  top: 0;
+  left: 0;
   width: 100vw;
   height: 100vh;
   background-image: url('/background.png');
@@ -36,21 +37,21 @@ body {
 /* Header sticky */
 .header {
   position: sticky;
-  top: 0; left: 0;
-  width: 100%;
-  padding: 2rem 0;
-  background-color: #fff;
-  border-bottom-left-radius: 1rem;
-  border-bottom-right-radius: 1rem;
+  top: 0;
+  left: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
-  z-index: 20;
 }
 
 .logo-container {
   display: flex;
-  gap: 2rem;
+  gap: 12rem;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  padding: 1.7rem;
+  background-color: #fff;
 }
 
 .nav-container {
@@ -75,14 +76,14 @@ body {
   padding: 12px;
   border-radius: 16px;
   border: none;
-  box-shadow: 2px 2px rgba(0,0,0,0.4);
+  box-shadow: 2px 2px rgba(0, 0, 0, 0.4);
   cursor: pointer;
 }
 
 .lang-switch .active {
   background-color: #16316a;
   transition: 1s all;
-  color:#f5f5f5;
+  color: #f5f5f5;
 }
 
 .nav-links a,
@@ -274,7 +275,8 @@ body {
   background: rgba(255, 255, 255, 0.1);
   color: #fff;
   font-size: 1rem;
-  appearance: none; /* remove seta nativa */
+  appearance: none;
+  /* remove seta nativa */
 }
 
 /* placeholder */
@@ -309,7 +311,7 @@ body {
 
 .confirmation {
   padding: 2rem;
-  background: rgba(0,0,0,0.1);
+  background: rgba(0, 0, 0, 0.1);
   border-radius: 1rem;
   text-align: center;
   font-size: 1.1rem;
@@ -379,7 +381,7 @@ body {
 .event-card {
   background: #fff;
   border-radius: 0.75rem;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   width: 320px;
   display: flex;
@@ -478,8 +480,8 @@ body {
   background-color: #f2eef2;
   border-radius: 20px;
   border: solid 4px #064E3B;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
-  align-items: center; 
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  align-items: center;
   font-family: 'Sofia Sans', sans-serif;
   text-align: justify;
 }
