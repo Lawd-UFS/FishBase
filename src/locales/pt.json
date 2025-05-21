@@ -15,6 +15,31 @@
     "title": "Inscrição",
     "steps": ["Informações de conta", "Dados Complementares", "Confirmação"],
     "confirmation": {
+      "success": {
+        "title": "Inscrição confirmada com sucesso!",
+        "description": "Parabéns! Sua inscrição no {eventName} foi realizada com sucesso. Você já pode fazer o login e acessar a área do participante.",
+        "eventName": "23º Simpósio FishBase e SeaLifeBase"
+      },
+      "error": {
+        "unknown": {
+          "title": "Erro ao confirmar inscrição",
+          "description": "Ocorreu um erro ao confirmar sua inscrição. Por favor, tente novamente mais tarde. Se o erro persistir, entre em contato com nossa organização."
+        },
+        "invalidToken": {
+          "title": "Erro ao confirmar inscrição",
+          "description": "Confirme a sua inscrição com o link enviado para o seu e-mail."
+        },
+        "expiredToken": {
+          "title": "Erro ao confirmar inscrição",
+          "description": "O link de confirmação expirou. Clique no botão abaixo para solicitar um novo link de confirmação.",
+          "guide": "O novo link será enviado para o e-mail informado no formulário de inscrição."
+        },
+        "enrollmentNotFound": {
+          "title": "Inscrição não encontrada",
+          "description": "A inscrição não foi encontrada. Realize a inscrição através do formulário de inscrição.",
+          "guide": "Se você já realizou a inscrição, por favor, entre em contato com nossa organização."
+        }
+      },
       "title": "Confirme sua inscrição",
       "description": "Enviamos para o seu email um link de confirmação. Clique no link para finalizar a inscrição.",
       "warning": {
@@ -68,7 +93,10 @@
     },
     "buttons": {
       "back": "Voltar",
-      "continue": "Continuar"
+      "continue": "Continuar",
+      "login": "Fazer login",
+      "requestNewLink": "Solicitar novo link",
+      "register": "Inscreva-se"
     },
     "messages": {
       "success": "🎉 Inscrição realizada com sucesso! Verifique seu email para confirmação.",
