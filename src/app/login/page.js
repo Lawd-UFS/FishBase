@@ -6,10 +6,34 @@ export default function LoginPage() {
   const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
 
-  const handleSubmit = e => {
-    e.preventDefault();
-    // TODO: chamada de API de login
-  };
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  try {
+    const response = await fetch('http://localhost:3000/auth/login', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ email, password: senha }),
+    });
+
+    const data = await response.json();
+
+    if (response.ok) {
+      // Save the token (adjust based on your backend response)
+      localStorage.setItem('token', data.access_token);
+      localStorage.setItem('language', data.language);
+      // Redirect to profile page, or wherever
+      window.location.href = '/user'; 
+    } else {
+      alert(data.message || 'Erro ao fazer login');
+    }
+  } catch (error) {
+    console.error('Login error:', error);
+    alert('Erro na conexão');
+  }
+};
+
 
   return (
     <main className="flex items-center justify-center h-screen bg-gray-100">

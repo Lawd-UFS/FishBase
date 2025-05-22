@@ -1,47 +1,63 @@
 'use client';
-//React
 import React, { useState, useEffect } from 'react';
 import { useLanguage } from '../../contexts/LanguageContext';
 import { FaMapMarkerAlt, FaLaptop } from 'react-icons/fa';
-
-//For resquest
 import axios from 'axios';
-
-import './User.css'
-
+import './User.css';
 
 function User() {
   const { texts } = useLanguage();
   const [selected, setSelected] = useState('presencial');
   const [userData, setUserData] = useState({
     name: '',
+    gender: '',
+    city: '',
+    state: '',
+    country: '',
+    institution: '',
     email: '',
     enrollmentType: '',
-    institution: ''
+    frequencyPercentage: 0,
+    language: ''
   });
-
-  const [selectedSection, setSelectedSection] = useState('dados'); // default selected
 
   useEffect(() => {
     const fetchUserData = async () => {
       try {
-        const response = await axios.post(`http://localhost:3000/participants/profile`);
+        const token = localStorage.getItem('token');
+        const response = await axios.post(
+          'http://localhost:3000/participants/profile',
+          {},
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          }
+        );
+
         if (response.data.success) {
           const data = response.data.data;
           setUserData({
             name: data.name || '',
+            gender: data.gender || '',
+            city: data.city || '',
+            state: data.state || '',
+            country: data.country || '',
+            institution: data.institution || '',
             email: data.email || '',
             enrollmentType: data.enrollmentType || '',
-            institution: data.institution || ''
+            frequencyPercentage: data.frequencyPercentage || 0,
+            language: data.language || ''
           });
+
+          // Set mode toggle state based on enrollmentType
+          if (data.enrollmentType === 'remote') {
+            setSelected('remoto');
+          } else {
+            setSelected('presencial');
+          }
         } else {
           console.error('Error fetching user data:', response.data.message);
-          setUserData({
-            name: "",
-            email: "",
-            enrollmentType: "",
-            institution: ""
-          });
         }
       } catch (error) {
         console.error('Error fetching user profile:', error);
@@ -50,31 +66,32 @@ function User() {
 
     fetchUserData();
   }, []);
-  
+
   return (
     <div className='Perfil'>
       <div className='titulo'>
         <h1>{texts.profile.title}</h1>
       </div>
+
       <div className='dados pessoais'>
         <div className='subtitulo'>{texts.profile.subtitles.personal}</div>
         <div className='linha'></div>
         <div className='fields'>
           <div className='field_container'>
-            <div className='field_name' id='name'>{texts.profile.fields.name}</div>
-            <div className='field'></div>
+            <div className='field_name'>{texts.profile.fields.name}</div>
+            <div className='field'>{userData.name}</div>
           </div>
           <div className='field_container'>
-            <div className='field_name' id='gender'>{texts.register.fields.gender}</div>
-            <div className='field'></div>
+            <div className='field_name'>{texts.register.fields.gender}</div>
+            <div className='field'>{userData.gender}</div>
           </div>
           <div className='field_container'>
             <div className='field_name'>{texts.register.fields.email}</div>
-            <div className='field'></div>
+            <div className='field'>{userData.email}</div>
           </div>
           <div className='field_container'>
             <div className='field_name'>{texts.register.fields.password}</div>
-            <div className='field'></div>
+            <div className='field'>••••••••</div>
           </div>
         </div>
       </div>
@@ -85,46 +102,46 @@ function User() {
         <div className='fields'>
           <div className='field_container'>
             <div className='field_name'>{texts.register.fields.country}</div>
-            <div className='field'></div>
+            <div className='field'>{userData.country}</div>
           </div>
           <div className='field_container'>
             <div className='field_name'>{texts.register.fields.city}</div>
-            <div className='field'></div>
+            <div className='field'>{userData.city}</div>
           </div>
           <div className='field_container'>
             <div className='field_name'>{texts.register.fields.state}</div>
-            <div className='field'></div>
+            <div className='field'>{userData.state}</div>
           </div>
           <div className='field_container'>
             <div className='field_name'>{texts.register.fields.institution}</div>
-            <div className='field'></div>
+            <div className='field'>{userData.institution}</div>
           </div>
           <div className='field_container'>
             <div className='field_name'>{texts.profile.fields.specialNeeds}</div>
-            <div className='field'></div>
+            <div className='field'>—</div> {/* Placeholder */}
           </div>
         </div>
-        
       </div>
-       <div className="mode-switch">
-      <label className="field_name">{texts.profile.fields.format}</label>
-      <div className="options">
-        <button
-          className={`option ${selected === 'presencial' ? 'active' : ''}`}
-          onClick={() => setSelected('presencial')}
-        >
-          <FaMapMarkerAlt size={14} />
-          {texts.profile.formats.inPerson}
-        </button>
-        <button
-          className={`option ${selected === 'remoto' ? 'active' : ''}`}
-          onClick={() => setSelected('remoto')}
-        >
-          <FaLaptop size={14} />
-          {texts.profile.formats.remote}
-        </button>
+
+      <div className="mode-switch">
+        <label className="field_name">{texts.profile.fields.format}</label>
+        <div className="options">
+          <button
+            className={`option ${selected === 'presencial' ? 'active' : ''}`}
+            onClick={() => setSelected('presencial')}
+          >
+            <FaMapMarkerAlt size={14} />
+            {texts.profile.formats.inPerson}
+          </button>
+          <button
+            className={`option ${selected === 'remoto' ? 'active' : ''}`}
+            onClick={() => setSelected('remoto')}
+          >
+            <FaLaptop size={14} />
+            {texts.profile.formats.remote}
+          </button>
+        </div>
       </div>
-    </div>
     </div>
   );
 }

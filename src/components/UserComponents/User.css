@@ -78,6 +78,9 @@ body{
   height: 3em;
   background-color: #F0F5F6;
   border-radius: 1.5em;
+  display: flex;
+  align-items: center;
+  padding-left: 2em;
 }
 
 .complementares .fields{
