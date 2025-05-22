@@ -68,5 +68,21 @@
       "step1Error": "Please complete all additional data."
     },
     "navBack": "Back"
+  },
+  "profile": {
+    "title": "Profile",
+    "subtitles": {
+      "personal": "Contact & Personal Data",
+      "additional": "Additional Data"
+    },
+    "fields": {
+      "name": "Name",
+      "specialNeeds": "Has special needs",
+      "format": "Format"
+    },
+    "formats": {
+      "inPerson": "In-person",
+      "remote": "Remote"
+    }
   }
 }

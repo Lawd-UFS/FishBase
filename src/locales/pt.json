@@ -68,5 +68,21 @@
       "step1Error": "Preencha todos os dados complementares."
     },
     "navBack": "Voltar"
+  },
+  "profile": {
+    "title": "Perfil",
+    "subtitles": {
+      "personal": "Dados de contato & pessoais",
+      "additional": "Dados Complementares"
+    },
+    "fields": {
+      "name": "Nome",
+      "specialNeeds": "Possui Necessidade especial?",
+      "format": "Modalidade"
+    },
+    "formats": {
+      "inPerson": "Presencial",
+      "remote": "Remoto"
+    }
   }
 }
