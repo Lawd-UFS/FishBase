@@ -1,0 +1,12 @@
+.container {
+  background-size: cover;
+  background-position: center;
+}
+
+.header {
+  padding: 2rem 4.5rem;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
