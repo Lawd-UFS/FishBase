@@ -95,7 +95,14 @@
     font-weight: 400;
     line-height: normal;
     width: 36rem;
+    margin-bottom: 3.375rem;
 }
+
+.speakers {
+    font-size: 1.4rem;
+    font-weight: 300;
+}
+
 
 .theme {
     color: #FFF;

@@ -12,7 +12,7 @@ import {
 
 const sofiaSans = Sofia_Sans({
   subsets: ['latin'],
-  weight: ['400'],
+  weight: ['300', '400'],
 });
 
 const sofiaSansSemiCondensed = Sofia_Sans_Condensed({
