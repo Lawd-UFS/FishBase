@@ -1,34 +1,38 @@
 'use client';
 
-import Link from 'next/link';
-import Image from 'next/image';
 import styles from '@/app/homePage/Schedule/Schedule.module.css';
 import homeStyles from '@/app/homePage/HomePage.module.css';
 import { useLanguage } from '@/contexts/LanguageContext';
 
-export default function Schedule() {
+export default function Schedule({ schedule = [] }) {
   const { texts } = useLanguage();
 
   return (
     <section className={styles.background}>
       <div className={`${styles.subtitleEventInfo} ${homeStyles.grid}`}>
-        <div className={styles.SymposiumDate}>September 1-2, 2025</div>
-        <div className={styles.SymposiumLocation}>
+        <div className={styles.symposiumDate}>September 1-2, 2025</div>
+        <div className={styles.symposiumLocation}>
           São Cristóvão – Sergipe – Brazil
         </div>
       </div>
       <div className={styles.content}>
-        <h2 className={styles.title}>{texts.navbar.programming}</h2>
-        <div className={styles.scheduleItems}>
-          <div className={styles.dateItem}>
-            <p className={styles.date}>55</p>
-            <p className={styles.time}>10</p>
-          </div>
-          <p className={styles.infoItem}>
-            FishBase and SeaLifeBase in Brazil: what is going on? – Kátia Freire
-            FishBase
-          </p>
-          <p className={styles.theme}>FishBase</p>
+        <div className={styles.stickyWrapper}>
+          <h2 className={styles.titleSection}>{texts.navbar.programming}</h2>
+        </div>
+        <div className={styles.scheduleContainer}>
+          {schedule.map((event) => (
+            <div className={styles.scheduleItems} key={event.id}>
+              <div className={styles.dateItem}>
+                <p className={styles.date}>{event.dateTime}</p>
+                <p className={styles.time}>{event.dateTime}</p>
+              </div>
+              <p className={styles.infoItem}>
+                {event.title}
+                {event.speaker ? ` - ${event.speaker}` : ''}
+              </p>
+              <p className={styles.theme}>{event.theme}</p>
+            </div>
+          ))}
         </div>
       </div>
     </section>

@@ -1,7 +1,5 @@
 .background {
     background: url('/green-background.svg');
-    background-size: cover;
-    height: 100%;
 }
 
 
@@ -14,14 +12,14 @@
 
 }
 
-.SymposiumDate {
+.symposiumDate {
     grid-column: 4 / -1;
     transform: translateX(-2rem);
     ;
 
 }
 
-.SymposiumLocation {
+.symposiumLocation {
     grid-column: 6 / -1;
     transform: translate(2.4rem, -1.2rem);
     ;
@@ -31,9 +29,18 @@
 .content {
     display: flex;
     justify-content: space-between;
+    gap: 8.51rem;
+    margin: 4.55rem 7rem 12rem 9.3rem;
+    min-height: 30rem;
 }
 
-.title {
+.stickyWrapper {
+    position: sticky;
+    top: 8rem;
+    align-self: flex-start;
+}
+
+.titleSection {
     color: #FFF;
     font-size: 3.16763rem;
     font-style: normal;
@@ -42,13 +49,19 @@
     grid-column: 2 / 4;
     letter-spacing: -0.12669rem;
     position: sticky;
+    top: 0;
+}
+
+.scheduleContainer {
+    display: flex;
+    flex-direction: column;
+
 }
 
 .scheduleItems {
-    margin: 4.55rem 0;
-    grid-column: 5 / 11;
     display: flex;
     justify-content: space-between;
+    width: 53.6rem;
 }
 
 .dateItem {
@@ -81,6 +94,7 @@
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+    width: 36rem;
 }
 
 .theme {
@@ -90,4 +104,5 @@
     font-style: normal;
     font-weight: 600;
     line-height: normal;
+    width: 7rem;
 }

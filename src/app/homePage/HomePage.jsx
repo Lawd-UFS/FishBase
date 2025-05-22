@@ -1,15 +1,16 @@
-import Header from "./Header/Header";
-import Hero from "./Hero/Hero";
-import styles from "@/app/homePage/HomePage.module.css"
-import Schedule from "./Schedule/Schedule";
+import Header from './Header/Header';
+import Hero from './Hero/Hero';
+import styles from '@/app/homePage/HomePage.module.css';
+import Schedule from './Schedule/Schedule';
+import { fetchSchedule } from './Schedule/fetchSchedule';
 
-
-export default function HomePage() {
+export default async function HomePage() {
+  const schedule = await fetchSchedule();
   return (
     <main className={styles.container}>
       <Header />
       <Hero />
-      <Schedule/>
+      <Schedule schedule={schedule} />;
     </main>
   );
 }
