@@ -1,12 +1,9 @@
 'use client';
-import Header from '../../components/Header';
-import pt from '../../locales/pt.json';
-import en from '../../locales/en.json';
 
-export const dynamic = 'force-dynamic';
-
+import Header from '@/components/Header';
 import { useEffect, useState } from 'react';
 import { getProgramming } from '@/lib/api';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 // formata ISO para "dd/mm/aaaa hh:mm"
 function formatDateTimeBR(isoString) {
@@ -20,6 +17,7 @@ function formatDateTimeBR(isoString) {
 
 export default function ProgramacaoPage() {
   const [sessions, setSessions] = useState([]);
+  const { texts } = useLanguage();
 
   useEffect(() => {
     const getSessions = async () => {
@@ -29,12 +27,9 @@ export default function ProgramacaoPage() {
         setSessions(response.data);
       }
     };
+
     getSessions();
   }, []);
-
-  // idioma fixo por enquanto (pt ou en)
-  const language = 'pt'; // ou 'en'
-  const texts = language === 'pt' ? pt : en;
 
   return (
     <main className='container'>
