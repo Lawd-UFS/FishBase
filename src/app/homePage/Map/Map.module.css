@@ -3,7 +3,8 @@
 }
 
 .section {
-    padding: 22rem 0;
+    padding-top: 22rem;
+    padding-bottom: 5rem;
 }
 
 .title {
@@ -15,16 +16,17 @@
     line-height: 3.06394rem;
     letter-spacing: -0.12669rem;
     width: 20.25rem;
+    margin-left: 3rem;
 }
 
 .text {
     color: #FFF;
     font-family: "Sofia Sans";
-    font-size: 1.58381rem;
+    font-size: 1.4rem;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-    width: 51.22613rem;
+    width: 48rem;
 }
 
 .container {
