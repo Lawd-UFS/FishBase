@@ -84,5 +84,9 @@
       "inPerson": "Presencial",
       "remote": "Remoto"
     }
+  },
+  "hotels": {
+    "hotelSugestion": "Saiba onde se hospedar",
+    "agencySugestion": "Faça um plano de viagem"
   }
 }

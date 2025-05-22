@@ -6,7 +6,6 @@ import axios from 'axios';
 import './User.css';
 
 import Header from '../Header';
-import Hero from '../Hero';
 
 
 function User() {
