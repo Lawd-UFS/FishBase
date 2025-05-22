@@ -6,7 +6,7 @@ import styles from "@/app/homePage/Hero/hero.module.css"
 
 
 import { useLanguage } from '../../../contexts/LanguageContext';
-import { ChevronDown, ChevronLeft, ChevronRight } from 'lucide-react';
+import { ChevronDown, ChevronRight } from 'lucide-react';
 
 export default function Hero() {
   const { texts, toggleLanguage, language } = useLanguage();
@@ -52,11 +52,7 @@ export default function Hero() {
           </Link>
         </div>
       </div>
-      <Image src={'/fish-hero.png'} width={1064} height={492} alt='fish' />
-      <div className={`${styles.subtitleEventInfo} ${styles.date}`}>September 1-2, 2025</div>
-      <div className={`${styles.subtitleEventInfo} ${styles.date}`}>
-        São Cristóvão – Sergipe – Brazil
-      </div>
+            <Image src={'/fish-hero.png'} width={1064} height={492} alt='fish' />
     </section>
   );
 }

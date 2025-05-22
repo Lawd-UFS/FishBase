@@ -180,24 +180,3 @@
     background: #fff;
     color: #064e3b;
 }
-
-.subtitleEventInfo {
-    color: #FFC729;
-    text-align: center;
-    font-size: 2.37569rem;
-    font-weight: 400;
-    line-height: 3.71206rem;
-    letter-spacing: -0.095rem;
-
-}
-
-.subtitleEventInfo.date {
-    grid-column: 4;
-
-}
-
-.subtitleEventInfo.location {
-    grid-column: 3;
-
-
-}

@@ -12,5 +12,6 @@
     padding: 0 42px;
     max-width: 100%;
     box-sizing: border-box;
+    row-gap: 0;
 
 }
