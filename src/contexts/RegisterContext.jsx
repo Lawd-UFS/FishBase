@@ -2,14 +2,15 @@
 
 import { registerParticipant, resendConfirmationLink } from '@/lib/api';
 import { createContext, useCallback, useContext, useState } from 'react';
+import { useAuthLayout } from './AuthLayoutContext';
 
 const RegisterContext = createContext(null);
 
 export const RegisterProvider = ({ children }) => {
+  const { setErrorMessage, resetErrorMessage } = useAuthLayout();
+
   const [formData, setFormData] = useState({});
   const [currentStage, setCurrentStage] = useState(0);
-  const [isLoading, setIsLoading] = useState(false);
-  const [errorMessage, setErrorMessage] = useState(null);
   const [validateCurrentStage, setValidateCurrentStage] = useState(null);
   const [getFormData, setGetFormData] = useState(null);
   const [isConfirmation, setIsConfirmation] = useState(false);
@@ -74,14 +75,8 @@ export const RegisterProvider = ({ children }) => {
     [validateCurrentStage, getFormData]
   );
 
-  const resetErrorMessage = useCallback(() => {
-    setErrorMessage(null);
-  }, []);
-
   const submitForm = useCallback(async () => {
-    setIsLoading(true);
     const response = await registerParticipant(formData);
-    setIsLoading(false);
 
     if (response.success) {
       setIsConfirmation(true);
@@ -96,9 +91,7 @@ export const RegisterProvider = ({ children }) => {
 
   const requestNewLink = useCallback(
     async (token) => {
-      setIsLoading(true);
       const response = await resendConfirmationLink(token);
-      setIsLoading(false);
 
       if (response.success) {
         setIsConfirmation(true);
@@ -122,16 +115,11 @@ export const RegisterProvider = ({ children }) => {
         nextStage,
         previousStage,
         submitForm,
-        isLoading,
-        setIsLoading,
-        errorMessage,
-        resetErrorMessage,
         goToStage,
         setValidateCurrentStage,
         setGetFormData,
         resetFormData,
         isConfirmation,
-        setErrorMessage,
         resetRegister,
         requestNewLink,
       }}
