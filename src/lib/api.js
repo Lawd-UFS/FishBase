@@ -76,3 +76,9 @@ export const getUserProfile = async (token) => {
 
   return response;
 };
+
+export const getProgramming = async () => {
+  const response = await api.get('/programming');
+
+  return response;
+};
