@@ -1,0 +1,30 @@
+.container {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+
+  font-size: 1.125rem;
+  font-weight: 700;
+  font-family: 'Sofia Sans Semi Condensed';
+
+  transition: all 0.2s ease-in-out;
+}
+
+.button:not(.selected) {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.button:not(.selected):hover {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.button.selected {
+  color: white;
+
+  text-decoration: underline;
+}

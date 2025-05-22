@@ -1,0 +1,50 @@
+.options {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  padding: 0.5rem 1rem;
+  border-radius: 2.25rem;
+  background-color: #3e85921f;
+
+  border: 2px solid transparent;
+
+  cursor: pointer;
+
+  transition: all 0.2s ease-in-out;
+}
+
+.option:not(.selected):hover {
+  background-color: #3e85923d;
+}
+
+.selected {
+  background-color: #015de21a;
+  border: 2px solid #1a3c88;
+}
+
+.selected span {
+  color: #15357d;
+}
+
+.selected svg path {
+  fill: #15357d;
+}
+
+.selected svg rect,
+.selected svg line {
+  fill: #15357d;
+}
+
+.selected svg rect {
+  stroke: #015de21a;
+}
+
+.selected svg circle {
+  fill: white;
+}

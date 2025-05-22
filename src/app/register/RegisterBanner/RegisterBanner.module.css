@@ -1,0 +1,21 @@
+.container {
+  background-image: url('/green-banner.png');
+  background-size: cover;
+  background-position: center;
+  background-position-y: 40%;
+}
+
+.header {
+  padding: 2rem 4.5rem;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.content {
+  height: 80%;
+
+  background-image: url('/fish-on-hand.png');
+  background-size: cover;
+}

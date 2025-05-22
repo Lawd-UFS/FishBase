@@ -8,6 +8,6 @@
     "jsx": "react-jsx",
     "resolveJsonModule": true
   },
-  "include": ["src/**/*", "app"],
+  "include": ["src/**/*"],
   "exclude": ["node_modules"]
 }
