@@ -1,6 +1,7 @@
-import pageStyles from '@/app/register/confirmation/page.module.css';
-import styles from '@/app/register/RegisterForm/RegisterForm.module.css';
+import pageStyles from '@/app/(auth)/confirmation/page.module.css';
+import styles from '@/app/(auth)/layout.module.css';
 import Button from '@/components/Button';
+import { useAuthLayout } from '@/contexts/AuthLayoutContext';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useRegister } from '@/contexts/RegisterContext';
 import { useParams, useRouter } from 'next/navigation';
@@ -8,14 +9,17 @@ import { useParams, useRouter } from 'next/navigation';
 export function ExpiredToken() {
   const { texts } = useLanguage();
   const { token } = useParams();
-  const { requestNewLink, isLoading } = useRegister();
+  const { isLoading, setIsLoading } = useAuthLayout();
+  const { requestNewLink } = useRegister();
 
   const router = useRouter();
 
   const handleRequestNewLink = async () => {
+    setIsLoading(true);
     const response = await requestNewLink(token);
 
     if (response.success) {
+      setIsLoading(false);
       router.push(`/register/confirmation`);
     }
   };

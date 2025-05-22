@@ -1,5 +1,5 @@
-import pageStyles from '@/app/register/confirmation/page.module.css';
-import styles from '@/app/register/RegisterForm/RegisterForm.module.css';
+import pageStyles from '@/app/(auth)/confirmation/page.module.css';
+import styles from '@/app/(auth)/layout.module.css';
 import Button from '@/components/Button';
 import { FormattedText } from '@/components/FormattedText';
 import { useLanguage } from '@/contexts/LanguageContext';

@@ -2,14 +2,15 @@
 
 import { Loading } from '@/components/Loading';
 import { useLanguage } from '@/contexts/LanguageContext';
-import styles from '@/app/register/RegisterForm/RegisterForm.module.css';
-import pageStyles from '@/app/register/confirmation/page.module.css';
+import styles from '@/app/(auth)/register/layout.module.css';
+import pageStyles from '@/app/(auth)/register/confirmation/page.module.css';
 import { useRegister } from '@/contexts/RegisterContext';
 import { useRouter } from 'next/navigation';
 import { useEffect } from 'react';
 
 export default function ConfirmationStep() {
   const { isConfirmation } = useRegister();
+
   const { texts } = useLanguage();
 
   const router = useRouter();
@@ -19,6 +20,8 @@ export default function ConfirmationStep() {
       router.push('/register');
     }
   }, [isConfirmation, router]);
+
+  if (!isConfirmation) return null;
 
   return (
     <div className={styles.stage}>

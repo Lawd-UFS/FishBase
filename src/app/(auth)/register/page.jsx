@@ -1,11 +1,13 @@
 'use client';
 
+import { useAuthLayout } from '@/contexts/AuthLayoutContext';
 import { useRegister } from '@/contexts/RegisterContext';
 import { useRouter } from 'next/navigation';
 import { useEffect } from 'react';
 
 export default function RegisterPage() {
-  const { setIsLoading, resetRegister } = useRegister();
+  const { setIsLoading } = useAuthLayout();
+  const { resetRegister } = useRegister();
 
   const router = useRouter();
 

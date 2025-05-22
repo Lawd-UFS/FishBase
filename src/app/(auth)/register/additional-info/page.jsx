@@ -10,9 +10,12 @@ import { createAdditionalInfoSchema } from '@/schemas/register.schema';
 import { useRegister } from '@/contexts/RegisterContext';
 import { useFormStage } from '@/hooks/useFormStage';
 import Button from '@/components/Button';
-import styles from '@/app/register/RegisterForm/RegisterForm.module.css';
+import styles from '@/app/(auth)/register/layout.module.css';
+import { useAuthLayout } from '@/contexts/AuthLayoutContext';
 
 export default function AdditionalInfoStep() {
+  const { setIsLoading } = useAuthLayout();
+
   const {
     formData,
     updateFormData,
@@ -21,6 +24,7 @@ export default function AdditionalInfoStep() {
     nextStage,
     setValidateCurrentStage,
     setGetFormData,
+    isConfirmation,
   } = useRegister();
 
   const router = useRouter();
@@ -37,12 +41,12 @@ export default function AdditionalInfoStep() {
     if (!shouldSubmit) return;
 
     const submit = async () => {
+      setIsLoading(true);
       const response = await submitForm();
 
       if (response.success) {
         setShouldSubmit(false);
         nextStage();
-        router.push('/register/confirmation');
         return;
       }
 
@@ -51,6 +55,13 @@ export default function AdditionalInfoStep() {
 
     submit();
   }, [shouldSubmit]);
+
+  useEffect(() => {
+    if (isConfirmation) {
+      setIsLoading(false);
+      router.push('/register/confirmation');
+    }
+  }, [isConfirmation]);
 
   const defaultValues = {
     institution: formData.institution || '',

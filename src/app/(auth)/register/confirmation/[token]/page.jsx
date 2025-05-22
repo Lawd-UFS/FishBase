@@ -1,11 +1,11 @@
 'use client';
 
-import styles from '@/app/register/RegisterForm/RegisterForm.module.css';
+import styles from '@/app/(auth)/layout.module.css';
 import { useRegister } from '@/contexts/RegisterContext';
 import { confirmRegistration } from '@/lib/api';
 import { useParams } from 'next/navigation';
 import { useEffect, useState } from 'react';
-import { ConfirmationStrategy } from '@/app/register/confirmation/[token]/strategies/ConfirmationStrategy';
+import { ConfirmationStrategy } from '@/app/(auth)/register/confirmation/[token]/strategies/ConfirmationStrategy';
 
 export default function ConfirmationPage() {
   const { token } = useParams();

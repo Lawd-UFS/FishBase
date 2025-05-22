@@ -1,4 +1,4 @@
-import pageStyles from '@/app/register/confirmation/page.module.css';
+import pageStyles from '@/app/(auth)/confirmation/page.module.css';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 export function InvalidToken() {
