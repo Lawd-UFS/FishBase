@@ -1,4 +1,4 @@
-import Header from '../../components/Header';
+import Header from '../homePage/Header/Header';
 import pt from '../../locales/pt.json';
 import en from '../../locales/en.json';
 
