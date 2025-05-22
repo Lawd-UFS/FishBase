@@ -12,7 +12,7 @@ export default function RegisterPage() {
   useEffect(() => {
     setIsLoading(true);
     resetRegister();
-    router.push('/register/account-info');
+    router.replace('/register/account-info');
 
     return () => setIsLoading(false);
   }, [setIsLoading, resetRegister, router]);
