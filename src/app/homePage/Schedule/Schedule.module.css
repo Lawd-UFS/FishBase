@@ -1,0 +1,116 @@
+.background {
+    background: url('/green-background.svg');
+}
+
+
+.subtitleEventInfo {
+    color: #FFC729;
+    font-size: 2.37569rem;
+    font-weight: 400;
+    line-height: 3.71206rem;
+    letter-spacing: -0.095rem;
+
+}
+
+.symposiumDate {
+    grid-column: 4 / -1;
+    transform: translateX(-2rem);
+    ;
+
+}
+
+.symposiumLocation {
+    grid-column: 6 / -1;
+    transform: translate(2.4rem, -1.2rem);
+    ;
+}
+
+
+.content {
+    display: flex;
+    justify-content: space-between;
+    gap: 8.51rem;
+    margin: 4.55rem 7rem 0 9.3rem;
+    min-height: 30rem;
+    padding-bottom: 10rem;
+}
+
+.stickyWrapper {
+    position: sticky;
+    top: 8rem;
+    align-self: flex-start;
+}
+
+.titleSection {
+    color: #FFF;
+    font-size: 3.16763rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 3.06394rem;
+    grid-column: 2 / 4;
+    letter-spacing: -0.12669rem;
+    position: sticky;
+    top: 0;
+}
+
+.scheduleContainer {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.scheduleItems {
+    display: flex;
+    justify-content: space-between;
+    width: 53.6rem;
+}
+
+.dateItem {
+    width: 5rem;
+}
+
+
+.date {
+    color: #FFC729;
+    font-family: "Sofia Sans Extra Condensed";
+    font-size: 1.97975rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 121.962%;
+}
+
+.time {
+    color: #FFF;
+    font-family: "Sofia Sans";
+    font-size: 1.18788rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 121.962%;
+}
+
+.infoItem {
+    color: #FFF;
+    font-family: "Sofia Sans";
+    font-size: 1.68281rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    width: 36rem;
+    margin-bottom: 3.375rem;
+}
+
+.speakers {
+    font-size: 1.4rem;
+    font-weight: 300;
+}
+
+
+.theme {
+    color: #FFF;
+    font-family: "Sofia Sans Condensed";
+    font-size: 1.78175rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    width: 7rem;
+}

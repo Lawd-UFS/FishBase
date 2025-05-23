@@ -1,12 +1,5 @@
-import Header from '../components/Header';
-import Hero from '../components/Hero';
+import HomePage from './homePage/HomePage';
 
-export default function Home() {
-  return (
-    <main className='container'>
-      <div className='background' />
-      <Header />
-      <Hero />
-    </main>
-  );
+export default function App() {
+  return <HomePage />;
 }

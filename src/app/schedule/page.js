@@ -1,9 +1,17 @@
-'use client';
+import Header from '../homePage/Header/Header';
+import pt from '../../locales/pt.json';
+import en from '../../locales/en.json';
 
-import Header from '@/components/Header';
-import { useEffect, useState } from 'react';
-import { getProgramming } from '@/lib/api';
-import { useLanguage } from '@/contexts/LanguageContext';
+export const dynamic = 'force-dynamic';
+
+async function fetchProgramacao() {
+  const res = await fetch('https://fishbase-backend.onrender.com/programming', {
+    cache: 'no-store',
+  });
+  if (!res.ok) return [];
+  const json = await res.json();
+  return json.success ? json.data : [];
+}
 
 // formata ISO para "dd/mm/aaaa hh:mm"
 function formatDateTimeBR(isoString) {
@@ -15,21 +23,12 @@ function formatDateTimeBR(isoString) {
   }).format(date);
 }
 
-export default function ProgramacaoPage() {
-  const [sessions, setSessions] = useState([]);
-  const { texts } = useLanguage();
+export default async function ProgramacaoPage() {
+  const sessoes = await fetchProgramacao();
 
-  useEffect(() => {
-    const getSessions = async () => {
-      const response = await getProgramming();
-
-      if (response.success) {
-        setSessions(response.data);
-      }
-    };
-
-    getSessions();
-  }, []);
+  // idioma fixo por enquanto (pt ou en)
+  const language = 'pt'; // ou 'en'
+  const texts = language === 'pt' ? pt : en;
 
   return (
     <main className='container'>
@@ -38,16 +37,16 @@ export default function ProgramacaoPage() {
 
       <section className='schedule-section'>
         <div className='cards-container'>
-          {sessions.length > 0 ? (
-            sessions.map((session, i) => {
-              const dateBR = formatDateTimeBR(session.dateTime);
+          {sessoes.length > 0 ? (
+            sessoes.map((sessao, i) => {
+              const dateBR = formatDateTimeBR(sessao.dateTime);
               return (
-                <div key={session.id ?? i} className='event-card'>
+                <div key={sessao.id ?? i} className='event-card'>
                   <div className='card-top-bar' />
                   <div className='card-body'>
-                    <div className='title'>{session.title}</div>
-                    <div className='speaker'>{session.speaker || '—'}</div>
-                    <div className='theme'>{session.theme}</div>
+                    <div className='title'>{sessao.title}</div>
+                    <div className='speaker'>{sessao.speaker || '—'}</div>
+                    <div className='theme'>{sessao.theme}</div>
                   </div>
                   <div className='date-pill'>{dateBR}</div>
                 </div>

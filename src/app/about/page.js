@@ -11,7 +11,11 @@ export default function SobrePage() {
         <Header />
         <div className='about-content'>
           <div className='about-content-container-1'>
-            <img src='/Mapa fishbase.png' alt='Imagem Exemplo' />
+            <img
+              src='Mapa fishbase.png
+            '
+              alt='Imagem Exemplo'
+            />
             <div className='text-container'>
               <h1>{texts.aboutEvent.title[0]}</h1>
               <p>{texts.aboutEvent.description[0]}</p>
