@@ -2,7 +2,7 @@
   "navbar": {
     "aboutEvent": "About the event",
     "programming": "Schedule",
-    "register": "Register"
+    "register": "Sign Up"
   },
   "hero": {
     "registerButton": "Register →",
@@ -13,53 +13,20 @@
   },
   "register": {
     "title": "Registration",
-    "steps": ["Account Information", "Additional Data", "Confirmation"],
-    "confirmation": {
-      "success": {
-        "title": "Registration confirmed successfully!",
-        "description": "Congratulations! Your registration for {eventName} has been successfully completed. You can now log in and access the participant area.",
-        "eventName": "23rd FishBase & SeaLifeBase Symposium"
-      },
-      "error": {
-        "unknown": {
-          "title": "Error confirming registration",
-          "description": "An unknown error occurred while confirming your registration. Please try again later. If the error persists, contact our organization."
-        },
-        "invalidToken": {
-          "title": "Error confirming registration",
-          "description": "Confirm your registration with the link sent to your email."
-        },
-        "expiredToken": {
-          "title": "Error confirming registration",
-          "description": "The confirmation link has expired. Click the button below to request a new confirmation link.",
-          "guide": "The new link will be sent to the email you provided in the registration form."
-        },
-        "enrollmentNotFound": {
-          "title": "Enrollment not found",
-          "description": "The enrollment was not found. Please register through the registration form.",
-          "guide": "If you have already registered, please contact our organization."
-        }
-      },
-      "title": "Confirm your registration",
-      "description": "We sent you an email with a confirmation link. Click the link to finish the registration.",
-      "warning": {
-        "title": "Attention:",
-        "list": [
-          "Your registration will only be completed after the email is confirmed.",
-          "Any questions, contact our organization."
-        ]
-      }
-    },
+    "steps": [
+      "Account Information",
+      "Additional Data",
+      "Confirmation"
+    ],
     "fields": {
       "firstName": "First Name",
       "lastName": "Last Name",
       "email": "Email",
       "password": "Password",
-      "confirmPassword": "Confirm Password",
       "gender": "Gender",
       "city": "City",
       "state": "State",
-      "country": "Country of origin",
+      "country": "Country",
       "institution": "Institution",
       "modality": "Modality",
       "language": "Language"
@@ -75,16 +42,14 @@
       "institution": "University of Example"
     },
     "genderOptions": {
-      "placeholder": "Select an option",
       "female": "Female",
       "male": "Male",
       "transgender": "Transgender",
-      "agender": "Agender",
-      "non-binary": "Non-binary",
-      "not declared": "Not declared"
+      "other": "Other",
+      "select": "Select"
     },
     "modalityOptions": {
-      "in-person": "In-person",
+      "inPerson": "In-person",
       "remote": "Remote"
     },
     "languageOptions": {
@@ -92,60 +57,10 @@
       "en": "English"
     },
     "buttons": {
-      "back": "Back",
-      "continue": "Continue",
-      "login": "Login",
-      "requestNewLink": "Request new link",
-      "register": "Register"
+      "back": "◀ Back",
+      "continue": "Continue ▶"
     },
     "messages": {
-      "firstName": {
-        "required": "First name is required",
-        "minLength": "The first name must be at least 1 character long."
-      },
-      "lastName": {
-        "required": "Last name is required",
-        "minLength": "The last name must be at least 1 character long."
-      },
-      "email": {
-        "required": "Email is required",
-        "invalid": "Invalid email."
-      },
-      "password": {
-        "required": "Password is required",
-        "minLength": "The password must be at least 6 characters long.",
-        "strong": "The password must contain at least one uppercase letter, one lowercase letter, one number and one symbol."
-      },
-      "confirmPassword": {
-        "required": "Confirm password is required",
-        "minLength": "The password must be at least 6 characters long.",
-        "notMatch": "The passwords do not match."
-      },
-      "gender": {
-        "required": "Gender is required"
-      },
-      "modality": {
-        "required": "Modality is required"
-      },
-      "institution": {
-        "required": "Institution is required",
-        "minLength": "The institution must be at least 2 characters long."
-      },
-      "country": {
-        "required": "Country is required",
-        "minLength": "The country must be at least 2 characters long."
-      },
-      "state": {
-        "required": "State is required",
-        "minLength": "The state must be at least 2 characters long."
-      },
-      "city": {
-        "required": "City is required",
-        "minLength": "The city must be at least 2 characters long."
-      },
-      "language": {
-        "required": "Language is required"
-      },
       "success": "🎉 Registration successful! Check your email for confirmation.",
       "genericError": "Unknown error",
       "networkError": "Network error, please try again.",
@@ -174,24 +89,5 @@
     "hotelSugestion": "Know where to stay",
     "agencySugestion": "Make a travel plan",
     "adress": "Address"
-<<<<<<< HEAD
-=======
-  },
-  "sidebar": {
-    "menu": {
-      "hotels": "Hotels",
-      "transmission": "Stream",
-      "certificates": "Certificates",
-      "abstracts": "Abstracts"
-    },
-    "extras": {
-      "profile": "Profile",
-      "help": "Help"
-    },
-    "footer": {
-      "exit": "Exit"
-    },
-    "notAvailable": "(not available)"
->>>>>>> us001-realizar-cadastro
   }
 }

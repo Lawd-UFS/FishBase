@@ -1,10 +1,10 @@
 'use client';
 
-import { createContext, useContext, useState, useEffect } from 'react';
-import pt from '@/locales/pt.json';
-import en from '@/locales/en.json';
+import React, { createContext, useContext, useState, useEffect } from 'react';
+import pt from '../locales/pt.json';
+import en from '../locales/en.json';
 
-const LanguageContext = createContext(null);
+const LanguageContext = createContext();
 
 const languages = { pt, en };
 
@@ -22,9 +22,7 @@ export const LanguageProvider = ({ children }) => {
   };
 
   return (
-    <LanguageContext.Provider
-      value={{ texts: languages[language], language, toggleLanguage }}
-    >
+    <LanguageContext.Provider value={{ texts: languages[language], language, toggleLanguage }}>
       {children}
     </LanguageContext.Provider>
   );
