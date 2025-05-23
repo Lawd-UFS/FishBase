@@ -5,7 +5,7 @@ const api = {
     const response = await fetch(`${API_URL}/${path}`, {
       method: 'POST',
       body: JSON.stringify(data),
-      headers: { ...headers },
+      headers: { 'Content-Type': 'application/json', ...headers },
     });
 
     return await response.json();
@@ -14,7 +14,7 @@ const api = {
     const response = await fetch(`${API_URL}/${path}`, {
       method: 'PUT',
       body: JSON.stringify(data),
-      headers: { ...headers },
+      headers: { 'Content-Type': 'application/json', ...headers },
     });
 
     return await response.json();
@@ -26,43 +26,23 @@ const api = {
 };
 
 export const registerParticipant = async (data) => {
-  const response = await api.post('/participants/register', data, {
-    headers: {
-      'Content-Type': 'application/json',
-    },
-  });
+  const response = await api.post('/participants/register', data);
 
   return response;
 };
 
 export const confirmRegistration = async (token) => {
-  const response = await api.put(
-    '/participants/confirm-enrollment',
-    {
-      token,
-    },
-    {
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    }
-  );
+  const response = await api.put('/participants/confirm-enrollment', {
+    token,
+  });
 
   return response;
 };
 
 export const resendConfirmationLink = async (token) => {
-  const response = await api.post(
-    '/participants/resend-confirmation-email',
-    {
-      token,
-    },
-    {
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    }
-  );
+  const response = await api.post('/participants/resend-confirmation-email', {
+    token,
+  });
 
   return response;
 };
@@ -84,15 +64,7 @@ export const getProgramming = async () => {
 };
 
 export const login = async (email, password) => {
-  const response = await api.post(
-    '/auth/login',
-    { email, password },
-    {
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    }
-  );
+  const response = await api.post('/auth/login', { email, password });
 
   return response;
 };
