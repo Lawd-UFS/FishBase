@@ -6,7 +6,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { Form } from '@/components/Form';
 import PasswordIcon from '@/components/PasswordIcon';
 import formStyles from '@/components/Form/Form.module.css';
-import styles from '@/app/(auth)/register/layout.module.css';
+import styles from '@/app/(auth)/layout.module.css';
 import { useEffect, useMemo, useState } from 'react';
 import { useRegister } from '@/contexts/RegisterContext';
 import { useFormStage } from '@/hooks/useFormStage';

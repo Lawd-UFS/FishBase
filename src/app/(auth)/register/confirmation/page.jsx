@@ -2,7 +2,7 @@
 
 import { Loading } from '@/components/Loading';
 import { useLanguage } from '@/contexts/LanguageContext';
-import styles from '@/app/(auth)/register/layout.module.css';
+import styles from '@/app/(auth)/layout.module.css';
 import pageStyles from '@/app/(auth)/register/confirmation/page.module.css';
 import { useRegister } from '@/contexts/RegisterContext';
 import { useRouter } from 'next/navigation';

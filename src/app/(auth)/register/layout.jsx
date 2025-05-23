@@ -1,6 +1,7 @@
 'use client';
 
-import styles from '@/app/(auth)/register/layout.module.css';
+import styles from '@/app/(auth)/layout.module.css';
+import registerStyles from '@/app/(auth)/register/layout.module.css';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { RegisterProvider } from '@/contexts/RegisterContext';
 
@@ -36,12 +37,12 @@ function RegisterPageLayout({ children }) {
     <>
       <header className={styles.header}>
         <h1>{texts.register.title}</h1>
-        <nav className={styles.nav}>
+        <nav className={registerStyles.nav}>
           <ul>
             {stages.map((stage, index) => (
               <li
                 key={stage}
-                className={`${styles.navItem} ${index === currentStage ? styles.active : ''}`}
+                className={`${registerStyles.navItem} ${index === currentStage ? registerStyles.active : ''}`}
                 onClick={() => handleStageClick(index)}
               >
                 {index === currentStage ? (

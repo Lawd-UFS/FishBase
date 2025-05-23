@@ -37,3 +37,41 @@
   margin: 0 auto;
   margin-bottom: 4rem;
 }
+
+.header {
+  width: 100%;
+  padding: 0 3rem;
+
+  margin-bottom: 2rem;
+}
+
+.header h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--primary-blue);
+
+  width: fit-content;
+  margin: 0 auto;
+  margin-bottom: 1.5rem;
+}
+
+.form {
+  width: 25.75rem;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: space-between;
+}
+
+.stage {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+}
