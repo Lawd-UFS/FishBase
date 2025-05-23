@@ -11,11 +11,12 @@ import { useFormStage } from '@/hooks/useFormStage';
 import { AtSign, Lock } from 'lucide-react';
 import PasswordIcon from '@/components/PasswordIcon';
 import Button from '@/components/Button';
-import { login } from '@/lib/api';
 import { useRouter } from 'next/navigation';
+import { useAuth } from '@/contexts/AuthContext';
 
 export default function LoginPage() {
   const { setBannerImage, setIsLoading, setErrorMessage } = useAuthLayout();
+  const { login } = useAuth();
   const { texts, language } = useLanguage();
 
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
