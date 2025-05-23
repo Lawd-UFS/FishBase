@@ -1,8 +1,24 @@
+import { cookies } from 'next/headers';
 import { HttpClient, HttpMethods } from '@/http/HttpClient';
 import { NextResponse } from 'next/server';
 
 const API_URL = process.env.API_URL;
 const httpClient = new HttpClient(API_URL);
+
+function setCookies(response, nextResponse) {
+  const cookies = response.headers.get('set-cookie');
+
+  if (cookies) {
+    const cookieArray = cookies.split(',');
+
+    cookieArray.forEach((cookie) => {
+      const [pair] = cookie.split(';');
+      const [name, value] = pair.split('=');
+
+      nextResponse.cookies.set(name.trim(), value.trim(), { httpOnly: true });
+    });
+  }
+}
 
 async function createHeader(request) {
   const headersObj = {};
@@ -10,7 +26,15 @@ async function createHeader(request) {
     headersObj[key] = value;
   }
 
+  const cookieStore = await cookies();
+  const cookieHeader = cookieStore
+    .getAll()
+    .map(({ name, value }) => `${name}=${value}`)
+    .join('; ');
 
+  if (cookieHeader) {
+    headersObj['cookie'] = cookieHeader;
+  }
 
   return headersObj;
 }
@@ -37,6 +61,8 @@ async function proxyRequest(method, request, params) {
     const nextResponse = NextResponse.json(body, {
       status: response.status,
     });
+
+    setCookies(response, nextResponse);
 
     return nextResponse;
   } catch (error) {
