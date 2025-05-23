@@ -164,5 +164,42 @@
       "step1Error": "Please complete all additional data."
     },
     "navBack": "Back"
+  },
+  "profile": {
+    "title": "Profile",
+    "subtitles": {
+      "personal": "Contact & Personal Data",
+      "additional": "Additional Data"
+    },
+    "fields": {
+      "name": "Name",
+      "specialNeeds": "Has special needs",
+      "format": "Format"
+    },
+    "formats": {
+      "inPerson": "In-person",
+      "remote": "Remote"
+    }
+  },
+  "hotels": {
+    "hotelSugestion": "Know where to stay",
+    "agencySugestion": "Make a travel plan",
+    "adress": "Address"
+  },
+  "sidebar": {
+    "menu": {
+      "hotels": "Hotels",
+      "transmission": "Stream",
+      "certificates": "Certificates",
+      "abstracts": "Abstracts"
+    },
+    "extras": {
+      "profile": "Profile",
+      "help": "Help"
+    },
+    "footer": {
+      "exit": "Exit"
+    },
+    "notAvailable": "(not available)"
   }
 }

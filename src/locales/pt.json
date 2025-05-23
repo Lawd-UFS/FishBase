@@ -164,5 +164,26 @@
       "step1Error": "Preencha todos os dados complementares."
     },
     "navBack": "Voltar"
+  },
+  "hotels": {
+    "hotelSugestion": "Saiba onde se hospedar",
+    "agencySugestion": "Faça um plano de viagem",
+    "adress": "Endereço"
+  },
+  "sidebar": {
+    "menu": {
+      "hotels": "Hotéis",
+      "transmission": "Transmissão",
+      "certificates": "Certificados",
+      "abstracts": "Resumos"
+    },
+    "extras": {
+      "profile": "Perfil",
+      "help": "Ajuda"
+    },
+    "footer": {
+      "exit": "Sair"
+    },
+    "notAvailable": "(não liberados)"
   }
 }
