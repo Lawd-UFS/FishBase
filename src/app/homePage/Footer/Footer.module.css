@@ -3,16 +3,31 @@
 }
 
 .section {
-    padding-top: 12rem;
+    padding-top: 6rem;
+}
+
+.spacing {
+    margin-inline: 10rem 6rem;
+    display: flex;
+    flex-direction: column;
+    gap: 4.1875rem;
+
 }
 
 
-.container {
+.header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    align-self: stretch;
 }
+
+.footer {
+    display: flex;
+    justify-content: start;
+    gap: 16.5rem;
+    align-items: start;
+}
+
 
 
 .headline {
@@ -21,7 +36,6 @@
     text-align: start;
     font-style: normal;
     line-height: 4rem;
-    margin-top: 8rem;
     width: 30.5rem;
     font-size: 2.49638rem;
     line-height: 2.3125rem;
@@ -69,28 +83,45 @@
 
 .subtitleContainer {
     display: flex;
-    width: 21.125rem;
+    width: fit-content;
     flex-direction: column;
     align-items: flex-start;
-    gap: 1.3125rem;
+    gap: 1.3rem;
 }
 
 
-.subtitle {}
+.subtitle {
+    color: #FFF;
+    font-family: "Sofia Sans Semi Condensed";
+    font-size: 1.78175rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: -0.07125rem;
+}
 
-.subitemContainer {
+.subitem {
     display: flex;
     align-items: flex-end;
     gap: 0.75rem;
     align-self: stretch;
-}
-
-.subitem {
     color: #FFF;
     font-family: "Sofia Sans Semi Condensed";
     font-size: 1.125rem;
     font-style: normal;
     font-weight: 400;
     line-height: 120%;
-    /* 1.35rem */
+
+}
+
+.lawd {
+    position: absolute;
+    bottom: 6rem;
+    left: 10rem;
+}
+
+.link {
+    color: #FFF;
+    text-decoration-thickness: 5.5%;
+    text-underline-offset: 25%
 }
