@@ -6,11 +6,12 @@ import { confirmRegistration } from '@/lib/api';
 import { useParams } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { ConfirmationStrategy } from '@/app/(auth)/register/confirmation/[token]/strategies/ConfirmationStrategy';
+import { useAuthLayout } from '@/contexts/AuthLayoutContext';
 
 export default function ConfirmationPage() {
   const { token } = useParams();
-  const { goToStage, isLoading, setIsLoading, resetErrorMessage } =
-    useRegister();
+  const { isLoading, setIsLoading, resetErrorMessage } = useAuthLayout();
+  const { goToStage } = useRegister();
 
   const [strategy, setStrategy] = useState(null);
 
