@@ -1,8 +1,7 @@
 /* Hero */
 
 .backgroundHero {
-
-    background: url('/background-hero.svg');
+    background: url('/hero-background.svg');
     background-size: cover;
     height: 100%;
 }

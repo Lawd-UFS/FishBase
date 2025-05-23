@@ -4,6 +4,7 @@ import Map from './Map/Map';
 import styles from '@/app/homePage/HomePage.module.css';
 import Schedule from './Schedule/Schedule';
 import { fetchSchedule } from './Schedule/fetchSchedule';
+import Footer from './Footer/Footer';
 
 export default async function HomePage() {
   const schedule = await fetchSchedule();
@@ -13,6 +14,7 @@ export default async function HomePage() {
       <Hero />
       <Schedule schedule={schedule} />
       <Map />
+      <Footer />
     </main>
   );
 }

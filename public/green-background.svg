@@ -1,6 +1,6 @@
 <svg width="1520" height="810" viewBox="0 0 1520 810" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g filter="url(#filter0_n_475_126)">
-<rect width="1520" height="810" fill="url(#paint0_linear_475_126)"/>
+<rect width="1520" height="810" fill="#378137"/>
 </g>
 <defs>
 <filter id="filter0_n_475_126" x="0" y="0" width="1520" height="810" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
@@ -22,8 +22,5 @@
 <feMergeNode in="color1" />
 </feMerge>
 </filter>
-<linearGradient id="paint0_linear_475_126" x1="760" y1="0" x2="760" y2="810" gradientUnits="userSpaceOnUse">
-<stop offset="0.735577" stop-color="#3C7015"/>
-</linearGradient>
 </defs>
 </svg>

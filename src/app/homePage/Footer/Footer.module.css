@@ -1,0 +1,96 @@
+.background {
+    background: url('/green-background.svg');
+}
+
+.section {
+    padding-top: 12rem;
+}
+
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-self: stretch;
+}
+
+
+.headline {
+    font-family: "Sulphur Point";
+    color: #FFF8E4;
+    text-align: start;
+    font-style: normal;
+    line-height: 4rem;
+    margin-top: 8rem;
+    width: 30.5rem;
+    font-size: 2.49638rem;
+    line-height: 2.3125rem;
+}
+
+
+.headline h1 {
+    align-self: stretch;
+    font-size: 2.49638rem;
+
+    font-weight: 200;
+    font-family: "Inria Sans";
+}
+
+
+.headline h2 {
+    font-size: 2.49638rem;
+    font-weight: 700;
+
+}
+
+.highlight {
+    font-family: "Sulphur Point";
+    font-weight: 600;
+    color: #FFBF00;
+    margin-right: 0.8rem;
+}
+
+.logosFishbase {
+    display: flex;
+    width: 41.73681rem;
+    padding: 0.52631rem;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    row-gap: 4.36844rem;
+    flex-wrap: wrap;
+}
+
+.logosSuport {
+    display: flex;
+    align-items: center;
+    gap: 3.5rem;
+}
+
+.subtitleContainer {
+    display: flex;
+    width: 21.125rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.3125rem;
+}
+
+
+.subtitle {}
+
+.subitemContainer {
+    display: flex;
+    align-items: flex-end;
+    gap: 0.75rem;
+    align-self: stretch;
+}
+
+.subitem {
+    color: #FFF;
+    font-family: "Sofia Sans Semi Condensed";
+    font-size: 1.125rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+    /* 1.35rem */
+}
