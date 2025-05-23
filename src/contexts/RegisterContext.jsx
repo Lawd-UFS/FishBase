@@ -1,6 +1,6 @@
 'use client';
 
-import { registerParticipant } from '@/lib/api';
+import { registerParticipant, resendConfirmationLink } from '@/lib/api';
 import { createContext, useCallback, useContext, useState } from 'react';
 
 const RegisterContext = createContext(null);
@@ -20,6 +20,15 @@ export const RegisterProvider = ({ children }) => {
 
   const resetFormData = useCallback(() => {
     setFormData({});
+  }, []);
+
+  const resetRegister = useCallback(() => {
+    setCurrentStage(0);
+    setValidateCurrentStage(null);
+    setGetFormData(null);
+    setIsConfirmation(false);
+    setErrorMessage(null);
+    resetFormData();
   }, []);
 
   const nextStage = useCallback(async () => {
@@ -85,6 +94,25 @@ export const RegisterProvider = ({ children }) => {
     return response;
   }, [formData]);
 
+  const requestNewLink = useCallback(
+    async (token) => {
+      setIsLoading(true);
+      const response = await resendConfirmationLink(token);
+      setIsLoading(false);
+
+      if (response.success) {
+        setIsConfirmation(true);
+        resetErrorMessage();
+        resetFormData();
+      } else {
+        setErrorMessage(response.error.message);
+      }
+
+      return response;
+    },
+    [formData]
+  );
+
   return (
     <RegisterContext.Provider
       value={{
@@ -103,6 +131,9 @@ export const RegisterProvider = ({ children }) => {
         setGetFormData,
         resetFormData,
         isConfirmation,
+        setErrorMessage,
+        resetRegister,
+        requestNewLink,
       }}
     >
       {children}

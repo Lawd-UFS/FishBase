@@ -37,7 +37,7 @@ const sulphur = Sulphur_Point({
 
 const inria = Inria_Sans({
   subsets: ['latin'],
-  weight: ['300'],
+  weight: ['300', '400', '700'],
 });
 
 export const metadata = {

@@ -37,9 +37,6 @@ body {
   z-index: -1;
 }
 
-
-
-
 /* ===== Registros & Formulários ===== */
 
 .registration-nav {
@@ -331,7 +328,6 @@ body {
   padding: 2rem;
 }
 
-
 .text-container {
   width: 100%;
   height: fit-content;
@@ -342,6 +338,7 @@ body {
   background-color: #f2eef2;
   border-radius: 20px;
   border: solid 4px #064E3B;
+  border: solid 4px #064e3b;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
   align-items: center;
   font-family: 'Sofia Sans', sans-serif;
@@ -352,7 +349,7 @@ body {
   font-size: 3rem;
   font-weight: 600;
   margin-bottom: 1rem;
-  color: #064E3B;
+  color: #064e3b;
 }
 
 .text-container p {
@@ -365,19 +362,22 @@ body {
   border-radius: 20px;
   font-family: 'sofia sans', sans-serif;
   font-size: 30px;
-  background: linear-gradient(to left, #f2eef2 50%, #064E3B 50%);
+  background: linear-gradient(to left, #f2eef2 50%, #064e3b 50%);
   background-size: 200% 100%;
   background-position: right bottom;
-  color: #064E3B;
+  color: #064e3b;
   font-weight: 600;
   border: solid 4px #16316a;
   width: 100%;
   cursor: pointer;
-  transition: background-position 0.4s, color 0.2s, border-color 0.2s;
+  transition:
+    background-position 0.4s,
+    color 0.2s,
+    border-color 0.2s;
 }
 
 .fishbase-button:hover {
   background-position: left bottom;
-  color: #FFD700;
-  border-color: #FFD700;
+  color: #ffd700;
+  border-color: #ffd700;
 }

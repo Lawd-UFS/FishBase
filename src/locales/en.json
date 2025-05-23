@@ -25,6 +25,31 @@
     "title": "Registration",
     "steps": ["Account Information", "Additional Data", "Confirmation"],
     "confirmation": {
+      "success": {
+        "title": "Registration confirmed successfully!",
+        "description": "Congratulations! Your registration for {eventName} has been successfully completed. You can now log in and access the participant area.",
+        "eventName": "23rd FishBase & SeaLifeBase Symposium"
+      },
+      "error": {
+        "unknown": {
+          "title": "Error confirming registration",
+          "description": "An unknown error occurred while confirming your registration. Please try again later. If the error persists, contact our organization."
+        },
+        "invalidToken": {
+          "title": "Error confirming registration",
+          "description": "Confirm your registration with the link sent to your email."
+        },
+        "expiredToken": {
+          "title": "Error confirming registration",
+          "description": "The confirmation link has expired. Click the button below to request a new confirmation link.",
+          "guide": "The new link will be sent to the email you provided in the registration form."
+        },
+        "enrollmentNotFound": {
+          "title": "Enrollment not found",
+          "description": "The enrollment was not found. Please register through the registration form.",
+          "guide": "If you have already registered, please contact our organization."
+        }
+      },
       "title": "Confirm your registration",
       "description": "We sent you an email with a confirmation link. Click the link to finish the registration.",
       "warning": {
@@ -78,7 +103,10 @@
     },
     "buttons": {
       "back": "Back",
-      "continue": "Continue"
+      "continue": "Continue",
+      "login": "Login",
+      "requestNewLink": "Request new link",
+      "register": "Register"
     },
     "messages": {
       "firstName": {

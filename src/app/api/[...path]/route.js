@@ -19,7 +19,10 @@ const api = {
     const response = await fetch(`${API_URL}/${path}`, {
       method: 'PUT',
       body: JSON.stringify(data),
-      headers: { ...headers },
+      headers: {
+        'Content-Type': 'application/json',
+        ...headers,
+      },
     });
 
     return await response.json();
@@ -58,24 +61,19 @@ export async function POST(request, { params }) {
   return executeRequest(
     async () =>
       await api.post(path, data, {
-        headers: {
-          'Content-Type': 'application/json',
-          ...request.headers,
-        },
+        ...request.headers,
       })
   );
 }
 
 export async function PUT(request, { params }) {
   const path = await getPath(params);
+  const data = await request.json();
 
   return executeRequest(
     async () =>
-      await api.put(path, request.body, {
-        headers: {
-          'Content-Type': 'application/json',
-          ...request.headers,
-        },
+      await api.put(path, data, {
+        ...request.headers,
       })
   );
 }

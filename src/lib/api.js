@@ -34,3 +34,51 @@ export const registerParticipant = async (data) => {
 
   return response;
 };
+
+export const confirmRegistration = async (token) => {
+  const response = await api.put(
+    '/participants/confirm-enrollment',
+    {
+      token,
+    },
+    {
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    }
+  );
+
+  return response;
+};
+
+export const resendConfirmationLink = async (token) => {
+  const response = await api.post(
+    '/participants/resend-confirmation-email',
+    {
+      token,
+    },
+    {
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    }
+  );
+
+  return response;
+};
+
+export const getUserProfile = async (token) => {
+  const response = await api.get('/participants/profile', {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  });
+
+  return response;
+};
+
+export const getProgramming = async () => {
+  const response = await api.get('/programming');
+
+  return response;
+};
