@@ -6,8 +6,11 @@ import React, { useState, useEffect } from 'react';
 import { getUserProfile } from '@/lib/api';
 
 import './User.css';
+import { useAuth } from '@/contexts/AuthContext';
 
 function User() {
+  const { token } = useAuth();
+
   const [userData, setUserData] = useState({
     name: '',
     email: '',
@@ -18,9 +21,11 @@ function User() {
   const [selectedSection, setSelectedSection] = useState('dados'); // default selected
 
   useEffect(() => {
+    if (!token) return;
+
     const fetchUserData = async () => {
       try {
-        const response = await getUserProfile('token');
+        const response = await getUserProfile(token);
 
         if (response.success) {
           const { data } = response;
@@ -45,7 +50,7 @@ function User() {
     };
 
     fetchUserData();
-  }, []);
+  }, [token]);
 
   return (
     <div className='Container'>
