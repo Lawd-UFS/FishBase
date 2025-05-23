@@ -51,6 +51,7 @@ export default function AdditionalInfoStep() {
       }
 
       setShouldSubmit(false);
+      setIsLoading(false);
     };
 
     submit();
