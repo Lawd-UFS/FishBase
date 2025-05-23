@@ -1,7 +1,23 @@
 const API_URL = '/api';
 
 const api = {
-  post: async (path, data, headers) => {
+  extractOptions: (optionsObject, optionsToExtract) => {
+    const extractedOptions = {};
+
+    for (const option of optionsToExtract) {
+      if (optionsObject[option]) {
+        extractedOptions[option] = optionsObject[option];
+      } else {
+        extractedOptions[option] = {};
+      }
+    }
+
+    return extractedOptions;
+  },
+
+  post: async (path, data, options = {}) => {
+    const { headers } = api.extractOptions(options, ['headers']);
+
     const response = await fetch(`${API_URL}/${path}`, {
       method: 'POST',
       body: JSON.stringify(data),
@@ -10,7 +26,10 @@ const api = {
 
     return await response.json();
   },
-  put: async (path, data, headers) => {
+
+  put: async (path, data, options = {}) => {
+    const { headers } = api.extractOptions(options, ['headers']);
+
     const response = await fetch(`${API_URL}/${path}`, {
       method: 'PUT',
       body: JSON.stringify(data),
@@ -19,7 +38,10 @@ const api = {
 
     return await response.json();
   },
-  get: async (path, headers) => {
+
+  get: async (path, options = {}) => {
+    const { headers } = api.extractOptions(options, ['headers']);
+
     const response = await fetch(`${API_URL}/${path}`, { headers });
     return await response.json();
   },
