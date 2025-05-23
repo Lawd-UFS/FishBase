@@ -2,7 +2,7 @@
   "navbar": {
     "aboutEvent": "Sobre o evento",
     "programming": "Programação",
-    "register": "Registro"
+    "register": "Inscreva-se"
   },
   "hero": {
     "registerButton": "Inscreva-se →",
@@ -13,20 +13,53 @@
   },
   "register": {
     "title": "Inscrição",
-    "steps": [
-      "Informações de conta",
-      "Dados Complementares",
-      "Confirmação"
-    ],
+    "steps": ["Informações de conta", "Dados Complementares", "Confirmação"],
+    "confirmation": {
+      "success": {
+        "title": "Inscrição confirmada com sucesso!",
+        "description": "Parabéns! Sua inscrição no {eventName} foi realizada com sucesso. Você já pode fazer o login e acessar a área do participante.",
+        "eventName": "23º Simpósio FishBase e SeaLifeBase"
+      },
+      "error": {
+        "unknown": {
+          "title": "Erro ao confirmar inscrição",
+          "description": "Ocorreu um erro ao confirmar sua inscrição. Por favor, tente novamente mais tarde. Se o erro persistir, entre em contato com nossa organização."
+        },
+        "invalidToken": {
+          "title": "Erro ao confirmar inscrição",
+          "description": "Confirme a sua inscrição com o link enviado para o seu e-mail."
+        },
+        "expiredToken": {
+          "title": "Erro ao confirmar inscrição",
+          "description": "O link de confirmação expirou. Clique no botão abaixo para solicitar um novo link de confirmação.",
+          "guide": "O novo link será enviado para o e-mail informado no formulário de inscrição."
+        },
+        "enrollmentNotFound": {
+          "title": "Inscrição não encontrada",
+          "description": "A inscrição não foi encontrada. Realize a inscrição através do formulário de inscrição.",
+          "guide": "Se você já realizou a inscrição, por favor, entre em contato com nossa organização."
+        }
+      },
+      "title": "Confirme sua inscrição",
+      "description": "Enviamos para o seu email um link de confirmação. Clique no link para finalizar a inscrição.",
+      "warning": {
+        "title": "Atenção:",
+        "list": [
+          "Sua inscrição só será concluída após a confirmação do e-mail.",
+          "Qualquer dúvida, entre em contato com nossa organização."
+        ]
+      }
+    },
     "fields": {
       "firstName": "Nome",
       "lastName": "Sobrenome",
       "email": "Email",
       "password": "Senha",
+      "confirmPassword": "Confirmar senha",
       "gender": "Gênero",
       "city": "Cidade",
       "state": "Estado",
-      "country": "País",
+      "country": "País de origem",
       "institution": "Instituição",
       "modality": "Modalidade",
       "language": "Idioma"
@@ -42,14 +75,16 @@
       "institution": "Universidade Federal de Sergipe"
     },
     "genderOptions": {
+      "placeholder": "Selecione uma opção",
       "female": "Feminino",
       "male": "Masculino",
       "transgender": "Transgênero",
-      "other": "Outro",
-      "select": "Selecione"
+      "agender": "Agênero",
+      "non-binary": "Não binário",
+      "not declared": "Não declarado"
     },
     "modalityOptions": {
-      "inPerson": "Presencial",
+      "in-person": "Presencial",
       "remote": "Remoto"
     },
     "languageOptions": {
@@ -57,11 +92,61 @@
       "en": "Inglês"
     },
     "buttons": {
-      "back": "◀ Voltar",
-      "continue": "Continuar ▶"
+      "back": "Voltar",
+      "continue": "Continuar",
+      "login": "Fazer login",
+      "requestNewLink": "Solicitar novo link",
+      "register": "Inscreva-se"
     },
     "messages": {
       "success": "🎉 Inscrição realizada com sucesso! Verifique seu email para confirmação.",
+      "firstName": {
+        "required": "Nome é obrigatório",
+        "minLength": "O nome deve ter pelo menos 1 caracter."
+      },
+      "lastName": {
+        "required": "Sobrenome é obrigatório",
+        "minLength": "O sobrenome deve ter pelo menos 1 caracter."
+      },
+      "email": {
+        "required": "Email é obrigatório",
+        "invalid": "Email inválido."
+      },
+      "password": {
+        "required": "Senha é obrigatória",
+        "minLength": "A senha deve ter pelo menos 6 caracteres.",
+        "strong": "A senha deve conter pelo menos uma letra maiúscula, uma letra minúscula, um número e um símbolo."
+      },
+      "confirmPassword": {
+        "required": "Confirmar senha é obrigatório",
+        "minLength": "A senha deve ter pelo menos 6 caracteres.",
+        "notMatch": "As senhas não coincidem."
+      },
+      "gender": {
+        "required": "Gênero é obrigatório"
+      },
+      "modality": {
+        "required": "Modalidade é obrigatório"
+      },
+      "institution": {
+        "required": "Instituição é obrigatório",
+        "minLength": "A instituição deve ter pelo menos 2 caracteres."
+      },
+      "country": {
+        "required": "País é obrigatório",
+        "minLength": "O país deve ter pelo menos 2 caracteres."
+      },
+      "state": {
+        "required": "Estado é obrigatório",
+        "minLength": "O estado deve ter pelo menos 2 caracteres."
+      },
+      "city": {
+        "required": "Cidade é obrigatório",
+        "minLength": "A cidade deve ter pelo menos 2 caracteres."
+      },
+      "language": {
+        "required": "Idioma é obrigatório"
+      },
       "genericError": "❌ Erro desconhecido",
       "networkError": "Erro de rede, tente novamente.",
       "step0Error": "Preencha nome, sobrenome, email e senha.",
@@ -69,6 +154,7 @@
     },
     "navBack": "Voltar"
   },
+<<<<<<< HEAD
   "profile": {
     "title": "Perfil",
     "subtitles": {
@@ -85,9 +171,30 @@
       "remote": "Remoto"
     }
   },
+=======
+>>>>>>> us001-realizar-cadastro
   "hotels": {
     "hotelSugestion": "Saiba onde se hospedar",
     "agencySugestion": "Faça um plano de viagem",
     "adress": "Endereço"
+<<<<<<< HEAD
+=======
+  },
+  "sidebar": {
+    "menu": {
+      "hotels": "Hotéis",
+      "transmission": "Transmissão",
+      "certificates": "Certificados",
+      "abstracts": "Resumos"
+    },
+    "extras": {
+      "profile": "Perfil",
+      "help": "Ajuda"
+    },
+    "footer": {
+      "exit": "Sair"
+    },
+    "notAvailable": "(não liberados)"
+>>>>>>> us001-realizar-cadastro
   }
 }
