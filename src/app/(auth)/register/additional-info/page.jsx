@@ -59,8 +59,9 @@ export default function AdditionalInfoStep() {
 
   useEffect(() => {
     if (isConfirmation) {
-      setIsLoading(false);
       router.push('/register/confirmation');
+
+      return () => setIsLoading(false);
     }
   }, [isConfirmation]);
 
