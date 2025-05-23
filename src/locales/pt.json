@@ -12,16 +12,17 @@
     "noSessions": "Nenhuma sessão disponível."
   },
   "aboutEvent": {
-    "title": [
-      "FishBase & SeaLifeBase",
-      "Sobre o Evento"
-    ],
+    "title": ["FishBase & SeaLifeBase", "Sobre o Evento"],
     "description": [
       "O FishBase é uma enciclopédia eletrônica que foi fundada em 1990 a partir de fichas catalográficas de peixes de interesse comercial (www.fishbase.org; Froese & Pauly, 2024). Hoje, o FishBase traz informações biológicas e ecológicas sobre 35.800 espécies de peixes marinhos e de água doce, com cerca de 330.300 nomes comuns associados a estas espécies, 65.100 fotos, 63.000 referências, 2.550 colaboradores em todo o mundo e que recebe cerca de 700.000 visitas/mês.",
       "O Simpósio Anual FishBase & SeaLifeBase é o principal encontro de pesquisadores gestores e conservacionistas que utilizam as maiores bases de dados mundiais sobre peixes e organismos marinhos, reunindo apresentações científicas, oficinas e mesas‑redondas sobre taxonomia, ecologia, modelagem de populações e uso sustentável de ecossistemas aquáticos. Realizado desde 2003, o evento ocorre este ano pela primeira vez no Brasil, oferecendo uma oportunidade única de intercâmbio entre especialistas nacionais e internacionais para debater desafios e oportunidades dos ecossistemas costeiros e continentais brasileiros, desde manguezais e recifes até as bacias amazônicas."
     ]
   },
-    "btnFishBase": "Visite o FishBase",
+  "btnFishBase": "Visite o FishBase",
+  "login": {
+    "title": "Login",
+    "button": "Entrar"
+  },
   "register": {
     "title": "Inscrição",
     "steps": ["Informações de conta", "Dados Complementares", "Confirmação"],
