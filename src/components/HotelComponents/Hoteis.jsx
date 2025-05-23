@@ -1,21 +1,115 @@
 'use client';
-import React from "react";
+import React, { useState } from "react";
 import { FaHotel } from "react-icons/fa";
+import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
+import { FaLocationDot } from "react-icons/fa6";
+import { FaAt } from "react-icons/fa6";
+import { PiLineVerticalThin } from "react-icons/pi";
+import { GiWhaleTail } from "react-icons/gi";
+
+
 import "./Hoteis.css";
 
 
 import { useLanguage } from '../../contexts/LanguageContext';
 import Header from '../Header';
 
-
-const TravelPage = () => {
+const Hoteis = () => {
     const { texts } = useLanguage();
+
+    const [activeTab, setActiveTab] = React.useState('hotels');
+
+    const hotels = [
+    {
+        name: "Vidam",
+        image: "/Imagens Hoteis/vidam.jpg",
+        instagram: "https://www.instagram.com/vidamhotel/",
+        address: "https://maps.app.goo.gl/XSUTPunrWNfMM8Hp6",
+        phones: ["(79) 9 9863 1002", "(79) 3304-0700"]
+    },
+    {
+        name: "Real Classic",
+        image: "/Imagens Hoteis/realclassic.jpg",
+        instagram: "https://www.instagram.com/realclassicaracaju/",
+        address: "https://maps.app.goo.gl/KfmXSD9fgbwSBDf4A",
+        phones: ["(79) 2106-7020/7023", "(79) 9 9812-2145"]
+    },
+    {
+        name: "Aquarios",
+        image: "/Imagens Hoteis/Aquarios.jpg",
+        instagram: "https://www.instagram.com/aquariospraiahotel/",
+        address: "https://maps.app.goo.gl/xrGwWzMzVJ43Vf826",
+        phones: ["(79) 99191-5800", "(79) 2107-5209"]
+    }
+    ];
+
+    const [selectedHotelIndex, setSelectedHotelIndex] = useState(null);
+    const [showModal, setShowModal] = useState(false);
+
+    const openModal = (index) => {
+    setSelectedHotelIndex(index);
+    setShowModal(true);
+    };
+
+    const closeModal = () => setShowModal(false);
+
+    const nextHotel = () =>
+    setSelectedHotelIndex((prev) => (prev + 1) % hotels.length);
+
+    const prevHotel = () =>
+    setSelectedHotelIndex((prev) => (prev - 1 + hotels.length) % hotels.length);
+
     return (
         <div className="main">
-            <Header></Header>
-            <div className="pageContent">
-                <div className='sidebar'></div>
-                <div className="travel-page">
+            {showModal && selectedHotelIndex !== null && (
+            <div className="hotel-modal">
+                <div className="modal-overlay" onClick={closeModal}></div>
+                <div className="modal" onClick={closeModal}>
+                    <div className="modal-inner">
+                        <button className="arrow-button left" onClick={(e) =>{
+                            e.stopPropagation();
+                            prevHotel();
+                            }} >
+                        <IoIosArrowBack />
+                        </button>
+
+                        <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+
+                            <div className="hotel-details">
+                                <img src={hotels[selectedHotelIndex].image} alt="" />
+                                <div className="info line-1">
+                                    <h2 className="modal-hotel-name"><FaHotel className="hotel-icon" />{hotels[selectedHotelIndex].name}</h2>
+                                    <div className="hotel-links">
+                                        <a className="hotel-link" href={hotels[selectedHotelIndex].instagram} target="_blank"><FaAt /> Instagram</a>
+                                        <a className="hotel-link" href={hotels[selectedHotelIndex].address} target="_blank"><FaLocationDot /> {texts.hotels.adress}</a>
+                                    </div>
+                                </div>
+                                <div className="hotel-contacts">
+                                    {hotels[selectedHotelIndex].phones.map((phone, i) => (
+                                        <React.Fragment key={i}>
+                                        <div className="phone-number">{phone}</div>
+                                        {i !== hotels[selectedHotelIndex].phones.length - 1 && (
+                                            <PiLineVerticalThin />
+                                        )}
+                                        </React.Fragment>
+                                    ))}
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <button className="arrow-button right" onClick={(e) =>{
+                            e.stopPropagation();
+                            nextHotel();
+                            }}>
+                        <IoIosArrowForward />
+                        </button>
+                    </div>
+                </div>
+            </div>
+            )}
+            <div className="travel-page">
                 {/* Header Image */}
                 <div className="header-image">
                     <img
@@ -24,38 +118,51 @@ const TravelPage = () => {
                     />
                 </div>
 
-
-                {/* Tabs */}
-                <div className="tabs">
-                    <button className="tab active">{texts.hotels.hotelSugestion}</button>
-                    <button className="tab">{texts.hotels.agencySugestion}</button>
-                </div>
-
-
-                {/* Hotel Cards */}
-                <div className="hotel-grid">
-                    <div className="hotel-card">
-                        <img src="/Imagens Hoteis/vidam.jpg" alt="Foto do Hotel Vidam" />
-                        <div className="hotel-name-container">
-                            <FaHotel className="hotel-icon" />
-                            <span className="hotel-name">Vidam</span>
-                        </div>
+                <div className="center-content">
+                    {/* Tabs */}
+                    <div className="tabs">
+                        <button
+                            className={`tab ${activeTab === 'hotels' ? 'active' : ''}`}
+                            onClick={() => setActiveTab('hotels')}
+                        >
+                            {activeTab === 'hotels' && <GiWhaleTail className="active-icon" />}
+                            {texts.hotels.hotelSugestion}
+                        </button>
+                        <button
+                            className={`tab ${activeTab === 'agencies' ? 'active' : ''}`}
+                            onClick={() => setActiveTab('agencies')}
+                        >
+                            {activeTab === 'agencies' && <GiWhaleTail className="active-icon" />}
+                            {texts.hotels.agencySugestion}
+                        </button>
                     </div>
-                    <div className="hotel-card">
-                        <img src="/Imagens Hoteis/realclassic.jpg" alt="Foto do Hotel Real Classic" />
-                        <div className="hotel-name-container">
-                            <FaHotel className="hotel-icon" />
-                            <span className="hotel-name">Real Classic</span>
+
+                    {activeTab === 'hotels' ? (
+                        <div className="hotel-grid">
+                            {hotels.map((hotel, index) => (
+                            <div key={index} className="hotel-card" onClick={() => openModal(index)}>
+                                <img src={hotel.image} alt={`Foto do Hotel ${hotel.name}`} />
+                                <div className="hotel-name-container">
+                                <FaHotel className="hotel-icon" />
+                                <span className="hotel-name">{hotel.name}</span>
+                                </div>
+                            </div>
+                            ))}
                         </div>
-                    </div>
-                    <div className="hotel-card">
-                        <img src="/Imagens Hoteis/Aquarios.jpg" alt="Foto do Hotel Aquarios" />
-                        <div className="hotel-name-container">
-                            <FaHotel className="hotel-icon" />
-                            <span className="hotel-name">Aquarios</span>
+                        ) : (
+                        <div className="agency-grid">
+                            {/* Agency suggestion content (second image) goes here */}
+                            <div className="agency-card naotorta">
+                                <img src="/Imagens Agencias/Nozes.png" alt="Nozes Turismo" />
+                                <span>Nozes Turismo</span>
+                            </div>
+                            <div className="agency-card torta">
+                                <img src="/Imagens Agencias/Aracaju.png" alt="Aracaju Turismo" />
+                                <span>Aracaju Turismo</span>
+                            </div>
                         </div>
-                    </div>
-                </div>
+                        )}
+
                 </div>
             </div>
         </div>
@@ -63,4 +170,4 @@ const TravelPage = () => {
 };
 
 
-export default TravelPage;
+export default Hoteis;

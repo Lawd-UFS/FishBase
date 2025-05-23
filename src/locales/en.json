@@ -87,6 +87,7 @@
   },
   "hotels": {
     "hotelSugestion": "Know where to stay",
-    "agencySugestion": "Make a travel plan"
+    "agencySugestion": "Make a travel plan",
+    "adress": "Address"
   }
 }

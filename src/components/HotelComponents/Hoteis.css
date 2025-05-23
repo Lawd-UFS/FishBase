@@ -21,22 +21,24 @@ body{
   height: 100%;
 }
 
-.pageContent{
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  height: auto;
-}
-
-.sidebar{
-  width: 30%;
-  height: auto;
-}
-
 .travel-page {
-  padding: 2%;
-  width: 100%;
-  height: auto;
+    padding: 2%;
+    width: 50vw;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.center-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  padding-top: .5em;
 }
 
 .header-image {
@@ -77,6 +79,13 @@ body{
 .tab.active {
   color: #004080;
   font-weight: bold;
+}
+
+.active{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
 
 .hotel-grid {
@@ -151,4 +160,186 @@ body{
 @media all and (orientation:landscape) {
   /* Style adjustments for landscape mode goes here */
 
+}
+
+
+.hotel-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+}
+
+.modal-overlay {
+    position: absolute;
+    background: #04234099;
+    width: 100%;
+    height: 100%;
+}
+
+.modal-content {
+    position: relative;
+    background: white;
+    width: 90%;
+    max-width: 50%;
+    margin: 5% auto;
+    padding: 2%;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.modal-content {
+  background: white;
+  border-radius: 16px;
+  padding: 2%;
+  max-width: 600px;
+  width: 90vw;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  z-index: 5;
+}
+.hotel-details {
+    max-width: 100%;
+    text-align: center;
+    flex: 1;
+}
+
+.hotel-details img{
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(5px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-inner {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+
+.arrow-button {
+  font-size: 2.5rem;
+  background: none;
+  border: none;
+  color: #FFFFFF;
+  cursor: pointer;
+  z-index: 10;
+  transition: color 0.3s ease;
+}
+
+.arrow-button.left {
+  margin-right: 1rem;
+}
+
+.arrow-button.right {
+  margin-left: 1rem;
+}
+
+.modal-hotel-name {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 0.3em;
+    color: #12386B;
+    font-weight: 300;
+}
+
+.line-1{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1em;
+}
+
+.hotel-links{
+    display: flex;
+    flex-direction: row;
+    gap: .5em;
+    align-items: center;
+}
+
+.hotel-links a{
+    display: flex;
+    flex-direction: row;
+    gap: .3em;
+    align-items: center;
+}
+
+.hotel-link{
+    background-color: #3E85921F;
+    color: #12386B;
+    font-weight: 300;
+    padding: 0.5em;
+    text-decoration: none;
+    border-radius: 5em;
+}
+
+.hotel-contacts{
+    display: flex;
+    flex-direction: row;
+    gap: .5em;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 1em 0;
+    color: #12386B;
+}
+
+.agency-grid{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    width: auto;
+    height: auto;
+    align-items: center;
+    justify-content: center;
+}
+
+.agency-card{
+    max-width: auto;
+    max-height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.agency-card img{
+    width: 50%;
+    height: auto;
+    min-height: 50%;
+    border-radius: 10px;   
+}
+
+.agency-card span{
+    font-weight: 600;
+    color: #12386B;
+    margin-top: auto;
+}
+
+.torta{
+    aspect-ratio: 1.4;
+    align-items: center;
+    justify-content: center;
+}
+.torta img{
+    margin-top: auto;
+}
+.naotorta{
+    margin-top: auto;
 }
