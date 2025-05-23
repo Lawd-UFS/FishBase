@@ -70,3 +70,12 @@ export const executelogin = async (email, password) => {
 
   return response;
 };
+
+export const refreshToken = async () => {
+  const response = await httpClient.request({
+    method: HttpMethods.POST,
+    path: '/auth/refresh-token',
+  });
+
+  return response;
+};
