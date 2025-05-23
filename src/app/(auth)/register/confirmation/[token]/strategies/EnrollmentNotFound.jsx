@@ -1,5 +1,5 @@
 import Button from '@/components/Button';
-import pageStyles from '@/app/(auth)/confirmation/page.module.css';
+import pageStyles from '@/app/(auth)/register/confirmation/page.module.css';
 import styles from '@/app/(auth)/layout.module.css';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useRouter } from 'next/navigation';

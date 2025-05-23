@@ -1,4 +1,4 @@
-import pageStyles from '@/app/(auth)/confirmation/page.module.css';
+import pageStyles from '@/app/(auth)/register/confirmation/page.module.css';
 import styles from '@/app/(auth)/layout.module.css';
 import Button from '@/components/Button';
 import { FormattedText } from '@/components/FormattedText';
