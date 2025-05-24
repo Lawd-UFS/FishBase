@@ -66,7 +66,6 @@ function User() {
 
   return (
     <div className='main'>
-      <Header></Header>
       <div className='pageContent'>
         <div className='sidebar'></div>
         <div className='Perfil'>
