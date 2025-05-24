@@ -26,13 +26,13 @@ export function ParticipantSidebar() {
     {
       label: texts.sidebar.menu.transmission,
       icon: '/sensors.svg',
-      path: '/participant/transmissao',
+      path: '/participant/live',
       disabled: true,
     },
     {
       label: texts.sidebar.menu.certificates,
       icon: '/developer_guide.svg',
-      path: '/participant/certificados',
+      path: '/participant/certificates',
       disabled: true,
     },
     {
@@ -47,7 +47,7 @@ export function ParticipantSidebar() {
     {
       label: texts.sidebar.extras.profile,
       icon: '/account_circle.svg',
-      path: '/participant/perfil',
+      path: '/participant/profile',
       disabled: true,
     },
     {
@@ -62,8 +62,8 @@ export function ParticipantSidebar() {
     <aside className={styles.sidebar}>
       <div className={styles.banner}>
         <Image
-          src="/header.png"
-          alt="Banner do Evento"
+          src='/header.png'
+          alt='Banner do Evento'
           width={230}
           height={150}
           className={styles.bannerImage}
@@ -82,7 +82,7 @@ export function ParticipantSidebar() {
               >
                 {item.disabled ? (
                   <div className={styles.disabledLink}>
-                    <Image src={item.icon} alt="" width={20} height={20} />
+                    <Image src={item.icon} alt='' width={20} height={20} />
                     <span>
                       {item.label}{' '}
                       <i className={styles.notAvailable}>
@@ -92,7 +92,7 @@ export function ParticipantSidebar() {
                   </div>
                 ) : (
                   <a href={item.path}>
-                    <Image src={item.icon} alt="" width={20} height={20} />
+                    <Image src={item.icon} alt='' width={20} height={20} />
                     <span>{item.label}</span>
                   </a>
                 )}
@@ -111,7 +111,7 @@ export function ParticipantSidebar() {
                 }`}
               >
                 <a href={item.path}>
-                  <Image src={item.icon} alt="" width={20} height={20} />
+                  <Image src={item.icon} alt='' width={20} height={20} />
                   <span>{item.label}</span>
                 </a>
               </div>
@@ -125,7 +125,7 @@ export function ParticipantSidebar() {
           style={{ cursor: 'pointer' }}
         >
           <Image
-            src="/arrow_menu_close.svg"
+            src='/arrow_menu_close.svg'
             alt={texts.sidebar.footer.exit}
             width={20}
             height={20}

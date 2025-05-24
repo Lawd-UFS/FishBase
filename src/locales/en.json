@@ -20,6 +20,10 @@
   "contact": "Contact",
   "support": "Support",
   "btnFishBase": "Visit FishBase",
+  "login": {
+    "title": "Login",
+    "button": "Sign in"
+  },
   "register": {
     "title": "Registration",
     "steps": ["Account Information", "Additional Data", "Confirmation"],
@@ -187,7 +191,7 @@
   "sidebar": {
     "menu": {
       "hotels": "Hotels",
-      "transmission": "Stream",
+      "transmission": "Live",
       "certificates": "Certificates",
       "abstracts": "Abstracts"
     },

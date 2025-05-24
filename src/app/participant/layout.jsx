@@ -1,17 +1,16 @@
 import { ParticipantSidebar } from './ParticipantSidebar';
 import { ParticipantHeader } from './ParticipantHeader';
 import styles from './page.module.css';
+import { RoleGuard } from '@/components/RoleGuard';
 
 export default function Layout({ children }) {
   return (
-    <div>
+    <RoleGuard roles={['participant']}>
       <ParticipantHeader />
       <div className={styles.container}>
         <ParticipantSidebar />
-        <main className={styles.mainContent}>
-          {children}
-        </main>
+        <main className={styles.mainContent}>{children}</main>
       </div>
-    </div>
+    </RoleGuard>
   );
 }

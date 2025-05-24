@@ -17,9 +17,13 @@
       "O FishBase é uma enciclopédia eletrônica que foi fundada em 1990 a partir de fichas catalográficas de peixes de interesse comercial. Hoje, o FishBase traz informações biológicas e ecológicas sobre 35.800 espécies de peixes marinhos e de água doce, com cerca de 330.300 nomes comuns associados a estas espécies, 65.100 fotos, 63.000 referências, 2.550 colaboradores em todo o mundo e que recebe cerca de 700.000 visitas/mês."
     ]
   },
+  "btnFishBase": "Visite o FishBase",
+  "login": {
+    "title": "Login",
+    "button": "Entrar"
+  },
   "contact": "Contato",
   "support": "Apoio",
-  "btnFishBase": "Visite o FishBase",
   "register": {
     "title": "Inscrição",
     "steps": ["Informações de conta", "Dados Complementares", "Confirmação"],

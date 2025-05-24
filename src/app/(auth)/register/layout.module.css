@@ -1,0 +1,40 @@
+.images {
+  display: flex;
+  gap: 3.6875rem;
+
+  margin: 0 auto;
+  margin-bottom: 4rem;
+}
+
+.nav {
+  width: 100%;
+}
+
+.nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 1.125rem;
+}
+
+.navItem {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  font-size: 1.25rem;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.navItem:not(.active):hover span {
+  color: var(--primary-blue);
+}
+
+.navItem:not(.active) {
+  color: var(--primary-blue-light-2);
+}
+
+.navItem.active {
+  color: var(--primary-blue);
+}
