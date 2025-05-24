@@ -19,12 +19,16 @@ export default function LoginPage() {
   const { setIsLoading, setErrorMessage } = useApp();
   const { setBannerImage } = useAuthLayout();
 
-  const { login, isAuth } = useAuth();
+  const { login, isAuth, refresh } = useAuth();
 
   const router = useRouter();
 
   useEffect(() => {
-    if (isAuth()) {
+    refresh();
+  }, []);
+
+  useEffect(() => {
+    if (isAuth) {
       router.push('/');
     }
   }, [isAuth, router]);
@@ -78,7 +82,7 @@ export default function LoginPage() {
     setIsLoading(false);
   };
 
-  if (isAuth()) {
+  if (isAuth) {
     return null;
   }
 

@@ -5,22 +5,25 @@ import { useRouter } from 'next/navigation';
 import { useEffect } from 'react';
 
 export const RoleGuard = ({ children, roles }) => {
-  const { user } = useAuth();
+  const { user, isAuth, isAuthLoading, refresh } = useAuth();
   const router = useRouter();
 
   const canAccess = user && roles.includes(user.role);
 
   useEffect(() => {
-    if (user && !canAccess) {
+    refresh();
+  }, []);
+
+  useEffect(() => {
+    if (isAuthLoading) return;
+
+    if (!isAuth || !canAccess) {
       router.replace('/login');
     }
-  }, [user, canAccess, router]);
+  }, [isAuthLoading, isAuth, canAccess, router]);
 
-  if (!user) return null;
-
-  if (!canAccess) {
-    return null;
-  }
+  if (isAuthLoading) return null;
+  if (!isAuth || !canAccess) return null;
 
   return children;
 };
