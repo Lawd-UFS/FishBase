@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import styles from '@/app/homePage/Header/header.module.css';
+import styles from '@/app/homePage/Header/Header.module.css';
 
 export default function Header() {
   return (

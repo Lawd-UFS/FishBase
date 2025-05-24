@@ -4,12 +4,28 @@ import { format } from 'date-fns';
 import styles from '@/app/homePage/Schedule/Schedule.module.css';
 import homeStyles from '@/app/homePage/HomePage.module.css';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { useEffect, useState } from 'react';
+import { getProgramming } from '@/lib/api';
 
-export default function Schedule({ schedule = [] }) {
+export default function Schedule() {
+  const [schedule, setSchedule] = useState([]);
+
   const { texts } = useLanguage();
 
+  useEffect(() => {
+    const updateSchedules = async () => {
+      const response = await getProgramming();
+
+      if (response.success) {
+        setSchedule(response.data);
+      }
+    };
+
+    updateSchedules();
+  }, []);
+
   return (
-    <section className={styles.background}>
+    <section id='schedule' className={styles.background}>
       <div className={`${styles.subtitleEventInfo} ${homeStyles.grid}`}>
         <div className={styles.symposiumDate}>September 1-2, 2025</div>
         <div className={styles.symposiumLocation}>
