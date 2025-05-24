@@ -2,7 +2,6 @@
 
 import styles from '@/app/(auth)/layout.module.css';
 
-import { useAuthLayout } from '@/contexts/AuthLayoutContext';
 import { useEffect, useMemo, useState } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Form } from '@/components/Form';
@@ -13,9 +12,13 @@ import PasswordIcon from '@/components/PasswordIcon';
 import Button from '@/components/Button';
 import { useRouter } from 'next/navigation';
 import { useAuth } from '@/contexts/AuthContext';
+import { useApp } from '@/contexts/AppContext';
+import { useAuthLayout } from '@/contexts/AuthLayoutContext';
 
 export default function LoginPage() {
-  const { setBannerImage, setIsLoading, setErrorMessage } = useAuthLayout();
+  const { setIsLoading, setErrorMessage } = useApp();
+  const { setBannerImage } = useAuthLayout();
+
   const { login } = useAuth();
   const { texts, language } = useLanguage();
 

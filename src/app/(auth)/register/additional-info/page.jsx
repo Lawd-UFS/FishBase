@@ -11,10 +11,10 @@ import { useRegister } from '@/contexts/RegisterContext';
 import { useFormStage } from '@/hooks/useFormStage';
 import Button from '@/components/Button';
 import styles from '@/app/(auth)/layout.module.css';
-import { useAuthLayout } from '@/contexts/AuthLayoutContext';
+import { useApp } from '@/contexts/AppContext';
 
 export default function AdditionalInfoStep() {
-  const { setIsLoading } = useAuthLayout();
+  const { setIsLoading } = useApp();
 
   const {
     formData,
