@@ -7,24 +7,35 @@
   background-color: transparent;
   border: none;
   cursor: pointer;
+  background: none;
 
   font-size: 1.125rem;
   font-weight: 700;
   font-family: 'Sofia Sans Semi Condensed';
 
   transition: all 0.2s ease-in-out;
+
+  border-bottom: 2px solid transparent;
 }
 
-.button:not(.selected) {
+.button.white {
   color: rgba(255, 255, 255, 0.5);
 }
 
-.button:not(.selected):hover {
+.button.white.selected,
+.button.white:hover {
   color: rgba(255, 255, 255, 0.7);
+
+  border-bottom-color: rgba(255, 255, 255, 0.7);
 }
 
-.button.selected {
-  color: white;
+.button.blue {
+  color: rgba(16, 77, 135, 0.5);
+}
 
-  text-decoration: underline;
+.button.blue.selected,
+.button.blue:hover {
+  color: rgb(16, 77, 135);
+
+  border-bottom-color: rgb(16, 77, 135);
 }
