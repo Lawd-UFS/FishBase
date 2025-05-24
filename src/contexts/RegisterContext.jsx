@@ -33,13 +33,19 @@ export const RegisterProvider = ({ children }) => {
   }, []);
 
   const nextStage = useCallback(async () => {
+    setIsLoading(true);
+
     if (validateCurrentStage) {
       const isValid = await validateCurrentStage();
 
-      if (!isValid) return false;
+      if (!isValid) {
+        setIsLoading(false);
+        return false;
+      }
     }
 
     setCurrentStage((prev) => prev + 1);
+    setIsLoading(false);
     return true;
   }, [validateCurrentStage]);
 
