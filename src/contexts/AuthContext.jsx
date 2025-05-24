@@ -1,26 +1,39 @@
 'use client';
 
 import { executelogin, refreshToken } from '@/lib/api';
-import { createContext, useContext, useEffect, useState } from 'react';
+import { createContext, useContext, useState } from 'react';
+import { useApp } from './AppContext';
+import { useLanguage } from './LanguageContext';
 
 const AuthContext = createContext(null);
 
 export const AuthProvider = ({ children }) => {
+  const { setIsLoading } = useApp();
+  const { toggleLanguage } = useLanguage();
+
   const [user, setUser] = useState(null);
   const [token, setToken] = useState(null);
 
-  useEffect(() => {
-    const updateToken = async () => {
-      const response = await refreshToken();
+  const refresh = async () => {
+    setIsLoading(true);
 
-      if (response.success) {
-        setToken(response.data.access_token);
-        setUser(response.data.user);
-      }
-    };
+    const response = await refreshToken();
 
-    updateToken();
-  }, []);
+    if (response.success) {
+      setToken(response.data.access_token);
+      setUser(response.data.user);
+      toggleLanguage(response.data.user.language);
+      setIsLoading(false);
+      return;
+    }
+
+    setUser({
+      role: undefined,
+      email: undefined,
+      language: undefined,
+    });
+    setIsLoading(false);
+  };
 
   const login = async (email, password) => {
     const response = await executelogin(email, password);
@@ -40,12 +53,14 @@ export const AuthProvider = ({ children }) => {
     };
   };
 
-  const isAuth = () => {
-    return !!token;
-  };
+  const isAuth = !!token;
+
+  const isAuthLoading = user === null;
 
   return (
-    <AuthContext.Provider value={{ user, login, token, isAuth }}>
+    <AuthContext.Provider
+      value={{ user, login, token, refresh, isAuth, isAuthLoading }}
+    >
       {children}
     </AuthContext.Provider>
   );
