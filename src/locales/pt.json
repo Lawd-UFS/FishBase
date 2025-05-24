@@ -9,7 +9,8 @@
     "checkEventButton": "Confira o evento"
   },
   "programming": {
-    "noSessions": "Nenhuma sessão disponível."
+    "noSessions": "Nenhuma sessão disponível.",
+    "comingSoon": "Em breve!"
   },
   "aboutEvent": {
     "title": ["Sobre o FishBase e SeaLifeBase", "Sobre o Evento"],

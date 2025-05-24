@@ -61,7 +61,7 @@ export default function Schedule() {
                   <p className={styles.time}>{format(event.dateTime, 'kk:mm')}</p>
                 </div>
                 <p className={styles.infoItem}>
-                  Em breve!
+                  {texts.programming.comingSoon}
                 </p>
               </div>
             )
