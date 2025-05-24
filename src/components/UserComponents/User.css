@@ -4,13 +4,139 @@
     padding: 0;
 }
 
-#root{
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+body{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #FFFFFF;
 }
+
+.main{
+  display: flex;
+  flex-direction: column;
+}
+
+.pageContent{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.sidebar{
+  width: 30%;
+}
+
+.Perfil{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+
+    padding-left: 2em;
+    padding-right: 2em;
+}
+
+.titulo{
+  width: 100%;
+  max-height: fit-content;
+  color: #104D87;
+  font-size: 1.5em;
+  font-weight: 700;
+  margin-bottom: 2%;
+}
+
+.subtitulo{
+  color: #5F84A7;
+  font-weight: 400;
+  font-size: 1.3em;
+}
+
+.linha{
+  border: none;
+  border-top: 1px solid #e5e7eb; /* light gray, like Tailwind's gray-200 */
+  margin: 1rem 0;
+}
+
+.dados{
+  height: fit-content;
+  width: 100%;
+}
+
+.fields{
+  display: grid;
+  grid-template-rows: 50% 50%;
+  grid-template-columns: auto auto;
+}
+
+.field_container{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding-bottom: 1em;
+  padding-right: 1em;
+  width: 100%;
+}
+
+.field_name{
+  font-size: 1em;
+  font-weight: 500;
+  color: #104D87;
+}
+
+.field{
+  width: auto;
+  height: 3em;
+  background-color: #F0F5F6;
+  border-radius: 1.5em;
+  display: flex;
+  align-items: center;
+  padding-left: 2em;
+}
+
+.complementares .fields{
+  grid-template-rows: 33% 33% 33%;
+  grid-template-columns: auto auto;
+}
+
+.mode-switch {
+  align-self: flex-start;
+  display: flex;
+  gap: 0.5rem;
+  flex-direction: column;
+}
+
+.options {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.875rem;
+  color: #1e3a8a; /* blue-800 */
+  background-color: #f8fafc; /* light background */
+  border: 2px solid transparent;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.option .icon {
+  font-size: 1rem;
+}
+
+.option.active {
+  background-color: #dbeafe; /* blue-100 */
+  border-color: #1e3a8a;     /* blue-800 */
+}
+
 
 .Container{
     width: 90%;
@@ -39,12 +165,6 @@
     padding-left: 3%;
 }
 
-.titulo{
-    color: #FFFFFF;
-    font-size: 3em;
-    font-weight: 700;
-    margin-bottom: 1em;
-}
 
 .Subtitulo{
     color: #FFFFFF;
@@ -331,39 +451,26 @@ input[type="text"]{
 
 @media all and (orientation:portrait) {
 /* Style adjustments for portrait mode goes here */
+body{
+  width: 100vw;
+  min-height: 100vh;
+  background-color: #FFFFFF;
 
-.Container{
-    flex-direction: column;
-    overflow-y: scroll;
+  /* allow content to flow and scroll */
+  display: block;
+  overflow-x: hidden;
+  justify-items: flex-end;
 }
-
-.titulo{
-    font-size: 2em;
+.fields{
+  display: flex;
+  flex-direction: column;
 }
-
-.Navegacao{
-    width: 100%;
-    padding-left: 0;
-    align-items: center;
-}
-
-.buttonsContainer{
+.Perfil{
     display: flex;
-    flex-direction: row;
-    gap: 1em;
-    overflow-x: scroll;
-}
-
-.Subtitulo{
-    width: 100%;
-    margin: 0;
-}
-
-.Display_De_Dados{
-    width: 100%;
-    height: 100%;
-    padding-left: 0;
-    padding-right: 0;
+    flex-direction: column;
+    height: auto;
+    padding-right: 2em;
+    padding-bottom: 2em;
 }
 
 }

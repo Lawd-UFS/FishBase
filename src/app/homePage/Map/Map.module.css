@@ -1,0 +1,42 @@
+.background {
+    background: url('/blue-background.svg');
+}
+
+.section {
+    padding-top: 12rem;
+    padding-bottom: 13.5rem;
+}
+
+.title {
+    color: #FFF;
+    font-family: "Sofia Sans Semi Condensed";
+    font-size: 3.16763rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 3.06394rem;
+    letter-spacing: -0.12669rem;
+    width: 20.25rem;
+    margin-left: 3rem;
+}
+
+.text {
+    color: #FFF;
+    font-family: "Sofia Sans";
+    font-size: 1.4rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    width: 48rem;
+}
+
+.container {
+    display: flex;
+    gap: 8.65rem;
+    justify-content: center;
+    margin-top: 5.6rem;
+}
+
+.map {
+    width: 100%;
+    margin: auto;
+}

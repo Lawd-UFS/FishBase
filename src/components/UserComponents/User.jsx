@@ -1,6 +1,10 @@
 'use client';
-//React
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
+import { useLanguage } from '../../contexts/LanguageContext';
+import { FaMapMarkerAlt, FaLaptop } from 'react-icons/fa';
+import './User.css';
+
+import Header from '../Header';
 
 //For resquest
 import { getUserProfile } from '@/lib/api';
@@ -11,14 +15,20 @@ import { useAuth } from '@/contexts/AuthContext';
 function User() {
   const { token } = useAuth();
 
+  const { texts } = useLanguage();
+  const [selected, setSelected] = useState('presencial');
   const [userData, setUserData] = useState({
     name: '',
+    gender: '',
+    city: '',
+    state: '',
+    country: '',
+    institution: '',
     email: '',
     enrollmentType: '',
-    institution: '',
+    frequencyPercentage: 0,
+    language: '',
   });
-
-  const [selectedSection, setSelectedSection] = useState('dados'); // default selected
 
   useEffect(() => {
     if (!token) return;
@@ -31,18 +41,25 @@ function User() {
           const { data } = response;
           setUserData({
             name: data.name || '',
+            gender: data.gender || '',
+            city: data.city || '',
+            state: data.state || '',
+            country: data.country || '',
+            institution: data.institution || '',
             email: data.email || '',
             enrollmentType: data.enrollmentType || '',
-            institution: data.institution || '',
+            frequencyPercentage: data.frequencyPercentage || 0,
+            language: data.language || '',
           });
+
+          // Set mode toggle state based on enrollmentType
+          if (data.enrollmentType === 'remote') {
+            setSelected('remoto');
+          } else {
+            setSelected('presencial');
+          }
         } else {
-          console.error('Error fetching user data:', response.error.message);
-          setUserData({
-            name: '',
-            email: '',
-            enrollmentType: '',
-            institution: '',
-          });
+          console.error('Error fetching user data:', response.data.message);
         }
       } catch (error) {
         console.error('Error fetching user profile:', error);
@@ -53,279 +70,94 @@ function User() {
   }, [token]);
 
   return (
-    <div className='Container'>
-      <div className='Navegacao'>
-        <div className='TituloContainer'>
-          <div className='titulo'>Área do participante</div>
-        </div>
-        <div className='buttonsContainer'>
-          <button
-            className={`Subtitulo ${selectedSection === 'dados' ? 'SelectedSubtitulo' : ''}`}
-            onClick={() => setSelectedSection('dados')}
-          >
-            Dados do participante
-          </button>
-          <button
-            className={`Subtitulo ${selectedSection === 'hospedagem' ? 'SelectedSubtitulo' : ''}`}
-            onClick={() => setSelectedSection('hospedagem')}
-          >
-            Saiba onde se hospedar
-          </button>
-          <button
-            className={`Subtitulo ${selectedSection === 'viagem' ? 'SelectedSubtitulo' : ''}`}
-            onClick={() => setSelectedSection('viagem')}
-          >
-            Faça um plano de viagem
-          </button>
-        </div>
-      </div>
+    <div className='main'>
+      <div className='pageContent'>
+        <div className='sidebar'></div>
+        <div className='Perfil'>
+          <div className='titulo'>
+            <h1>{texts.profile.title}</h1>
+          </div>
 
-      <div className='Display_De_Dados'>
-        {selectedSection === 'dados' && (
-          <>
-            <div className='Row'>
-              {/*<div className='Foto GridElement'></div>*/}
-              <div className='Name GridElement'>
-                <p>Nome</p>
-                <div className='FormContainer'>
-                  <input
-                    className='Uninteractable'
-                    type='text'
-                    placeholder={userData.name}
-                  />
+          <div className='dados pessoais'>
+            <div className='subtitulo'>{texts.profile.subtitles.personal}</div>
+            <div className='linha'></div>
+            <div className='fields'>
+              <div className='field_container'>
+                <div className='field_name'>{texts.profile.fields.name}</div>
+                <div className='field'>{userData.name}</div>
+              </div>
+              <div className='field_container'>
+                <div className='field_name'>{texts.register.fields.gender}</div>
+                <div className='field'>{userData.gender}</div>
+              </div>
+              <div className='field_container'>
+                <div className='field_name'>{texts.register.fields.email}</div>
+                <div className='field'>{userData.email}</div>
+              </div>
+              <div className='field_container'>
+                <div className='field_name'>
+                  {texts.register.fields.password}
                 </div>
-              </div>
-            </div>
-            <div className='Row'>
-              <div className='Email GridElement'>
-                <p>Email</p>
-                <div className='FormContainer'>
-                  <input
-                    className='Uninteractable'
-                    type='text'
-                    placeholder={userData.email}
-                  />
-                </div>
-              </div>
-            </div>
-            <div className='Row'>
-              <div className='Modalidade GridElement'>
-                <p>Modalidade</p>
-                <div className='FormContainer'>
-                  <input
-                    className='Uninteractable'
-                    type='text'
-                    placeholder={userData.enrollmentType}
-                  />
-                </div>
-              </div>
-            </div>
-            <div className='Row'>
-              <div className='Instituicao GridElement'>
-                <p>Instituição</p>
-                <div className='FormContainer'>
-                  <input
-                    className='Uninteractable'
-                    type='text'
-                    placeholder={userData.institution}
-                  />
-                </div>
-              </div>
-            </div>
-            {/* 
-            <div className='Row ButtonRow'>
-              <div className='Buttn Descartar'>Descartar</div>
-              <div className='Buttn Salvar'>Salvar</div>
-            </div>
-            */}
-          </>
-        )}
-
-        {selectedSection === 'viagem' && (
-          <div className='Agencias'>
-            <div className='HotelCard'>
-              <h2>Nozes Turismo</h2>
-              <div className='ContactRow'>
-                <div className='IconCircle'>📞</div>
-                <span>0055 79 9 9972-7314</span>
-              </div>
-              <div className='ContactRow'>
-                <div className='IconCircle'>🔗</div>
-                <a href='https://linkme.bio/nozestur?fbclid=PAZXh0bgNhZW0CMTEAAadis6MLJbvqK6ZoH9xdbqpQd76h_bNyMRYLm0hMglpOrwrKtVDX63_UPDq0iQ_aem_afur7dzhXpeWQrmbDe8eyA'>
-                  Links úteis
-                </a>
-              </div>
-              <div className='ContactRow'>
-                <div className='IconCircle'>📍</div>
-                <a
-                  href='https://maps.app.goo.gl/pZh3EamHtYmYLZT88'
-                  target='_blank'
-                  rel='noopener noreferrer'
-                >
-                  Av. Santos Dumont, 1550 - Coroa do Meio, Aracaju - SE,
-                  49037-475
-                </a>
-              </div>
-              <div className='ContactRow'>
-                <div className='IconCircle'>📸</div>
-                <a
-                  href='https://www.instagram.com/nozes.turismo'
-                  target='_blank'
-                  rel='noopener noreferrer'
-                >
-                  @nozes.turismo
-                </a>
-              </div>
-            </div>
-
-            <div className='HotelCard'>
-              <h2>Aracaju Turismo</h2>
-              <div className='ContactRow'>
-                <div className='IconCircle'>📞</div>
-                <span>0055 79 9 9950-1524</span>
-              </div>
-              <div className='ContactRow'>
-                <div className='IconCircle'>🔗</div>
-                <a href='https://linktr.ee/aracajuturismo?fbclid=PAZXh0bgNhZW0CMTEAAafpZSW-N0YRGUeqrl4dGrV9U06MDWI4Skc7LPv4OPg66usm-0yq-brL5utMNA_aem_3jz3fjw9u-VoJpmP-2YsfQ'>
-                  Links úteis
-                </a>
-              </div>
-              <div className='ContactRow'>
-                <div className='IconCircle'>📍</div>
-                <a
-                  href='https://maps.app.goo.gl/W2kzH8SfZeqAGkDH7'
-                  target='_blank'
-                  rel='noopener noreferrer'
-                >
-                  Av. Santos Dumont, 1550 - Coroa do Meio, Aracaju - SE,
-                  49037-475
-                </a>
-              </div>
-              <div className='ContactRow'>
-                <div className='IconCircle'>📸</div>
-                <a
-                  href='https://www.instagram.com/aracaju_turismo/'
-                  target='_blank'
-                  rel='noopener noreferrer'
-                >
-                  @aracaju_turismo
-                </a>
+                <div className='field'>••••••••</div>
               </div>
             </div>
           </div>
-        )}
 
-        {selectedSection === 'hospedagem' && (
-          <div className='Hoteis'>
-            <div className='HotelCard'>
-              <div className='HotelHeader'>
-                <h2>VIDAM</h2>
-                <div className='HotelImagePlaceholder'>
-                  <img
-                    className='FotoHotel'
-                    src='/images/Hoteis/vidam.jpg'
-                    alt='Foto do Hotel Vidam'
-                  />
-                </div>
-              </div>
-
-              <div className='HotelContent'>
-                <div className='HotelLinks'>
-                  <a
-                    href='https://www.instagram.com/vidamhotel/'
-                    target='_blank'
-                    rel='noopener noreferrer'
-                  >
-                    instagram
-                  </a>
-                  <a
-                    href='https://maps.app.goo.gl/XSUTPunrWNfMM8Hp6'
-                    target='_blank'
-                    rel='noopener noreferrer'
-                  >
-                    endereço
-                  </a>
-                </div>
-                <div className='HotelContacts'>
-                  <div>(79) 9 9863 1002</div>
-                  <div>(79) 33040700</div>
-                </div>
-              </div>
+          <div className='dados complementares'>
+            <div className='subtitulo'>
+              {texts.profile.subtitles.additional}
             </div>
-
-            <div className='HotelCard'>
-              <div className='HotelHeader'>
-                <h2>AQUARIOS</h2>
-                <div className='HotelImagePlaceholder'>
-                  <img
-                    className='FotoHotel'
-                    src='/images/Hoteis/Aquarios.jpg'
-                    alt='Foto do Hotel Aquarios'
-                  />
+            <div className='linha'></div>
+            <div className='fields'>
+              <div className='field_container'>
+                <div className='field_name'>
+                  {texts.register.fields.country}
                 </div>
+                <div className='field'>{userData.country}</div>
               </div>
-
-              <div className='HotelContent'>
-                <div className='HotelLinks'>
-                  <a
-                    href='https://www.instagram.com/aquariospraiahotel/'
-                    target='_blank'
-                    rel='noopener noreferrer'
-                  >
-                    instagram
-                  </a>
-                  <a
-                    href='https://maps.app.goo.gl/xrGwWzMzVJ43Vf826'
-                    target='_blank'
-                    rel='noopener noreferrer'
-                  >
-                    endereço
-                  </a>
-                </div>
-                <div className='HotelContacts'>
-                  <div>(79) 99191-5800</div>
-                  <div>(79) 2107-5209</div>
-                </div>
+              <div className='field_container'>
+                <div className='field_name'>{texts.register.fields.city}</div>
+                <div className='field'>{userData.city}</div>
               </div>
-            </div>
-
-            <div className='HotelCard'>
-              <div className='HotelHeader'>
-                <h2>REAL CLASSIC</h2>
-                <div className='HotelImagePlaceholder'>
-                  <img
-                    className='FotoHotel'
-                    src='/images/Hoteis/realclassic.jpg'
-                    alt='Foto do Hotel Real Classic'
-                  />
-                </div>
+              <div className='field_container'>
+                <div className='field_name'>{texts.register.fields.state}</div>
+                <div className='field'>{userData.state}</div>
               </div>
-
-              <div className='HotelContent'>
-                <div className='HotelLinks'>
-                  <a
-                    href='https://www.instagram.com/realclassicaracaju/'
-                    target='_blank'
-                    rel='noopener noreferrer'
-                  >
-                    instagram
-                  </a>
-                  <a
-                    href='https://maps.app.goo.gl/KfmXSD9fgbwSBDf4A'
-                    target='_blank'
-                    rel='noopener noreferrer'
-                  >
-                    endereço
-                  </a>
+              <div className='field_container'>
+                <div className='field_name'>
+                  {texts.register.fields.institution}
                 </div>
-                <div className='HotelContacts'>
-                  <div>(79) 2106-7020/7023</div>
-                  <div>(79) 9 9812-2145</div>
+                <div className='field'>{userData.institution}</div>
+              </div>
+              <div className='field_container'>
+                <div className='field_name'>
+                  {texts.profile.fields.specialNeeds}
                 </div>
+                <div className='field'>—</div> {/* Placeholder */}
               </div>
             </div>
           </div>
-        )}
+
+          <div className='mode-switch'>
+            <label className='field_name'>{texts.profile.fields.format}</label>
+            <div className='options'>
+              <button
+                className={`option ${selected === 'presencial' ? 'active' : ''}`}
+                onClick={() => setSelected('presencial')}
+              >
+                <FaMapMarkerAlt size={14} />
+                {texts.profile.formats.inPerson}
+              </button>
+              <button
+                className={`option ${selected === 'remoto' ? 'active' : ''}`}
+                onClick={() => setSelected('remoto')}
+              >
+                <FaLaptop size={14} />
+                {texts.profile.formats.remote}
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
