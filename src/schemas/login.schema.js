@@ -12,6 +12,7 @@ export const createLoginSchema = (language) => {
       .string()
       .min(1, messages.email.required)
       .email(messages.email.invalid),
-    password: z.string(),
+
+    password: z.string().min(1, messages.password.required),
   });
 };
