@@ -4,7 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import styles from '@/app/homePage/Footer/Footer.module.css';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { ChevronRight, ExternalLink, Mail, Phone } from 'lucide-react';
+import { ExternalLink, Mail, Phone } from 'lucide-react';
 
 export default function Footer() {
   const { texts } = useLanguage();
@@ -21,10 +21,10 @@ export default function Footer() {
             <h2>Symposium</h2>
           </div>
           <div className={styles.logosFishbase}>
-            <img src={'/fishbase-logo-white.png'} alt='fishbase' />
-            <img src={'/seaLifeBase-logo-white.png'} alt='seaLifeBase' />
-            <img src={'/seaAroundUs-logo-white.png'} alt='seaAroundUs' />
-            <img src={'/aquaMaps-logo-white.png'} alt='aquaMaps' />
+            <img src='/fishbase-logo-white.png' alt='fishbase' />
+            <img src='/seaLifeBase-logo-white.png' alt='seaLifeBase' />
+            <img src='/seaAroundUs-logo-white.png' alt='seaAroundUs' />
+            <img src='/aquaMaps-logo-white.png' alt='aquaMaps' />
           </div>
         </div>
         <footer className={styles.footer}>
@@ -51,17 +51,17 @@ export default function Footer() {
           <div className={styles.subtitleContainer}>
             <p className={styles.subtitle}>{texts.support}</p>
             <div className={styles.logosSuport}>
-              <img src={'/cnpq.png'} alt='cnpq' />
-              <img src={'/depaq.png'} alt='depaq' />
-              <img src={'/ufs.png'} alt='ufs' />
+              <img src='/cnpq.png' alt='cnpq' />
+              <img src='/depaq.png' alt='depaq' />
+              <img src='/ufs.png' alt='ufs' />
             </div>
           </div>
         </footer>
       </div>
-      <img src={'/fish-footer.png'} alt='fishs' style={{ width: '100%' }} />
+      <img src='/fish-footer.png' alt='fishs' style={{ width: '100%' }} />
       <img
         className={styles.lawd}
-        src={'/lawd.svg'}
+        src='/lawd.svg'
         alt='made with love by lawd'
       />
     </section>
