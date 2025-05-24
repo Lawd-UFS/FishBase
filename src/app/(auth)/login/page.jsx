@@ -37,7 +37,10 @@ export default function LoginPage() {
 
   const schema = useMemo(() => createLoginSchema(language), [language]);
 
-  const { register, errors, getValues } = useFormStage(schema, defaultValues);
+  const { register, errors, getValues, validate } = useFormStage(
+    schema,
+    defaultValues
+  );
 
   useEffect(() => {
     setBannerImage('/register-banner.png');
@@ -45,6 +48,13 @@ export default function LoginPage() {
 
   const handleLogin = async () => {
     setIsLoading(true);
+
+    const isValid = await validate();
+
+    if (!isValid) {
+      setIsLoading(false);
+      return;
+    }
 
     const data = getValues();
 
