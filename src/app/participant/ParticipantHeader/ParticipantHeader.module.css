@@ -16,37 +16,3 @@
   gap: 3rem;
   align-items: center;
 }
-
-/* Idioma */
-.languageSwitch {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.languageSwitch button {
-  background: none;
-  border: none;
-  cursor: pointer;
-  color: #104d87;
-  font-weight: 500;
-  font-size: 1rem;
-  border-bottom: 2px solid transparent;
-  transition: all 0.2s ease;
-  padding-bottom: 2px;
-}
-
-.languageSwitch button:hover {
-  color: #104d87;
-  border-bottom: 2px solid #104d87;
-}
-
-.languageSwitch span {
-  color: #9ca3af;
-}
-
-.languageSwitch .active {
-  color: #104d87;
-  border-bottom: 2px solid #104d87;
-  font-weight: 600;
-}
