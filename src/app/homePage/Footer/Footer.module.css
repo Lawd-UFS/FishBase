@@ -19,13 +19,17 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
+
 }
 
 .footer {
     display: flex;
-    justify-content: start;
+    justify-content: flex-start;
     gap: 16.5rem;
-    align-items: start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+
 }
 
 
@@ -36,7 +40,7 @@
     text-align: start;
     font-style: normal;
     line-height: 4rem;
-    width: 30.5rem;
+    max-width: 30.5rem;
     font-size: 2.49638rem;
     line-height: 2.3125rem;
 }
@@ -66,24 +70,24 @@
 
 .logosFishbase {
     display: flex;
-    width: 41.73681rem;
+    max-width: 41.73681rem;
     padding: 0.52631rem;
     justify-content: space-between;
     align-items: center;
     align-content: center;
-    row-gap: 4.36844rem;
+    row-gap: 1.6rem;
     flex-wrap: wrap;
 }
 
 .logosSuport {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     gap: 5rem;
 }
 
 .subtitleContainer {
     display: flex;
-    width: fit-content;
     flex-direction: column;
     align-items: flex-start;
     gap: 1.3rem;
@@ -111,8 +115,13 @@
     font-style: normal;
     font-weight: 400;
     line-height: 120%;
-
+    align-items: flex-start;
 }
+
+.subitem p {
+    word-break: break-word;
+}
+
 
 .lawd {
     position: absolute;
@@ -124,4 +133,85 @@
     color: #FFF;
     text-decoration-thickness: 5.5%;
     text-underline-offset: 25%
+}
+
+
+
+@media (max-width:1500px) {
+
+    .spacing {
+        margin-inline: 2rem;
+    }
+
+    .header,
+    .footer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2rem;
+        margin: auto;
+    }
+
+}
+
+@media (max-width:768px) {
+
+    .lawd {
+        scale: 0.8;
+
+    }
+
+    .logosSuport img {
+        scale: 0.7;
+    }
+
+    .logosSuport {
+        flex-direction: column;
+        gap: 0rem;
+    }
+
+
+}
+
+@media (max-width:425px) {
+
+    .headline h1,
+    .headline h2,
+    .headline h3 {
+        font-size: 2rem;
+
+    }
+
+    .logosFishbase {
+        flex-direction: column;
+        justify-content: flex-start;
+
+    }
+
+
+    .header,
+    .footer {
+        margin-inline: 0rem;
+        justify-content: center;
+        align-items: flex-center;
+
+    }
+
+    .subtitleContainer {
+        align-items: center;
+        width: 100%;
+    }
+
+    .lawd {
+        bottom: 2rem;
+        left: 2rem;
+        scale: 0.8;
+
+    }
+
+
+    .subitem p {
+        font-size: 1rem;
+        word-wrap: break-word;
+    }
+
 }

@@ -8,18 +8,19 @@
 
 
 .navContainer {
-    margin-top: 2.75rem;
+    padding: 2.75rem 6.63rem 0 9.76rem;
     display: flex;
     align-items: center;
-    gap: 31rem;
-    width: 80%;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+
 }
 
 .navLinks {
     display: flex;
     gap: 2.5rem;
     font-size: 1.6rem;
-    width: 52rem;
 
 }
 
@@ -148,6 +149,7 @@
     font-style: normal;
     font-weight: 700;
     transition: all 0.2s ease;
+    line-height: 1rem;
 }
 
 .triangle {
@@ -163,6 +165,7 @@
     background-color: #ffd700;
     color: #064e3b;
     border: none;
+    line-height: 0.1rem;
 }
 
 .btnPrimary:hover {
@@ -178,4 +181,67 @@
 .btnSecondary:hover {
     background: #fff;
     color: #064e3b;
+}
+
+@media (max-width:768px) {
+
+    .headline {
+        margin-top: 2rem;
+    }
+
+    .headline h1,
+    .headline h2,
+    .headline h3 {
+        font-size: 4rem;
+
+    }
+
+    .navContainer {
+        padding: 2.75rem;
+
+    }
+
+    .navLinks {
+        gap: 0.5rem;
+
+    }
+}
+
+@media (max-width:425px) {
+
+    .navContainer {
+        padding: 1rem;
+    }
+
+    .headline {
+        margin-top: 2rem;
+        line-height: 2rem;
+        margin-inline: 0.2rem;
+
+    }
+
+    .headline h1,
+    .headline h2,
+    .headline h3 {
+        font-size: 2rem;
+
+    }
+
+    .navContainer {
+        padding: 1rem;
+        flex-direction: column-reverse;
+        align-content: center;
+
+    }
+
+    .navLinks a,
+    .langSwitch button {
+        gap: 0.5rem;
+        font-size: 1rem;
+    }
+
+    .buttonsContainer {
+        scale: 0.8;
+
+    }
 }

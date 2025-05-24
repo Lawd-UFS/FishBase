@@ -10,7 +10,7 @@ export default function Map() {
 
   return (
     <section className={`${styles.section} ${styles.background}`}>
-      <img src={'/map.svg'} alt='map' />
+      <img src={'/map.svg'} alt='map' style={{ width: '100%' }} />
       <div className={styles.container}>
         <h1 className={styles.title}>{texts.aboutEvent.title[0]}</h1>
         <p className={styles.text}>{texts.aboutEvent.description[0]}</p>

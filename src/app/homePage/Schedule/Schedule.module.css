@@ -29,10 +29,11 @@
 .content {
     display: flex;
     justify-content: space-between;
-    gap: 8.51rem;
     margin: 4.55rem 7rem 0 9.3rem;
     min-height: 30rem;
     padding-bottom: 10rem;
+    flex-wrap: wrap;
+
 }
 
 .stickyWrapper {
@@ -56,13 +57,14 @@
 .scheduleContainer {
     display: flex;
     flex-direction: column;
-
 }
 
 .scheduleItems {
     display: flex;
     justify-content: space-between;
-    width: 53.6rem;
+    gap: 2.5rem;
+    flex-wrap: wrap;
+
 }
 
 .dateItem {
@@ -97,6 +99,7 @@
     line-height: normal;
     width: 36rem;
     margin-bottom: 3.375rem;
+    margin-top: 0.15rem;
 }
 
 .speakers {
@@ -113,4 +116,79 @@
     font-weight: 600;
     line-height: normal;
     width: 7rem;
+    margin-top: 0.15rem;
+
+}
+
+@media (max-width:768px) {
+
+    .infoItem {
+        width: 100%;
+        margin-bottom: 0;
+    }
+
+    .scheduleItems {
+        gap: 0.6rem;
+        margin-bottom: 5rem;
+    }
+
+    .stickyWrapper {
+        position: relative;
+        top: 0rem;
+        margin-bottom: 5rem;
+
+    }
+
+    .subtitleEventInfo {
+        font-size: 2rem;
+
+    }
+
+    .symposiumDate {
+        grid-column: 3 / -1;
+        transform: translateX(-0);
+
+    }
+
+    .symposiumLocation {
+        grid-column: 4 / -1;
+        transform: translateX(-0);
+
+    }
+
+}
+
+@media (max-width:425px) {
+
+    .content {
+        margin: 2rem;
+
+    }
+
+    .titleSection {
+        font-size: 2rem;
+    }
+
+    .date {
+        font-size: 1.6rem;
+    }
+
+    .infoItem,
+    .theme {
+        font-size: 1.4rem;
+    }
+
+    .subtitleEventInfo {
+        font-size: 1.5rem;
+        padding-top: 1rem;
+
+    }
+
+    .symposiumDate,
+    .symposiumLocation {
+        grid-column: 1/ -1;
+        line-height: 2rem;
+
+
+    }
 }

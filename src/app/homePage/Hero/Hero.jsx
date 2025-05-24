@@ -2,8 +2,7 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import styles from "@/app/homePage/Hero/hero.module.css"
-
+import styles from '@/app/homePage/Hero/hero.module.css';
 
 import { useLanguage } from '../../../contexts/LanguageContext';
 import { ChevronDown, ChevronRight } from 'lucide-react';
@@ -52,7 +51,13 @@ export default function Hero() {
           </Link>
         </div>
       </div>
-            <Image src={'/fish-hero.png'} width={1064} height={492} alt='fish' />
+      <Image
+        src={'/fish-hero.png'}
+        width={1064}
+        height={492}
+        alt='fish'
+        style={{ maxWidth: '100%', height: 'auto' }}
+      />
     </section>
   );
 }

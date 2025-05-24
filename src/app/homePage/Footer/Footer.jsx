@@ -32,11 +32,11 @@ export default function Footer() {
             <p className={styles.subtitle}>{texts.contact}</p>
             <div className={styles.subitem}>
               <Mail />
-              fbbrazilscientificcommittee@gmail.com
+              <p>fbbrazilscientificcommittee@gmail.com</p>
             </div>
             <div className={styles.subitem}>
               <Phone />
-              +0055 79 8156-5745
+              <p>+0055 79 8156-5745</p>
             </div>
             <div className={styles.subitem}>
               <ExternalLink />
@@ -44,7 +44,7 @@ export default function Footer() {
                 href='https://maps.app.goo.gl/jbZs6hRdx2rpUWhA8'
                 className={styles.link}
               >
-                Departamento de Pesca
+                <p>Departamento de Pesca</p>
               </Link>
             </div>
           </div>

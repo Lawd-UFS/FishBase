@@ -34,6 +34,8 @@
     gap: 8.65rem;
     justify-content: center;
     margin-top: 5.6rem;
+    flex-wrap: wrap;
+
 }
 
 .map {
