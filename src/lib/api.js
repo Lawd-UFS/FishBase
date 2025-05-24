@@ -54,7 +54,7 @@ export const getUserProfile = async (token) => {
 
 export const getProgramming = async () => {
   const response = await httpClient.request({
-    method: HttpMethods.POST,
+    method: HttpMethods.GET,
     path: '/programming',
   });
 
