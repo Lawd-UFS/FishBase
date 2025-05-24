@@ -2,12 +2,12 @@
 
 import { registerParticipant, resendConfirmationLink } from '@/lib/api';
 import { createContext, useCallback, useContext, useState } from 'react';
-import { useAuthLayout } from './AuthLayoutContext';
+import { useApp } from '@/contexts/AppContext';
 
 const RegisterContext = createContext(null);
 
 export const RegisterProvider = ({ children }) => {
-  const { setErrorMessage, resetErrorMessage } = useAuthLayout();
+  const { setIsLoading, setErrorMessage, resetErrorMessage } = useApp();
 
   const [formData, setFormData] = useState({});
   const [currentStage, setCurrentStage] = useState(0);
