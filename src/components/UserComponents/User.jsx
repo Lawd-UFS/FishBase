@@ -1,12 +1,15 @@
 'use client';
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useLanguage } from '../../contexts/LanguageContext';
 import { FaMapMarkerAlt, FaLaptop } from 'react-icons/fa';
-import axios from 'axios';
 import './User.css';
 
 import Header from '../Header';
 
+//For resquest
+import { getUserProfile } from '@/lib/api';
+
+import './User.css';
 
 function User() {
   const { texts } = useLanguage();
@@ -21,25 +24,16 @@ function User() {
     email: '',
     enrollmentType: '',
     frequencyPercentage: 0,
-    language: ''
+    language: '',
   });
 
   useEffect(() => {
     const fetchUserData = async () => {
       try {
-        const token = localStorage.getItem('token');
-        const response = await axios.post(
-          'http://localhost:3000/participants/profile',
-          {},
-          {
-            headers: {
-              Authorization: `Bearer ${token}`,
-            },
-          }
-        );
+        const response = await getUserProfile('token');
 
-        if (response.data.success) {
-          const data = response.data.data;
+        if (response.success) {
+          const { data } = response;
           setUserData({
             name: data.name || '',
             gender: data.gender || '',
@@ -50,7 +44,7 @@ function User() {
             email: data.email || '',
             enrollmentType: data.enrollmentType || '',
             frequencyPercentage: data.frequencyPercentage || 0,
-            language: data.language || ''
+            language: data.language || '',
           });
 
           // Set mode toggle state based on enrollmentType
@@ -97,18 +91,24 @@ function User() {
                 <div className='field'>{userData.email}</div>
               </div>
               <div className='field_container'>
-                <div className='field_name'>{texts.register.fields.password}</div>
+                <div className='field_name'>
+                  {texts.register.fields.password}
+                </div>
                 <div className='field'>••••••••</div>
               </div>
             </div>
           </div>
 
           <div className='dados complementares'>
-            <div className='subtitulo'>{texts.profile.subtitles.additional}</div>
+            <div className='subtitulo'>
+              {texts.profile.subtitles.additional}
+            </div>
             <div className='linha'></div>
             <div className='fields'>
               <div className='field_container'>
-                <div className='field_name'>{texts.register.fields.country}</div>
+                <div className='field_name'>
+                  {texts.register.fields.country}
+                </div>
                 <div className='field'>{userData.country}</div>
               </div>
               <div className='field_container'>
@@ -120,19 +120,23 @@ function User() {
                 <div className='field'>{userData.state}</div>
               </div>
               <div className='field_container'>
-                <div className='field_name'>{texts.register.fields.institution}</div>
+                <div className='field_name'>
+                  {texts.register.fields.institution}
+                </div>
                 <div className='field'>{userData.institution}</div>
               </div>
               <div className='field_container'>
-                <div className='field_name'>{texts.profile.fields.specialNeeds}</div>
+                <div className='field_name'>
+                  {texts.profile.fields.specialNeeds}
+                </div>
                 <div className='field'>—</div> {/* Placeholder */}
               </div>
             </div>
           </div>
 
-          <div className="mode-switch">
-            <label className="field_name">{texts.profile.fields.format}</label>
-            <div className="options">
+          <div className='mode-switch'>
+            <label className='field_name'>{texts.profile.fields.format}</label>
+            <div className='options'>
               <button
                 className={`option ${selected === 'presencial' ? 'active' : ''}`}
                 onClick={() => setSelected('presencial')}

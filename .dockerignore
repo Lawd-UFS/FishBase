@@ -1,0 +1,21 @@
+# Formatação de código
+.eslintrc.json
+.prettierrc
+
+# Documentação
+*.md
+
+# Dependências
+node_modules/
+
+# Build e cache
+dist/
+build/
+.next/
+
+# Variáveis de ambiente
+.env*
+
+# Git
+.gitignore
+.git/
