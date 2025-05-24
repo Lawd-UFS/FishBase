@@ -19,12 +19,19 @@ export default function LoginPage() {
   const { setIsLoading, setErrorMessage } = useApp();
   const { setBannerImage } = useAuthLayout();
 
-  const { login } = useAuth();
+  const { login, isAuth } = useAuth();
+
+  const router = useRouter();
+
+  useEffect(() => {
+    if (isAuth()) {
+      router.push('/');
+    }
+  }, [isAuth, router]);
+
   const { texts, language } = useLanguage();
 
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
-
-  const router = useRouter();
 
   const handlePasswordVisibility = () => {
     setIsPasswordVisible((prev) => !prev);
@@ -70,6 +77,10 @@ export default function LoginPage() {
 
     setIsLoading(false);
   };
+
+  if (isAuth()) {
+    return null;
+  }
 
   return (
     <>
