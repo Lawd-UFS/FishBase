@@ -16,7 +16,7 @@ export const registerParticipant = async (data) => {
 
 export const confirmRegistration = async (token) => {
   const response = await httpClient.request({
-    method: HttpMethods.POST,
+    method: HttpMethods.PUT,
     path: '/participants/confirm-enrollment',
     data: {
       token,
