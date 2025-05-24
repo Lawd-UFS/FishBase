@@ -1,6 +1,6 @@
-import styles from '@/components/Loading/Loading.module.css';
+import styles from '@/components/Spinner/Spinner.module.css';
 
-export function Loading({ size = 24, className = null }) {
+export function Spinner({ size = 24, className = null }) {
   return (
     <div className={`${styles.container} ${className}`}>
       <div className={styles.spinner}>

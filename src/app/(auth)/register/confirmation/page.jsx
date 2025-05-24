@@ -1,6 +1,6 @@
 'use client';
 
-import { Loading } from '@/components/Loading';
+import { Spinner } from '@/components/Spinner';
 import { useLanguage } from '@/contexts/LanguageContext';
 import styles from '@/app/(auth)/layout.module.css';
 import pageStyles from '@/app/(auth)/register/confirmation/page.module.css';
@@ -26,7 +26,7 @@ export default function ConfirmationStep() {
   return (
     <div className={styles.stage}>
       <div className={pageStyles.content}>
-        <Loading className={pageStyles.loading} />
+        <Spinner className={pageStyles.loading} />
         <h1>{texts.register.confirmation.title}</h1>
         <p>{texts.register.confirmation.description}</p>
       </div>
