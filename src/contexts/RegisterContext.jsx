@@ -2,14 +2,15 @@
 
 import { registerParticipant, resendConfirmationLink } from '@/lib/api';
 import { createContext, useCallback, useContext, useState } from 'react';
+import { useApp } from '@/contexts/AppContext';
 
 const RegisterContext = createContext(null);
 
 export const RegisterProvider = ({ children }) => {
+  const { setIsLoading, setErrorMessage, resetErrorMessage } = useApp();
+
   const [formData, setFormData] = useState({});
   const [currentStage, setCurrentStage] = useState(0);
-  const [isLoading, setIsLoading] = useState(false);
-  const [errorMessage, setErrorMessage] = useState(null);
   const [validateCurrentStage, setValidateCurrentStage] = useState(null);
   const [getFormData, setGetFormData] = useState(null);
   const [isConfirmation, setIsConfirmation] = useState(false);
@@ -32,13 +33,19 @@ export const RegisterProvider = ({ children }) => {
   }, []);
 
   const nextStage = useCallback(async () => {
+    setIsLoading(true);
+
     if (validateCurrentStage) {
       const isValid = await validateCurrentStage();
 
-      if (!isValid) return false;
+      if (!isValid) {
+        setIsLoading(false);
+        return false;
+      }
     }
 
     setCurrentStage((prev) => prev + 1);
+    setIsLoading(false);
     return true;
   }, [validateCurrentStage]);
 
@@ -74,14 +81,8 @@ export const RegisterProvider = ({ children }) => {
     [validateCurrentStage, getFormData]
   );
 
-  const resetErrorMessage = useCallback(() => {
-    setErrorMessage(null);
-  }, []);
-
   const submitForm = useCallback(async () => {
-    setIsLoading(true);
     const response = await registerParticipant(formData);
-    setIsLoading(false);
 
     if (response.success) {
       setIsConfirmation(true);
@@ -96,9 +97,7 @@ export const RegisterProvider = ({ children }) => {
 
   const requestNewLink = useCallback(
     async (token) => {
-      setIsLoading(true);
       const response = await resendConfirmationLink(token);
-      setIsLoading(false);
 
       if (response.success) {
         setIsConfirmation(true);
@@ -122,16 +121,11 @@ export const RegisterProvider = ({ children }) => {
         nextStage,
         previousStage,
         submitForm,
-        isLoading,
-        setIsLoading,
-        errorMessage,
-        resetErrorMessage,
         goToStage,
         setValidateCurrentStage,
         setGetFormData,
         resetFormData,
         isConfirmation,
-        setErrorMessage,
         resetRegister,
         requestNewLink,
       }}

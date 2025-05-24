@@ -1,76 +1,51 @@
+import { HttpClient, HttpMethods } from '@/http/HttpClient';
+
 const API_URL = '/api';
 
-const api = {
-  post: async (path, data, headers) => {
-    const response = await fetch(`${API_URL}/${path}`, {
-      method: 'POST',
-      body: JSON.stringify(data),
-      headers: { ...headers },
-    });
-
-    return await response.json();
-  },
-  put: async (path, data, headers) => {
-    const response = await fetch(`${API_URL}/${path}`, {
-      method: 'PUT',
-      body: JSON.stringify(data),
-      headers: { ...headers },
-    });
-
-    return await response.json();
-  },
-  get: async (path, headers) => {
-    const response = await fetch(`${API_URL}/${path}`, { headers });
-    return await response.json();
-  },
-};
+const httpClient = new HttpClient(API_URL);
 
 export const registerParticipant = async (data) => {
-  const response = await api.post('/participants/register', data, {
-    headers: {
-      'Content-Type': 'application/json',
-    },
+  const response = await httpClient.request({
+    method: HttpMethods.POST,
+    path: '/participants/register',
+    data,
   });
 
   return response;
 };
 
 export const confirmRegistration = async (token) => {
-  const response = await api.put(
-    '/participants/confirm-enrollment',
-    {
+  const response = await httpClient.request({
+    method: HttpMethods.POST,
+    path: '/participants/confirm-enrollment',
+    data: {
       token,
     },
-    {
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    }
-  );
+  });
 
   return response;
 };
 
 export const resendConfirmationLink = async (token) => {
-  const response = await api.post(
-    '/participants/resend-confirmation-email',
-    {
+  const response = await httpClient.request({
+    method: HttpMethods.POST,
+    path: '/participants/resend-confirmation-email',
+    data: {
       token,
     },
-    {
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    }
-  );
+  });
 
   return response;
 };
 
 export const getUserProfile = async (token) => {
-  const response = await api.get('/participants/profile', {
-    headers: {
-      Authorization: `Bearer ${token}`,
+  const response = await httpClient.request({
+    method: HttpMethods.GET,
+    path: '/participants/profile',
+    options: {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
     },
   });
 
@@ -78,7 +53,29 @@ export const getUserProfile = async (token) => {
 };
 
 export const getProgramming = async () => {
-  const response = await api.get('/programming');
+  const response = await httpClient.request({
+    method: HttpMethods.GET,
+    path: '/programming',
+  });
+
+  return response;
+};
+
+export const executelogin = async (email, password) => {
+  const response = await httpClient.request({
+    method: HttpMethods.POST,
+    path: '/auth/login',
+    data: { email, password },
+  });
+
+  return response;
+};
+
+export const refreshToken = async () => {
+  const response = await httpClient.request({
+    method: HttpMethods.POST,
+    path: '/auth/refresh-token',
+  });
 
   return response;
 };

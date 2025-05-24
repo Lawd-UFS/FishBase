@@ -10,12 +10,13 @@ export default function Button({
   variant = 'filled',
   color = null,
   onClick = null,
+  style = null,
 }) {
   return (
     <button
       className={`${styles.button} ${variants[variant]}`}
-      style={{ color: color }}
       onClick={onClick}
+      style={{ color, ...style }}
     >
       {children}
     </button>
