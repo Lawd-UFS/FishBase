@@ -9,13 +9,25 @@ export class HttpClient {
     const response = await fetch(`${this.baseURL}/${path}`, {
       method,
       body: method !== HttpMethods.GET ? JSON.stringify(data) : null,
-      headers: { 'Content-Type': 'application/json', ...headers },
+      headers: this.buildHeaders(headers),
       credentials: 'include',
     });
 
     if (raw) return response;
 
     return await response.json();
+  }
+
+  buildHeaders(headers) {
+    const hasContentType = Object.keys(headers).some(
+      (key) => key.toLowerCase() === 'content-type'
+    );
+
+    if (!hasContentType) {
+      headers['Content-Type'] = 'application/json';
+    }
+
+    return headers;
   }
 
   extractOptions(optionsObject, optionsToExtract) {
