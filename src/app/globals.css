@@ -16,14 +16,8 @@
 body {
   font-family: 'Sofia Sans Semi Condensed';
   background: #f5f5f5;
-}
-
-/* Container e fundo geral */
-.container {
-  position: relative;
-  width: 100%;
-  min-height: 100vh;
-  overflow: visible;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
 }
 
 /* Background fixo */
@@ -155,6 +149,7 @@ body {
 .btn-secondary:hover {
   background: #fff;
   color: #064e3b;
+  z-index: -1;
 }
 
 /* ===== Registros & Formulários ===== */
@@ -254,7 +249,8 @@ body {
   background: rgba(255, 255, 255, 0.1);
   color: #fff;
   font-size: 1rem;
-  appearance: none; /* remove seta nativa */
+  appearance: none;
+  /* remove seta nativa */
 }
 
 /* placeholder */

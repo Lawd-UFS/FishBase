@@ -2,11 +2,12 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
+import styles from '@/app/homePage/Header/header.module.css';
 
 export default function Header() {
   return (
-    <header className='header'>
-      <div className='logo-container'>
+    <header className={styles.header}>
+      <div className={styles.logoContainer}>
         <Link href='https://www.fishbase.org'>
           <Image
             src='/fishbase-logo.png'

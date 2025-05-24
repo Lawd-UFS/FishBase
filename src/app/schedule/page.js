@@ -39,15 +39,15 @@ export default function ProgramacaoPage() {
       <section className='schedule-section'>
         <div className='cards-container'>
           {sessions.length > 0 ? (
-            sessions.map((session, i) => {
-              const dateBR = formatDateTimeBR(session.dateTime);
+            sessions.map((sessao, i) => {
+              const dateBR = formatDateTimeBR(sessao.dateTime);
               return (
-                <div key={session.id ?? i} className='event-card'>
+                <div key={sessao.id ?? i} className='event-card'>
                   <div className='card-top-bar' />
                   <div className='card-body'>
-                    <div className='title'>{session.title}</div>
-                    <div className='speaker'>{session.speaker || '—'}</div>
-                    <div className='theme'>{session.theme}</div>
+                    <div className='title'>{sessao.title}</div>
+                    <div className='speaker'>{sessao.speaker || '—'}</div>
+                    <div className='theme'>{sessao.theme}</div>
                   </div>
                   <div className='date-pill'>{dateBR}</div>
                 </div>
