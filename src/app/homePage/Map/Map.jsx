@@ -9,7 +9,7 @@ export default function Map() {
   const { texts } = useLanguage();
 
   return (
-    <section className={`${styles.section} ${styles.background}`}>
+    <section id='map' className={`${styles.section} ${styles.background}`}>
       <img src={'/map.svg'} alt='map' style={{ width: '100%' }} />
       <div className={styles.container}>
         <h1 className={styles.title}>{texts.aboutEvent.title[0]}</h1>

@@ -56,6 +56,12 @@
     transition: color 0.2s;
 }
 
+.navLinks a {
+    display: flex;
+    gap: 0.45rem;
+    align-items: center;
+}
+
 .langSwitch button::after {
     content: '';
     position: absolute;
@@ -152,15 +158,6 @@
     line-height: 1rem;
 }
 
-.triangle {
-    width: 0;
-    height: 0;
-    border-bottom: 10px solid transparent;
-    border-top: 10px solid transparent;
-    border-left: 20px solid #091A46;
-}
-
-
 .btnPrimary {
     background-color: #ffd700;
     color: #064e3b;
@@ -182,6 +179,7 @@
     background: #fff;
     color: #064e3b;
 }
+
 
 @media (max-width:768px) {
 
@@ -205,9 +203,15 @@
         gap: 0.5rem;
 
     }
+
 }
 
-@media (max-width:425px) {
+@media (max-width:525px) {
+
+    .icon {
+        scale: 0.8;
+    }
+
 
     .navContainer {
         padding: 1rem;
@@ -229,6 +233,7 @@
 
     .navContainer {
         padding: 1rem;
+        gap: 1rem;
         flex-direction: column-reverse;
         align-content: center;
 
@@ -238,6 +243,11 @@
     .langSwitch button {
         gap: 0.5rem;
         font-size: 1rem;
+    }
+
+    .navLinks a {
+        gap: 0.1rem;
+
     }
 
     .buttonsContainer {

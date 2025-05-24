@@ -9,7 +9,7 @@ export default function Schedule({ schedule = [] }) {
   const { texts } = useLanguage();
 
   return (
-    <section className={styles.background}>
+    <section id='schedule' className={styles.background}>
       <div className={`${styles.subtitleEventInfo} ${homeStyles.grid}`}>
         <div className={styles.symposiumDate}>September 1-2, 2025</div>
         <div className={styles.symposiumLocation}>

@@ -5,7 +5,7 @@ import Image from 'next/image';
 import styles from '@/app/homePage/Hero/hero.module.css';
 
 import { useLanguage } from '../../../contexts/LanguageContext';
-import { ChevronDown, ChevronRight } from 'lucide-react';
+import { ChevronDown, ChevronRight, Lock } from 'lucide-react';
 
 export default function Hero() {
   const { texts, toggleLanguage, language } = useLanguage();
@@ -14,10 +14,13 @@ export default function Hero() {
     <section className={`${styles.hero} ${styles.backgroundHero}`}>
       <div className={styles.navContainer}>
         <nav className={styles.navLinks}>
-          <Link href='/about'>{texts.navbar.aboutEvent}</Link>
-          <Link href='/schedule'>{texts.navbar.programming}</Link>
-          <Link href='/login'>Login</Link>
-          <Link href='/register'>{texts.navbar.register}</Link>
+          <Link href='/login'>
+            <Lock size={22} strokeWidth={3} className={styles.icon} />
+            Login
+          </Link>
+          <Link href='#map'>{texts.navbar.aboutEvent}</Link>
+          <Link href='#schedule'>{texts.navbar.programming}</Link>
+          <Link href='#footer'>{texts.navbar.contact}</Link>
         </nav>
         <div className={styles.langSwitch}>
           <button
@@ -45,7 +48,7 @@ export default function Hero() {
             {texts.hero.registerButton}
             <ChevronRight />
           </Link>
-          <Link href='/schedule' className={styles.btnSecondary}>
+          <Link href='#schedule' className={styles.btnSecondary}>
             {texts.hero.checkEventButton}
             <ChevronDown />
           </Link>

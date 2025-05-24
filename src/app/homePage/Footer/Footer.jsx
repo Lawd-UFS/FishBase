@@ -10,7 +10,7 @@ export default function Footer() {
   const { texts } = useLanguage();
 
   return (
-    <section className={`${styles.section} ${styles.background}`}>
+    <section id='footer' className={`${styles.section} ${styles.background}`}>
       <div className={styles.spacing}>
         <div className={styles.header}>
           <div className={styles.headline}>

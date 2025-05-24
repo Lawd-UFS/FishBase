@@ -148,7 +148,6 @@
         flex-direction: column;
         align-items: flex-start;
         gap: 2rem;
-        margin: auto;
     }
 
 }
@@ -182,7 +181,6 @@
     }
 
     .logosFishbase {
-        flex-direction: column;
         justify-content: flex-start;
 
     }
@@ -190,14 +188,12 @@
 
     .header,
     .footer {
-        margin-inline: 0rem;
         justify-content: center;
         align-items: flex-center;
 
     }
 
     .subtitleContainer {
-        align-items: center;
         width: 100%;
     }
 

@@ -2,7 +2,8 @@
   "navbar": {
     "aboutEvent": "Learn more",
     "programming": "Schedule",
-    "register": "Register"
+    "register": "Register",
+     "contact": "Contact"
   },
   "hero": {
     "registerButton": "Register",

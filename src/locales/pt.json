@@ -2,7 +2,8 @@
   "navbar": {
     "aboutEvent": "Saiba mais",
     "programming": "Programação",
-    "register": "Inscreva-se"
+    "register": "Inscreva-se",
+     "contact": "Contato"
   },
   "hero": {
     "registerButton": "Inscreva-se",

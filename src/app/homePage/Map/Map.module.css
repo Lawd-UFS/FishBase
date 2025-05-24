@@ -27,6 +27,7 @@
     font-weight: 400;
     line-height: normal;
     width: 48rem;
+    margin-inline: 2rem;
 }
 
 .container {
@@ -34,11 +35,49 @@
     gap: 8.65rem;
     justify-content: center;
     margin-top: 5.6rem;
-    flex-wrap: wrap;
+
 
 }
 
 .map {
     width: 100%;
     margin: auto;
+}
+
+
+
+@media (max-width: 768px) {
+
+    .section {
+        padding-top: 10rem;
+        padding-bottom: 5rem;
+    }
+
+    .container {
+        gap: 2rem;
+        margin-top: 2rem;
+        flex-direction: column;
+
+    }
+
+    .title {
+        font-size: 2rem;
+        line-height: 100%;
+        width: fit-content;
+    }
+
+    .text {
+        margin-inline: 3rem;
+        width: 80%;
+    }
+}
+
+
+@media (max-width: 425px) {
+
+
+    .text {
+        font-size: 1rem;
+
+    }
 }
