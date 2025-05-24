@@ -16,7 +16,9 @@ export default function Hero() {
       <div className={styles.navContainer}>
         <nav className={styles.navLinks}>
           <Link href='/about'>{texts.navbar.aboutEvent}</Link>
-          <Link href='/schedule'>{texts.navbar.programming}</Link>
+          <Link href='#schedule' scroll={true}>
+            {texts.navbar.programming}
+          </Link>
           <Link href='/login'>Login</Link>
           <Link href='/register'>{texts.navbar.register}</Link>
         </nav>
@@ -33,7 +35,7 @@ export default function Hero() {
             {texts.hero.registerButton}
             <ChevronRight />
           </Link>
-          <Link href='/schedule' className={styles.btnSecondary}>
+          <Link href='#schedule' scroll={true} className={styles.btnSecondary}>
             {texts.hero.checkEventButton}
             <ChevronDown />
           </Link>
