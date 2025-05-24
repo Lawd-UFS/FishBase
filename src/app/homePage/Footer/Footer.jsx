@@ -11,6 +11,9 @@ export default function Footer() {
 
   return (
     <section className={`${styles.section} ${styles.background}`}>
+      <div className={styles.fishFooterBg}>
+        <img src='/fish-footer.png' alt='fishs' />
+      </div>
       <div className={styles.spacing}>
         <div className={styles.header}>
           <div className={styles.headline}>
@@ -57,13 +60,12 @@ export default function Footer() {
             </div>
           </div>
         </footer>
+        <img
+          className={styles.lawd}
+          src='/lawd.svg'
+          alt='made with love by lawd'
+        />
       </div>
-      <img src='/fish-footer.png' alt='fishs' style={{ width: '100%' }} />
-      <img
-        className={styles.lawd}
-        src='/lawd.svg'
-        alt='made with love by lawd'
-      />
     </section>
   );
 }

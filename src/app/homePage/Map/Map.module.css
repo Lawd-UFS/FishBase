@@ -1,5 +1,6 @@
 .background {
     background: url('/blue-background.svg');
+    width: 100%; /* alterado de 100vw para 100% */
 }
 
 .section {
